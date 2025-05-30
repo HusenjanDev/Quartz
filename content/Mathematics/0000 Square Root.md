@@ -19,3 +19,25 @@ $$\sqrt[3]{27} \quad \sqrt[4]{16} \quad \sqrt[7]{1} \quad \sqrt{100} \quad \sqrt
 Solution for the question is the following.
 
 $$\sqrt[5]{-1} \quad \sqrt[7]{1} \quad \sqrt[4]{16} \quad \sqrt[4]{40} \quad \sqrt[3]{27} \quad \sqrt{100}$$
+## 1.3
+
+Finding the nroot with 3 decimals with Geogebra CAS.
+
+1. $\sqrt[3]{10} = 2.154^3$
+2. $\sqrt[4]{17} = 3.050^4$
+3. $\sqrt[7]{-64} = 1.811^7$
+4. $\sqrt[12]{1,065} = 1.005^{12}$
+
+## 1.4 
+
+1. $\frac{x^4 \cdot x^2}{x \cdot x^3} = \frac{x^{4 + 2}}{x^{3 + 1}} = \frac{x^6}{x^4} = x^{6 - 4} = x^2$
+2. $\frac{\left(5x^2\right)^2}{5x^3} = \frac{5x^{2 \cdot 2}}{5x^3} = \frac{5x^4}{5x^3} = 5x^{4 - 3} = 5x$
+3. $\left(\frac{1}{x}\right)^6 \cdot \left(x^2\right)^3 = \frac{1^6}{x^6} \cdot x^{2 \cdot 3} = \frac{1}{x^6} \cdot x^6 = 1$
+4. $\frac{\left(x^{-3}\right)^{-1}}{(2x)^2} = \frac{x^{-3 \cdot -1}}{\left(2x\right)^2} = \frac{x^3}{2^2x^2} = \frac{x^{3 - 2}}{2^2} = \frac{x}{2 \cdot 2} = \frac{1}{4}x$
+
+## 1.5
+
+1. $\frac{a^6 \cdot b^2}{a^3 \cdot b} = a^{6 - 3} \cdot b^{2-1} = a^3 \cdot b$
+2. $\frac{a^3 b^9}{a^2\left(b^{-3}\right)^3 } = \frac{a^3 b^9}{a^2 b^{-3 \cdot 3}} = \frac{a^3 b^9}{a^2 b^{-9}} = a^{3 - 2} b^{9 - (-9)} = ab^{18}$
+3. $\frac{\left(2a\right)^2 \cdot b^0}{ab^{-3}} = \frac{2^2a^2 \cdot b^0}{ab^{-3}} = 2^2 a^{2 - 1} \cdot b^{0 - (-3)} = 4a \cdot b^3 = 4ab^3$
+4. $\frac{\left(2ab^2\right)^3}{ 2a^3 \cdot 2ab^{-1}} = \frac{2^3 a^3 b^{2 \cdot 3}}{2a^3 \cdot 2ab^{-1}} = \frac{8a^3b^6}{\left(2 \cdot 2\right) a^{3 + 1} b^{-1}} = \frac{8a^3b^6}{4a^4b^{-1}} = \left(8 \div 4\right) a^{3 - 4} b^{6 - (-1)} = 2a^{-1}b^7$
