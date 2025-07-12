@@ -18,11 +18,7 @@
     font-weight: 400;
 }
 
-.recent-ul .recent-li .section .desc h3 a {
-    font-size: medium;
-}
-
 .section-ul .section-li .section {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr repeat(2, 0);
+    grid-template-columns: 1.5fr 4fr 1.5fr repeat(2, 0);
 }

@@ -2,6 +2,7 @@
 title: Attacking Active Directory
 created: 2025-05-29
 modified: 2025-05-29
+tags: ["Penetration-Testing"]
 ---
 ## What is Active Directory?
 
