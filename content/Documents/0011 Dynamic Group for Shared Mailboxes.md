@@ -31,7 +31,11 @@ A cybersecurity risk occurred because the coordinator and crewing department dea
 
 ![[0000 Dynamic-Group-for-Shared-Mailbox-1.png]]
 
-The solution that I came up after brainstorming was to create two [Mail-Enabled Security Groups](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) with the names **ACL-Vessel-Coordinator** and **ACL-Vessel-Crew-Change** which enables us to add users into these groups and the users will instantly get access to all the different shared mailboxes they are supposed to have access to rather than adding them manually 10 times.
+The solution that I came up after brainstorming was to create two [Mail-Enabled Security Groups](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) with the names **ACL-Vessel-Coordinator** and **ACL-Vessel-Crew-Change** which enables us to add users into these groups and the users will instantly get access to all the different shared mailboxes they are supposed to have access to rather than adding them 
+manually 10 times.
+
+> [!IMPORTANT]+
+> This configuration requires the user to perform manual actions to add shared mailboxes into their Outlook client using this guide [How to add a shared mailbox in Outlook](https://www.ablebits.com/office-addins-blog/add-shared-mailbox-outlook/).
 
 ## Conclusion
 
