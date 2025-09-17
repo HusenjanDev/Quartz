@@ -4,6 +4,7 @@ created: 2024-09-28
 modified: 2024-09-28
 description: "How can I build our own Kubernetes Cluster? In this document, I'll go step-by-step setting up a Kubernetes Cluster."
 keywords: ["Kubernetes", "Building a Kubernetes Cluster"]
+tags: ["Kubernetes"]
 draft: false
 ---
 
@@ -203,7 +204,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 Now to see all the nodes on our Kubernetes Cluster use the following command:
 
 ```
-root@kmaster:/home/gnosis# kubectl get nodes
+root@kmaster:/home/hhesenjan# kubectl get nodes
 NAME       STATUS     ROLES           AGE     VERSION
 kmaster    Ready      control-plane   7m44s   v1.31.1
 kworker1   NotReady   <none>          3m47s   v1.31.1
@@ -219,7 +220,7 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/refs/hea
 Now all our nodes should be in the `Ready` status to see all the nodes use the same command again:
 
 ```
-root@kmaster:/home/gnosis# kubectl get nodes
+root@kmaster:/home/hhesenjan# kubectl get nodes
 NAME       STATUS   ROLES           AGE   VERSION
 kmaster    Ready    control-plane   24m   v1.31.1
 kworker1   Ready    <none>          20m   v1.31.1
@@ -234,7 +235,7 @@ kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
 ```
 
 ```
-root@kmaster:/home/gnosis# kubectl get pods
+root@kmaster:/home/hhesenjan# kubectl get pods
 NAME                           READY   STATUS    RESTARTS   AGE
 hello-world-6ddfc454c8-28x4k   1/1     Running   0          9s
 hello-world-6ddfc454c8-cnks2   1/1     Running   0          9s
@@ -252,11 +253,11 @@ kubectl get svc
 You should now be able to `curl` the web application and visit it through a web browser:
 
 ```
-root@kmaster:/home/gnosis# curl http://192.168.58.201:32506
+root@kmaster:/home/hhesenjan# curl http://192.168.58.201:32506
 Hello, world!
 Version: 2.0.0
 Hostname: hello-world-6ddfc454c8-dbv7q
-root@kmaster:/home/gnosis# curl http://192.168.58.202:32506
+root@kmaster:/home/hhesenjan# curl http://192.168.58.202:32506
 Hello, world!
 Version: 2.0.0
 Hostname: hello-world-6ddfc454c8-fl5sv

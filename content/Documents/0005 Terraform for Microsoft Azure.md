@@ -4,6 +4,7 @@ created: 2024-10-02
 modified: 2024-10-02
 description: "Combining Terraform with Microsoft Azure is a game changer."
 keywords: ["Terraform", "Microsoft Azure", "Azure"]
+tags: ["Microsoft Azure", "Terraform", "IaaC"]
 draft: false
 ---
 

@@ -4,6 +4,7 @@ created: 2024-12-31
 modified: 2024-12-31
 description: "The Active Directory Certificate Service (ADCS) can be exploited to compromise the whole environment."
 keywords: ["JWT", "JSON Web Token", "Understanding JSON Web Token"]
+tags: ["Active Directory", "msDS-KeyCredentialLink"]
 draft: false
 ---
 
