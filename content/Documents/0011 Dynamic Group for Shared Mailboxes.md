@@ -12,6 +12,8 @@ draft: false
 
 The Coordinators and Crewing department in our organization was facing challenges with organizing their emails because 7 to 10 vessels are taking contact into a single shared mailbox. It can quickly become difficult when there are 20 to 30 employees working on a single shared mailbox.
 
+In this article I'll go through the name pattern, configurations, and a way to add 20 to 30 employees into multiple of shared mailboxes using a single mail-enabled security group.
+
 ## Solution
 
 It was agreed between IT, Coordinators, and Crewing departments that we would seperate shared mailboxes for coordinators and crewing department for each vessels as that will allow the manager to assign specific vessles to specific employee. The crewing department would have access to all shared mailboxes of coordinators as they are seniors and can assist the coordinators when they need assistance.
