@@ -93,7 +93,7 @@ Now once we click on submit it will automatically send out the phishing email to
 
 ![[0000 Creating-A-Phishing-Campaign-12.png]]
 
-Congratulation! You have now successfully launched a phishing campaign using the attack simulation and once the phishing campaign ends you can get analysis about the amount of users who clicked on the phi-shing link and logged in with their credentials and the amount of employees that finished their training after failing the phishing campaign.
+Congratulation! You have now successfully launched a phishing campaign using the attack simulation and once the phishing campaign ends you can get analysis about the amount of users who clicked on the phishing link and logged in with their credentials and the amount of employees that finished their training after failing the phishing campaign.
 
 ## Conclusion
 
