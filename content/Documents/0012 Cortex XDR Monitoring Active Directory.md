@@ -10,11 +10,11 @@ draft: false
 
 ## Information
 
-We recently experienced a incident where a company administrator changed the `userPrincipalName` of someone in the management. This lead to a investigation where we needed to find out who made the changes and the reasoning behind it to ensure that organization is secure.
+We recently experienced a incident where a company administrator changed the `userPrincipalName` of someone important in the organization. This lead to a investigation where we needed to find out who made the changes and the reasoning behind it to ensure that organization is secure.
 
 ## Mitigation
 
-Once it was confirmed that the `userPrincipalName` of someone in the management were changed the following actions where performed on the account.
+Once it was confirmed that the `userPrincipalName` of the account was changed the following actions were performed on the account. 
 
 1. Account was disabled through Active Directory
 2. Monitoring all sign-ins occurred in Microsoft Entra and Active Directory
@@ -33,7 +33,7 @@ What is great about Cortex XDR is that all events from endpoints and servers are
 * [Event ID 4738 - A user account was updated](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4738)
 * [Event ID 4743 - A computer account was deleted](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4743)
 
-A great website for finding more Event IDs is [UltimateWindowsSecurity](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx?i=j) where all the events are described by details which I highly recommend checking out.
+A great website for finding more Event IDs is [UltimateWindowsSecurity](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx?i=j) where all the events are described in details which I highly recommend checking out.
 
 ## Ingvestigation
 
