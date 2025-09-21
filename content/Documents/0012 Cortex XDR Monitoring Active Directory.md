@@ -29,6 +29,7 @@ What is great about Cortex XDR is that all events from endpoints and servers are
 * [Event ID 4624 - An account was successfully logged on](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4624)
 * [Event ID 4625 - A failed login attempt occurred](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4625)
 * [Event ID 4625 - A failed login attempt occurred](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4625)
+* [Event ID 4725 - An attempt was made to reset an accounts password](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4724)
 * [Event ID 4726 - A user account was deleted](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4726)
 * [Event ID 4738 - A user account was updated](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4738)
 * [Event ID 4743 - A computer account was deleted](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4743)
