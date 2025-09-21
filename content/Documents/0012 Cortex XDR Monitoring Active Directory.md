@@ -63,6 +63,20 @@ After finding the user who changed the `userPrincipalName` of the account we can
 
 We can also go one step further by going through the Microsoft Entra ID logs such as risky users, risky logins, and login events to ensure that these accounts are secure.
 
+## Remediation
+
+The remediation steps that has been taken to prvent this incident is by implementing correlation rules which consistently monitors important accounts in the organization.
+
+```SQL title="Correlation Rules"
+dataset = xdr_data 
+| filter event_type = ENUM.EVENT_LOG  
+| filter action_evtlog_event_id  in (4724, 4738) and action_evtlog_data_fields->TargetUserName in ("jdoe", "edoe")
+| alter actioned_by = action_evtlog_data_fields->SubjectUserName
+| fields action_evtlog_event_id, actioned_by, action_evtlog_message, action_evtlog_description, action_evtlog_data_fields
+```
+
+All the XQL Query does is it fetches all event logs and searches for event ids such as 4724 and 4738. If these actions has been performed on accounts such as `jdoe` and `edoe` it will create a alert.
+
 ## Lesson Learnt
 
 *We should remove domain admins from all IT admin.* Jokes aside there are many lessons to be learnt from this incident such as:
