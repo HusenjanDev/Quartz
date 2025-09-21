@@ -29,7 +29,7 @@ Body:
 
 Hi [Firstname],
 
-We are happy to inform you that you have recieved a salary incrase for 2024.
+We are happy to inform you that you have rercieved a salary incrase for 2024.
 
 Please urgenlty will out the following form to get your salary increase:
 
