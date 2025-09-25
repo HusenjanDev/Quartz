@@ -1,8 +1,8 @@
 ---
-title: "Understanding Microsoft Sentinel (Part 1)"
+title: "Understanding Microsoft Sentinel KQL"
 created: 2025-09-24
 modified: 2025-09-24
-description: "How to use Cortex XDR to monitor Active Directory changes and updates"
+description: "Using Microsoft Sentinel to investigate incidents and logs."
 keywords: ["Microsoft 365", "Red Team"]
 tags: ["Microsoft Sentinel", "Kusto Query Language", "KQL"]
 draft: false
