@@ -5,7 +5,7 @@ modified: 2025-09-26
 description: "How to use Cortex XDR to monitor Active Directory changes and updates"
 keywords: ["Microsoft 365", "Red Team"]
 tags: ["Microsoft Sentinel", "Kusto Query Language", "KQL"]
-draft: false
+draft: true
 ---
 
 ## Information
