@@ -14,7 +14,7 @@ Deploying Cortex XDR can be a difficult and frustrating task especially if you'r
 
 ## Preperation
 
-The preperation stage is about downloading Cortex XDR and converting the `.msi` to `.intunewin` file. The convertion from `.msi` to `.intunewin` enables us to configure a-lot of things and prevent things such as unexpected reboots. Here's a overview of downloading Cortex XDR:
+The preperation stage is about downloading Cortex XDR and converting the `.msi` to `.intunewin` file. The convertion from `.msi` to `.intunewin` enables us to configure a-lot of things and prevent things such as unexpected reboots. 
 
 **Cortex Panel-> Endpoint -> Agent Installation -> Create**.
 
