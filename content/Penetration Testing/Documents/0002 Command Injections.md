@@ -1,6 +1,8 @@
 ---
 title: Command Injections
 created: 2025-07-15
+modified: 2025-07-15
+tags: ["Penetration-Testing"]
 ---
 ## What is Command Injections?
 
