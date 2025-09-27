@@ -2,9 +2,9 @@
 title: "Deploying Cortex XDR through Intune"
 created: 2025-09-26
 modified: 2025-09-26
-description: "How to use Cortex XDR to monitor Active Directory changes and updates"
-keywords: ["Microsoft 365", "Red Team"]
-tags: ["Microsoft Sentinel", "Kusto Query Language", "KQL"]
+description: "Deploying Cortex XDR to an enterprise environment using Microsoft Intune."
+keywords: ["Microsoft 365", "Microsoft Intune", "Cortex XDR"]
+tags: ["Microsoft 365", "Microsoft Intune", "Cortex XDR"]
 draft: false
 ---
 

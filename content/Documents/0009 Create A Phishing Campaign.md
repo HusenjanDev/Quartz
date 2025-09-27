@@ -2,8 +2,8 @@
 title: "Creating A Phishing Campaign"
 created: 2024-12-25
 modified: 2024-12-25
-description: "Microsoft Attack Simulation comes with compact features for us to do our phishing campaigns."
-keywords: ["Phishing Campaign", "Microsoft 365", "Microsoft 365 Phishing"]
+description: "Performing phishing campaign using Attack Simulation in Micrsofot 365 Defender."
+keywords: ["Microsoft 365", "Microsoft 365 Defender", "Phishing Email"]
 draft: false
 ---
 

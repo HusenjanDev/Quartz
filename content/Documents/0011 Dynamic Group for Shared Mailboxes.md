@@ -2,9 +2,9 @@
 title: "Dynamic Group for Shared Mailboxes"
 created: 2025-09-16
 modified: 2025-09-16
-description: "Dynamic Group for Shared Mailboxes"
-keywords: ["Microsoft 365", "Red Team"]
-tags: ["Microsoft 365", "Shared Mailboxes", "Dynamic Group"]
+description: "Implementing strict user access control for shared mailboxes"
+keywords: ["Microsoft 365", "Shared Mailbox", "Dynamic Group"]
+tags: ["Microsoft 365", "Shared Mailbox", "Dynamic Group"]
 draft: false
 ---
 

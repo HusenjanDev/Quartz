@@ -3,8 +3,8 @@ title: "Understanding Microsoft Sentinel KQL"
 created: 2025-09-24
 modified: 2025-09-24
 description: "Using Microsoft Sentinel to investigate incidents and logs."
-keywords: ["Microsoft 365", "Red Team"]
-tags: ["Microsoft Sentinel", "Kusto Query Language", "KQL"]
+keywords: ["Windows", "Microsoft Sentinel", "KQL"]
+tags: ["Windows", "Microsoft Sentinel", "KQL"]
 draft: false
 ---
 
