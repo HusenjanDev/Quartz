@@ -137,7 +137,7 @@ sudo apt-get install bloodhound
 .\SharpHound.exe -c All --zipfilename bloodhound_data.zip
 
 # Bloodhound-Python: Collecting data for bloodhound
-bloodhount-python -c all -u '<USERNAME>' -p '<PASSWORD>' -d '<DOMAIN>' -ns '<IP>'
+bloodhound-python -c all -u '<USERNAME>' -p '<PASSWORD>' -d '<DOMAIN>' -ns '<IP>'
 ```
 
 ```cypher title='Bloodhound Queries'
