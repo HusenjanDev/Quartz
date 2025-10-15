@@ -1,35 +1,49 @@
 ---
-title: "Onbaording Microsoft Defender to 1000 Devices"
-created: 2025-10-01
-modified: 2025-10-01
+title: "Onboarding Microsoft Defender to 1000 Devices"
+created: 2025-10-15
+modified: 2025-10-15
 description: "In this article I'll go through the steps that I took to onboard Microsoft Defender to 1500 devices from Cortex XDR."
 keywords: ["Microsoft 365", "Enrolling Widnows Device Into Microsoft Intune"]
 tags: ["Microsoft Intune", "Microsoft Defender", "Cortex XDR"]
-draft: true
+draft: false
 ---
 
 ## Information
 
-I was recently tasked with onboarding Microsoft Defender XDR to the organization as our Cortex XDR license was about to expire in 10 days. I was luckily prepared for it because a week before I was working on onboarding few devices to Microsoft Defender to see if it's good for the organization.
+Our Cortex XDR license was about to expire in a week and since the organization had planned to move to Microsoft Defender for long time ago as it's part of our Microsoft E5 license. Therefore I was tasked to onboard as many of our endpoints over to [Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint). In this article, I'll share how I onboarded 1,000 devices to Microsoft Defender for Endpoint with the goal of helping others in similar position.
+
+## Terms
+
+Microsoft Defender has multiple of product lines with different purpose and features. It's important to be familiar with the whole product line as it can help with securing our organization.
+
+* **Microsoft Defender for Endpoints:** Is responsible for monitoring malicious endpoint behaviors and protecting our endpoints from malwares and ransomwares.
+* **Microsoft Defender for Office 365:** Is responsible for scanning attachments and ensuring the link the user clicks on is safe.
+* **Microsoft Defender for Cloud Apps:** Is responsible for monitoring the usage of cloud applications such as OpenAI, Claude, YouTube, and more.
+* **Microsoft Defender for XDR:** Brings the data from Defender for Endpoints, Defender for Office 365, and Cloud Apps to provide a visual representation of the attack chain.
+
+All these are products that are in Microsoft Defender line and integrating all these products into the organization is important as it will help with monitoring and securing our endpoints, emails, and cloud applications.
 
 ## Planning
 
-We have multiple of offices in our organization based on Norway, United Kingdom, United States, and Malaysia. To reduce the chances of a issue occurring we decided to do the following:
+We have multiple of offices in our organization and they are based on Norway, United Kingdom, United States, Malaysia, and Vessels. In order to prevent a issue occurring and bringing down a whole department we decided to onboard random devices and a precentage of country.
 
-1. Tuesday - Morning - Onboard 20% of Norway
-2. Tuesday - Afternoon - Onboard 50% of Norway
-3. Tuesday - Morning - Onboard 20% of Norway
-4. Tuesday - Afternoon - Onboard 50% of United Kingdom
-5. Wenesday - Morning - Onboard 20% of United States
-6. Wenesday - Afternoon - Onboard 50% of United States
-7. Thursday - Onboard - 100% of Norway
-8. Thursday - Onboard - 100% of United Kingdom
 
-This method ensures that we don't take out a whole department and if something did go wrong we can quickly revet back...
+| Day                   | Onboard Percentage | Country                  |
+| --------------------- | ------------------ | ------------------------ |
+| Tuesday - Morning     | 20%                | Norway<br>United Kingdom |
+| Tuesday - Afternoon   | 50%                | Norway<br>United Kingdom |
+| Wednesday - Morning   | 20%                | United States            |
+| Wednesday - Morning   | 70%                | United Kingdom           |
+| Wednesday - Afternoon | 20%                | Malaysia                 |
+| Thursday - Morning    | 100%               | United Kingdom           |
+| Thursday - Afternoon  | 100%               | Malaysia                 |
+| Friday - Morning      | 100%               | Norway                   |
 
-## Preperation
+This plan ensured that no department would be significantly effected if an issue occurred. When it came to our vessels it was a bit more complicated as we had to communicate back and forward to ensure we didn't affect any business critical endpoints.
 
-I really love to automate things but to onboard Microsoft Defender from Cortex XDR is difficult since there is no APIs to perform uninstallation in Cortex XDR. Therefore I made the following script which allows us to extract tsv file from Cortex XDR and automatically add it into a security group.
+## Automation
+
+With the plan we had it would consume a-lot of our time to manually add devices from Cortex XDR into a security group in which then onboards them to Microsoft Defender. That is why I made the following script which allows us to export device name from Cortex XDR and add them into a security group which enrolls them to Microsoft Defender.
 
 ```powershell
 # Parameters
@@ -92,57 +106,78 @@ function main {
 main
 ```
 
-This script allows us to use Computer Name to obtain the Device ID from Microsoft Intune which then allows us to bulk import using object id.
+This script significantly increased the efficiency of our onboarding as we could select random devices from Cortex XDR Panel and export them as tsv file and use this script to add them into the security group which onboards the devices automatically to Microsoft Defender.
 
-## Endpoint Detection and Response Policy
+## EDR Policy
 
-The Endpoint Detection and Response Policy allows us to onboard devices into Microsoft Defender without having to execute a script. To create a Endpoint Detection and Response Policy follow the following instructions:
+Endpoint Detection and Response Policy (EDR Policy) allows us to onboard devices that are in Microsoft Intune into Microsoft Defender. To create a EDR policy follow the following instructions:
 
-1. Microsoft Intune -> Endpoint Security -> Endpoint Detection and Response
-    ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-01.png]]
-2. Create Policy -> Platform (Windows) -> Profile (Endpoint Detection and Response)
+1. Go to Microsoft Intune -> Endpoint Security -> Endpoint Detection and Response.
+![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-01.png]]
+
+2. Click on **Create Policy** and select the following configurations.
+    * **Platform:** Select Windows
+    * **Profile:** Endpoint detection and response 
+
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-02.png]]
-3. Enter Policy Name and Policy Description
+
+3. In Basics section, specify **Policy Name** as **Microsoft Defender Onboarding** and write a short summary for description (optional).
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-03.png]]
-4. In configuration settings use the following configuration.
+
+4. In Configuration Setting section use the following configurations.
+    * **Microsoft Defender for Endpoint client configuration package type:** Choose the client configuration package type. Select **Auto Connector**.
+    * **Sample Sharing:** Sends maliicous files to Microsoft for deep analysis. Select **All (Default)**.
+    * **Telemetry Reporting Frequency:** This feature is deprecated. **Select Normal**.
+
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-04.png]]
-5. Select your organization scope tags.
+
+5. Select the scope tags which is prepared to be onboarded to Microsoft Defender.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-05.png]]
-6. Select the security group with devices inside of it.
+
+6. Select the **Security Group** of users or devices which should be onboarded to Microsoft Defender.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-06.png]]
+
 7. Review the configuration and create it.
      ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-07.png]]
 
-Once the policy is created we can now start adding devices into the ACL-MicrosoftDefender group.
+Once the policy is created we can now start onboarding devices into Microsoft Defender by adding them into the `ACL-MicrosoftDefender` security group.
 
 ## Onboarding Devices to Microsoft Defender
 
-We cam now start onboarding devices to Microsoft Defender by doing the following procedures.
+Currently, all our organizational devices are onboarded to Cortex XDR and to onboard them into Microsoft Defender we can export a list of devices in Cortex XDR Panel and from there we can use [[#Automation]] script to onboard these devices into Microsoft Defender.
 
-1. Cortex XDR -> Endpoint Groups.
+1. Go to Cortex XDR -> Endpoint Groups. 
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-08.png]]
-2. Create a Cortex XDR Group with all the devices to onboard to Microsoft Defender.
+
+2. On the **Endpoint Groups**, create a **Endpoint Group** with all devices to onboard to Microsoft Defender.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-09.png]]
-3. Export the device list.
+
+3. Right click on the group and export the device list.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-10.png]]
-4. Use the PowerShell script above in the following way.
+    
+4. Open PowerShell terminal and connect to Microsoft Graph and execute the script.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-11.png]]
-5. Inside Azure Portal we can see that these devices where successfully added into ACL-MicrosoftDefender
+
+5. On **Azure Portal** we can see that the devices were successfully added into ACL-MicrosoftDefender.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-12.png]]
 
-Once these devices are added into the security group they will start onboarding themselves into Microsoft Defender. It's possible to view the statestics through Microsoft Intune.
-
-![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-13.png]]
+6. We can view all onboarded devices through Microsoft Intune -> Endpoint Security -> Microsoft Defender Onboarding Policy.
+    ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-13.png]]
 
 ## Cortex Removal
 
-Once these devices has successfully installed Microsoft Defender we can then continue with uninstalling through the following procedure.
+Once it's confirmed that all these devices are onboarded to Microsoft Defender we can start performing Cortex XDR uninstall through the following procedure.
 
-1. Cortex XDR -> Endpoint Groups
+1. Go to Cortex XDR Panel -> Endpoint Groups -> View endpoints.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-14.png]]
-2. Select all devices -> Endpoint Control -> Unisntall Agents
+
+2. Select All Devices -> Right Click -> Endpoint Control -> Uninstall Agents.
     ![[0000 Onboarding-Microsoft-Defender-to-1000-Devices-15.png]]
 
-We have now successfully uninstalled Cortex XDR from all these systems that has been onboarded to Microsoft Defender.
+Once the devices are connected to the internet Cortex XDR will start uninstalling itself. Once all the uninstalls are successful we can celebrate that we have successfully managed to onboard devices into Microsoft Defender.
 
 ## Conclusion
+
+Onboarding Microsoft Defender can be a fairly difficult task. However, with planning and automating manual tasks it can help us with onboarding thousands of devices in a week without creating any distruption to the business. It's also important to think about ways to improve the process and automation scripts as that will help us be more effective.
+
+Hopefully, this article assisted some of you to move from Cortex XDR to Microsoft Defender.
