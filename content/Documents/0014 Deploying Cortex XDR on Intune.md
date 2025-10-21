@@ -4,7 +4,7 @@ created: 2025-09-26
 modified: 2025-09-26
 description: "Deploying Cortex XDR to an enterprise environment using Microsoft Intune."
 keywords: ["Cortex XDR", "Microsoft 365", "Microsoft Intune"]
-tags: ["Cortex XDR", "Microsoft 365", "Microsoft Intune"]
+tags: ["Cortex XDR", "Microsoft Intune"]
 draft: false
 ---
 

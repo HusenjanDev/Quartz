@@ -4,7 +4,7 @@ created: 2025-10-15
 modified: 2025-10-15
 description: "In this article I'll go through the steps that I took to onboard Microsoft Defender to 1500 devices from Cortex XDR."
 keywords: ["Microsoft Defender", "Microsoft Defender for Endpoint", "Onboarding Microsoft Defender to 1000 Devices"]
-tags: ["Microsoft Intune", "Microsoft Defender", "Cortex XDR"]
+tags: ["Microsoft Intune", "Microsoft Defender", "Microsoft Defender XDR", "Cortex XDR"]
 draft: false
 ---
 
