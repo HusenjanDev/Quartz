@@ -14,7 +14,7 @@ Advanced Hunting in Microsoft Defender XDR allows us to create Custom Detection 
 
 ## Implementation
 
-The `SecurityEvent` table contains event logs from Active Directory. In Active Directory the Event ID 4738 occurs when a user account was changed and Event ID 4723 occurs when a password change occurred on a account. Here is KQL query that enables us to obtain these events for specific accounts:
+The `SecurityEvent` table contains event logs from Active Directory. The [Event ID 4738](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4738) occurs when a user account is updated and [Event ID 4723](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4723) occurs when a password reset has happened on a account. Using all these information's we can craft the following KQL:
 
 ```sql
 SecurityEvent
@@ -27,7 +27,7 @@ SecurityEvent
 | where TimeGenerated > ago(2h)
 ```
 
-The query is getting all the events that has occurred on `husenjan-admin` and `john-admin` from there it's getting the Event IDs 4723 and 4738 from Active Directory. The reason `MSQOL` and `NT AUTHORITY\ANONYMOUS LOGON` is filtered out is because these are false positives. Now since we are familiar with KQL query let's implement custom detection rule through Microsoft Defender Portal.
+The query is getting all the events that has occurred on users `husenjan-admin` and `john-admin`. It's then filtering out the data where the actions where performed by `MSOL` and `NT AUTHORITY\ANONYMOUS LOGON` because these are expected behaviors. It's then getting all log data which has event id of 4723 and 4738. Using Event IDs we can notify ourselves when a change occurs on a highly privileged account. Now since we are familiar with KQL query let's implement custom detection rule through Microsoft Defender Portal.
 
 1. Go to Microsoft Defender -> Investigation and Response -> Advanced Hunting.
     ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-01.png]]
