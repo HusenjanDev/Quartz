@@ -27,7 +27,7 @@ SecurityEvent
 | where TimeGenerated > ago(2h)
 ```
 
-The query is getting all the events that has occurred on users `husenjan-admin` and `john-admin`. It's then filtering out the data where the actions where performed by `MSOL` and `NT AUTHORITY\ANONYMOUS LOGON` because these are expected behaviors. It's then getting all log data which has event id of 4723 and 4738. Using Event IDs we can notify ourselves when a change occurs on a highly privileged account. Now since we are familiar with KQL query let's implement custom detection rule through Microsoft Defender Portal.
+The query is getting all the events that has occurred on users `husenjan-admin` and `john-admin`. It's then filtering out the data where the actions where performed by `MSOL` and `NT AUTHORITY\ANONYMOUS LOGON` because these are expected behaviors. It's then getting all log data which has event id of 4723 and 4738. Now since we are familiar with KQL query let's implement custom detection rule through Microsoft Defender Portal.
 
 1. Go to Microsoft Defender -> Investigation and Response -> Advanced Hunting.
     ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-01.png]]
