@@ -14,7 +14,7 @@ Microsoft Defender for Identity comes with the Microsoft Defender XDR suite. It 
 
 It will help with detecting, investigating, and responding to attacks such as reconnaissance, lateral movements, brute-force attacks. Additionally, it will be able to use signals from Azure Active Directory, Windows Active Directory, and endpoints to reference affected users, devices, and services.
 
-## Onboarding Defender for Identity 
+## Onboarding
 
 1. Go to Settings -> Identities. 
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-01.png]]
@@ -40,6 +40,14 @@ It will help with detecting, investigating, and responding to attacks such as re
 8. Once the installation is completed click on Next. 
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-08.png]]
 
+## Setting Up Read-Only Account
+
+1. Go to Settings -> Directory Service Accounts.
+	![[0000 Onboarding-Microsoft-Defender-for-Identity-09.png]]
+
+2. Make a read-only account in Windows Active Directory and enter these credentials inside Add credentials.
+	![[0000 Onboarding-Microsoft-Defender-for-Identity-10.png]]
+
 ## Conclusion
 
-If your organization is using Microsoft Defender XDR - Microsoft highly recommends setting up Microsoft Defender for Identity as it will help with collecting more signals to detect, investigate, and respond to normal and complex cyberthreats. Additionally, it will maximize the value of the product which we are paying for which is important.
+Once all these actions are completed the domain controllers are onboarded to Microsoft Defender for Identity. If your organization is using Microsoft Defender XDR and Microsoft highly recommends setting up Microsoft Defender for Identity as it will help with collecting signals to detect, investigate, and respond to complex cyberthreats.
