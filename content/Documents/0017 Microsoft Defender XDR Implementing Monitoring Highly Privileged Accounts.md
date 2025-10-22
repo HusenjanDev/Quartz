@@ -4,7 +4,7 @@ created: 2025-10-20
 modified: 2025-10-20
 description: "Advanced Hunting in Microsoft Defender XDR enables us to create custom detection rules to create alerts when a specific set of actions occurs. In this article I'll go through creating custom detection rules to monitor highly privileged accounts."
 keywords: ["Microsoft Defender", "Microsoft Defender for Endpoint", "Onboarding Microsoft Defender to 1000 Devices"]
-tags: ["Mcirosoft Defender", "Microsoft Defender XDR", "KQL"]
+tags: ["Microsoft Defender", "Microsoft Defender XDR", "KQL"]
 draft: false
 ---
 
