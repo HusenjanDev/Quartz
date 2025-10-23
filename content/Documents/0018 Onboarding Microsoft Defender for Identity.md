@@ -16,13 +16,13 @@ It will help with detecting, investigating, and responding to attacks such as re
 
 ## Onboarding
 
-1. Go to Settings -> Identities. 
+1. Go to **Settings -> Identities**. 
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-01.png]]
 
 2. Go to Sensors -> Add Sensor and Download Azure ATP Sensor.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-02.png]]
 
-3. Transfer `Azure ATP Sensor` file to Domain Controller and run `Azure ATP Sensor Setup.msi` as administrator.
+3. Transfer `Azure ATP Sensor.zip` file to Domain Controller and run `Azure ATP Sensor Setup.msi` as administrator.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-03.png]]
 
 4. Click on **Yes** 
@@ -31,18 +31,18 @@ It will help with detecting, investigating, and responding to attacks such as re
 5. Select **English** and click on **Next**.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-05.png]]
 
-6. Click on Next. 
+6. Click on **Next**. 
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-06.png]]
 
 7. Enter **Access Key** and click on **Next**.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-07.png]]
 
-8. Once the installation is completed click on Next. 
+8. Once the installation is completed click on **Next**. 
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-08.png]]
 
 ## Setting Up Read-Only Account
 
-1. Go to Settings -> Directory Service Accounts.
+1. Go to **Settings -> Directory Service Accounts**.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-09.png]]
 
 2. Make a read-only account in Windows Active Directory and enter these credentials inside Add credentials.
