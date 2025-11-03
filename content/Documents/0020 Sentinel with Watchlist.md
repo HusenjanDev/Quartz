@@ -14,8 +14,6 @@ Watchlists in Microsoft Sentinel is commonly used for storing a list of data whi
 
 ## Creating Watchlist
 
-We can create a watchlist through the following steps.
-
 1. Go to Microsoft Sentinel -> Watchlist.
     ![[0000 Using-Watchlist-in-Microsoft-Sentinel-00.png]]
 
