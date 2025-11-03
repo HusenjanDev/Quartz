@@ -34,7 +34,7 @@ We can also enroll a Windows device into Microsoft Intune by extracting the lapt
 3. Use `Install-Script Get-WindowsAutopilotInfo -Force` to download the Windows Autopilot script.
 5. Use `Get-WindowsAutopilotInfo -GroupTag <TAG> -OutputFile D:\SERIALNUMBER.csv` to extract hash.
 6. Upload the `SERIALNUMBER.csv` through [Windows Autopilot Devices](https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/AutopilotDevices.ReactView/filterOnManualRemediationRequired~/false).
-	![[0015 Enrolling-Devices-Into-Intune-01.png]]
+	![[0000 Enrolling-Devices-Into-Intune-01.png]]
 7. Wait 15 minutes and reboot the system.
 
 After rebooting a Microsoft login page with the company logo should come up and from there the user can start logging in and start enrolling the Windows device into our Microsoft Intune environment. 

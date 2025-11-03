@@ -4,7 +4,7 @@ created: 2025-11-3
 modified: 2025-11-3
 description: "Watchlists in Microsoft Sentinel is desinged to help security analysts with quickly correlate data by getting values from a list."
 keywords: ["MDE", "MDE-XDR"]
-tags: ["MDE", "MDE-XDR", "KQL"]
+tags: ["Microsoft Sentinel", "KQL"]
 draft: false
 ---
 
@@ -31,7 +31,7 @@ Watchlists in Microsoft Sentinel is commonly used for storing a list of data whi
 
 ## Using Watchlist
 
-Once the watchlist is created, we can retrieve data using `_GetWatchlist()` operator with `project` to return specific values.
+Once the watchlist is created, we can retrieve data through `_GetWatchlist()` function with the `project` operator to only return specific row. 
 
 ![[0000 Using-Watchlist-in-Microsoft-Sentinel-05.png]]
 

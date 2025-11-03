@@ -4,7 +4,7 @@ created: 2025-10-22
 modified: 2025-10-22
 description: "Microsoft Defender for Identity collects signals from Windows Active Directory to better detect, investigate, and respond to cyberthreats."
 keywords: ["Microsoft Defender", "Microsoft Defender XDR", "Microsoft Defender for Identity"]
-tags: ["Microsoft Defender", "Microsoft Defender XDR", "Microsoft Defender for Identity"]
+tags: ["Microsoft Defender XDR"]
 draft: false
 ---
 
@@ -16,7 +16,7 @@ It will help with detecting, investigating, and responding to attacks such as re
 
 ## Onboarding
 
-1. Go to **Settings -> Identities**. 
+1. Go to **Settings -> Identities**.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-01.png]]
 
 2. Go to Sensors -> Add Sensor and Download Azure ATP Sensor.
@@ -25,7 +25,7 @@ It will help with detecting, investigating, and responding to attacks such as re
 3. Transfer `Azure ATP Sensor.zip` file to Domain Controller and run `Azure ATP Sensor Setup.msi` as administrator.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-03.png]]
 
-4. Click on **Yes** 
+4. Click on **Yes**.
 	![[0000 Onboarding-Microsoft-Defender-for-Identity-04.png]]
 
 5. Select **English** and click on **Next**.

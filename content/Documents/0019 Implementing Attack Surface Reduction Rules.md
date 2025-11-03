@@ -3,8 +3,8 @@ title: "Implementing Attack Surface Reduction Rules"
 created: 2025-10-30
 modified: 2025-10-30
 description: "Attack Surface Reduction (ASR) is designed to limit the attack surface for WIndows endpoints to secure the environment from common attack techniques."
-keywords: ["MDE", "MDE-XDR"]
-tags: ["MDE", "MDE-XDR"]
+keywords: ["Microsoft Defender", "Microsoft Defender XDR"]
+tags: ["Microsoft Defender XDR", "ASR"]
 draft: false
 ---
 
