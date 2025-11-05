@@ -5,7 +5,7 @@ modified: 2025-11-05
 description: "Microsoft Defender SmartScreen is designed to protect endpoints from phishing sites, malwares, and ransomwares by notifying the user before execution."
 keywords: ["Microsoft Defender XDR", "Microsoft Defender for Endpoint"]
 tags: ["Microsoft Defender XDR", "SmartScreen"]
-draft: true
+draft: false
 ---
 
 ## Information
@@ -29,6 +29,8 @@ Microsoft Defender SmartScreen is desinged to protect endpoints from malicious w
 5. Review **Configuration** and click on **Create**.
     ![[0000 Implementing-Microsoft-Defender-SmartScreen-05.png]]
 
-## Conclusion
+    > [!IMPORTANT]+ IMPORTANT
+    > Once the Application Control Policy is applied on the endpoints it will force the users to reboot within 10 minutes. If your company has change management system, I highly recommend creating a change request for the following implementation.
 
+## Conclusion
 
