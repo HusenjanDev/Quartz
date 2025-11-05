@@ -3,7 +3,7 @@ title: "Using Watchlist in Microsoft Sentinel"
 created: 2025-11-3
 modified: 2025-11-3
 description: "Watchlists in Microsoft Sentinel is desinged to help security analysts with quickly correlate data by getting values from a list."
-keywords: ["MDE", "MDE-XDR"]
+keywords: ["Microsoft Defender XDR", "Microsoft Defender for Endpoint"]
 tags: ["Microsoft Sentinel", "KQL"]
 draft: false
 ---
