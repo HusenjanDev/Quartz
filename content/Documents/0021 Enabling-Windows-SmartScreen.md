@@ -29,9 +29,9 @@ Microsoft Defender SmartScreen is desinged to protect endpoints from malicious w
 5. Review **Configuration** and click on **Create**.
     ![[0000 Implementing-Microsoft-Defender-SmartScreen-05.png]]
 
-    > [!IMPORTANT]+ IMPORTANT
-    > Once the Application Control Policy is applied on the endpoints it will force the users to reboot within 10 minutes. If your company has change management system, I highly recommend creating a change request for the following implementation.
+> [!IMPORTANT]+ IMPORTANT
+> Once the Application Control Policy is applied on the endpoints it will force the users to reboot within 10 minutes otherwise it will automatically reboot their systems.
 
 ## Conclusion
 
-Microsoft Defender SmartScreen is exceptional for warning about malicious websites, applications, and files. 
+Microsoft Defender SmartScreen is exceptional for warning about malicious websites, applications, and files. All organizations should enable Microsoft Defender SmartScreen to warn their users and protect organizational assets from threat actors.
