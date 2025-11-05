@@ -10,7 +10,7 @@ draft: false
 
 ## Information
 
-Microsoft Defender SmartScreen is desinged to protect endpoints from malicious websites, applications, and files by displaying an early warning. It comes with anti-phishing, anti-malware, reputation-based url, and app protection to detect malicious applications.
+Microsoft Defender SmartScreen is desinged to protect endpoints from malicious websites, applications, and files by displaying an early warning before execution. It comes with anti-phishing, anti-malware, reputation-based url, and app protection to detect malicious applications.
 
 ## Implementation
 
@@ -34,3 +34,4 @@ Microsoft Defender SmartScreen is desinged to protect endpoints from malicious w
 
 ## Conclusion
 
+Microsoft Defender SmartScreen is exceptional for warning about malicious websites, applications, and files. 
