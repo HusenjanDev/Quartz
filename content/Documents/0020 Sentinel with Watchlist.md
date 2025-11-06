@@ -14,19 +14,19 @@ Watchlists in Microsoft Sentinel is commonly used for storing a list of data whi
 
 ## Creating Watchlist
 
-1. Go to Microsoft Sentinel -> Watchlist.
+1. Go to **Microsoft Sentinel -> Watchlist**.
     ![[0000 Using-Watchlist-in-Microsoft-Sentinel-00.png]]
 
-2. Click on New.
+2. Click on **New**.
     ![[0000 Using-Watchlist-in-Microsoft-Sentinel-01.png]]
 
-3. Enter Name, Description, and Alias.
+3. Enter **Name, Description, and Alias**.
     ![[0000 Using-Watchlist-in-Microsoft-Sentinel-02.png]]
 
-4. Upload a `dat.tsv` file which consists a list of all information.
+4. **Upload `data.tsv`** contains all data about users.
     ![[0000 Using-Watchlist-in-Microsoft-Sentinel-03.png]]
 
-5. Review and create watchlist.
+5. **Review Configuration** and click on **Create**.
     ![[0000 Using-Watchlist-in-Microsoft-Sentinel-04.png]]
 
 ## Using Watchlist

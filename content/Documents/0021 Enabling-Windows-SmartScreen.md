@@ -30,7 +30,7 @@ Microsoft Defender SmartScreen is desinged to protect endpoints from malicious w
     ![[0000 Implementing-Microsoft-Defender-SmartScreen-05.png]]
 
 > [!IMPORTANT]+ IMPORTANT
-> Once the Application Control Policy is applied on the endpoints it will force the users to reboot within 10 minutes otherwise it will automatically reboot their systems.
+> Once the Application Control Policy is applied on the endpoints it will force the endpoints to reboot within 10 minutes otherwise it will automatically reboot the system.
 
 ## Conclusion
 

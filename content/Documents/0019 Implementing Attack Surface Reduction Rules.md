@@ -4,7 +4,7 @@ created: 2025-10-30
 modified: 2025-10-30
 description: "Attack Surface Reduction (ASR) is designed to limit the attack surface for WIndows endpoints to secure the environment from common attack techniques."
 keywords: ["Microsoft Defender", "Microsoft Defender XDR"]
-tags: ["Microsoft Defender XDR", "ASR"]
+tags: ["Microsoft Defender XDR", " ASR"]
 draft: false
 ---
 
@@ -16,35 +16,35 @@ Attack Surface Reduction (ASR) is designed to limit the attack surface for Windo
 
 Microsoft recommends implementing the Attack Surface Reduction (ASR) policy in auditing mode before enabling as they can create distruption throughout the business. Here's a overview of implementing Attack Surface Reduction in Auditing Mode:
 
-1. Go to Microsoft Intune -> Endpoint Security -> Attack Surface Reduction
+1. Go to **Microsoft Intune -> Endpoint Security -> Attack Surface Reduction**.
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-01.png]]
 
-2. Click on Create -> Select Windows -> Select Attack Surface Reduction
+2. Click on **Create -> Select Windows -> Select Attack Surface Reduction**
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-02.png]]
 
-3. Enter Name and Description for Attack Surface Reduction policy.
+3. Enter **Name and Description** for Attack Surface Reduction policy.
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-03.png]]
 
-4. Select all the Attack Surface Reduction Rules to enable in audit mode.
+4. Select all features to enable in audit mode.
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-04.png]]
 
-5. Select the necessary scope tag for your environment.
+5. Select **Scope Tag**.
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-05.png]]
 
-6. Select the devices to onboard to Attack Surface Reduction policy.
+6. Select **All Devices/Group** to onboard to ASR policy.
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-06.png]]
 
-7. Save the policy.
+7. **Review Configuration** and click on **Create**. 
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-07.png]]
 
 ## Auditing
 
 When the Attack Surface Reduction policy is created, it's recommended to start auditing the programs that could be affected by Attack Surface Reduction rules.
 
-1. Go to Microsoft Defender 365 -> Reports -> Attack Surface Reduction.
+1. Go to **Microsoft Defender 365 -> Reports -> Attack Surface Reduction**.
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-08.png]]
 
-2. Monitor`Blocked/Audited?` field to see which services where audited and blocked.
+2. Monitor `Blocked/Adited` field to monitor actions ASR would perform. 
 ![[0000 Implementing-Attack-Surface-Reduction-Rules-09.png]]
 
 ## Conclusion
