@@ -2,8 +2,8 @@
 title: "Using Watchlist in Microsoft Sentinel"
 created: 2025-11-3
 modified: 2025-11-3
-description: "Watchlists in Microsoft Sentinel is desinged to help security analysts with quickly correlate data by getting values from a list."
-keywords: ["Microsoft Defender XDR", "Microsoft Defender for Endpoint"]
+description: "Watchlists in Microsoft Sentinel is made to assist security analysts with quickly correlate data by getting the data from a list. An example of watchlist coming into great use is storing UserPrincipalName of executives accounts and service accounts."
+keywords: ["Microsoft Defender XDR", "Microsoft Defender for Endpoint", "Microsoft Sentinel", "Microsoft Sentinel Watchlist", "Watchlist"]
 tags: ["Microsoft Sentinel", "KQL"]
 draft: false
 ---
