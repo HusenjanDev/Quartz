@@ -4,7 +4,7 @@ created: 2025-10-30
 modified: 2025-10-30
 description: "Attack Surface Reduction (ASR) in Microsoft Defneder is designed to limit the attack surface for Windows endpoints to secure the environment from common attack techniques."
 keywords: ["Microsoft Defender", "Microsoft Defender XDR", "Attack Surface Reduction", "ASR"]
-tags: ["Microsoft Defender XDR", " ASR"]
+tags: ["MDE", " ASR"]
 draft: false
 ---
 

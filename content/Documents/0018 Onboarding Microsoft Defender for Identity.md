@@ -4,7 +4,7 @@ created: 2025-10-22
 modified: 2025-10-22
 description: "Microsoft Defender for Identity comes with the Microsoft Defender XDR suite and it's purpose is to better detect, investigate, and respond to cyberthreat by using Active Directory signals.."
 keywords: ["Microsoft Defender", "Microsoft Defender XDR", "Microsoft Defender for Identity"]
-tags: ["Microsoft Defender XDR"]
+tags: ["MDE"]
 draft: false
 ---
 

@@ -4,7 +4,7 @@ created: 2025-09-16
 modified: 2025-09-16
 description: "Implementing strict user access control for shared mailboxes"
 keywords: ["Microsoft 365", "Shared Mailbox", "Dynamic Group"]
-tags: ["Microsoft 365", "Shared Mailbox", "Dynamic Group"]
+tags: ["M365"]
 draft: false
 ---
 

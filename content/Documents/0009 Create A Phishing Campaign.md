@@ -4,7 +4,7 @@ created: 2024-12-25
 modified: 2024-12-25
 description: "Performing phishing campaign using Attack Simulation in Micrsofot 365 Defender."
 keywords: ["Microsoft 365", "Microsoft 365 Defender", "Attack Simulator", "Phishing Email"]
-tags: ["Microsoft 365", "Microsoft Defender XDR", "Attack Simulator"]
+tags: ["M365", "MDE"]
 draft: false
 ---
 
