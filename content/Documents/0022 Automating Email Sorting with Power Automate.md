@@ -10,7 +10,7 @@ draft: false
 
 ## Information
 
-We are currently implementing a new system into organization and the employees using these systems made a request to implement automatic email sorting where all emails with PDFs are moved to a different folder than emails without PDF documents. Unfortunately, this is not possible with default Outlook email rules therefore we have to automate it through Power Automate.
+We are currently implementing a new system in the organization and the employees using these systems made a request to implement automatic email sorting where all emails with PDFs are moved to a different folder than emails without PDF documents. Unfortunately, this is not possible with default Outlook rules because it doesn't allow us to check for specific document type.
 
 ## Automating with Power Automate
 
@@ -18,7 +18,7 @@ We are currently implementing a new system into organization and the employees u
     
     ![[0000 Automating-Email-Sorting-with-Power-Automate-00.png]]
 
-2. Click on **When I receive new email arrives**
+2. Click on **When I receive new email arrives**.
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-01.png]]
 
@@ -26,7 +26,7 @@ We are currently implementing a new system into organization and the employees u
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-02.png]]
 
-4. Initalize a variable with the name `hasPDF` with value `false`.
+4. Initialize `hasPDF` variable with value `false`.
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-03.png]]
 
@@ -38,25 +38,26 @@ We are currently implementing a new system into organization and the employees u
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-05.png]]
 
-7. If PDF attachment is included in email, set `hasPDF` variable to `true`.
+7. Use **Set variable** to set `hasPDF` variable to `true`.
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-06.png]]
 
-8. Inside condition configure it to check if `hasPDF` is `true`.
+8. Create another **Condition** to check if `hasPDF` is `true`.
+
     ![[0000 Automating-Email-Sorting-with-Power-Automate-07.png]]
 
-9. When `hasPDF` is `true` create another object to move the email to different folder by using **Message Id**.
+9. Create **Move email (v2)** object to move email to different folder using **Message Id** from Outlook connector.
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-08.png]]
 
-Short summary of what happens when we receive a new email to the connected account is the following.
+The **when I receive new email arrives** feature in Power Automate allows us to do the following on the account connected to Outlook connector.
 
 * When an email comes into mailbox a boolean variable is created with name `hasPDF` and the value is `false`. 
 * The while loop will enumerate through all the attachment and when PDF document is found the `hasPDF` variable is set to `true`. 
 * The last condition checks if `hasPDF` variable is `true` and then moves the email to `Processed by Power Automate` folder. 
 
-With that implementation each time a email comes into the mailbox it will automatically move the emails with PDF attached to them into a different folder.
+With this implementation each time a email comes into the mailbox it will automatically move the emails with PDF attached to them into a different folder than emails without.
 
 ## Conclusion
 
-Power Automate is a tool designed to automate manual tasks which employees performs. In this situation it came in good use because all emails with PDF attachments will be moved to different folder than the emails without PDF documents. This allows employees to focus on emails without PDFs attached to them.
+Power Automate is low-code platform designed to automate manual tasks with employees performs manually. In this situation it came in good use because all emails with PDF attchments will be moved to different folder than the emails without PDF documents. This implementation allows employees to focus on more important things than spending time shorting emails.
