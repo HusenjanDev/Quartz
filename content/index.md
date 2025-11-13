@@ -1,8 +1,7 @@
 ---
 title: Home
 draft: false
-created: 2000-01-01
-modified: 2000-01-01
+
 ---
 
 ## About Me
