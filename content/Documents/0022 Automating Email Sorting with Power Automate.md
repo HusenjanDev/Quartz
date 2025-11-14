@@ -10,7 +10,9 @@ draft: false
 
 ## Information
 
-We are currently implementing a new system in the organization and the employees using these systems made a request to implement automatic email sorting where all emails with PDFs are moved to a different folder than emails without PDF documents. Unfortunately, this is not possible with default Outlook rules because it doesn't allow us to check for specific document type.
+We are currently implementing a new system in the organization and the employees using these systems made a request to implement automatic email sorting for shared mailbox where all emails with PDFs are moved to a different folder than emails without PDF documents. Unfortunately, this is not possible with default Outlook rules becuase it doesn't allow us to check of specific file type.
+
+However, after resarching for a bit I found out that Power Automate allows us to sort emails using file type so I purchased a Power Automate license and made the following integration for shared mailbox.
 
 ## Automating with Power Automate
 
