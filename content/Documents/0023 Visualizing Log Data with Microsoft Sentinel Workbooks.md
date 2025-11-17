@@ -10,11 +10,11 @@ draft: false
 
 ## Information
 
-Microsoft Sentinel Workbooks are designed to visualize logs that occurs in our environment so we can better secure and respond to incidents, alerts, and threat actors.
+Microsoft Sentinel Workbooks are designed to visualize logs that occurs in our environment so we can better secure and respond to incidents, alerts, and threat actors. I recently decided to implement Microsoft Sentinel Workbooks to monitor domain admin accounts to protect them from brute-force and password spray attacks. 
 
 ## Implemention
 
-With Microsoft Sentinel Workbooks we can implement monitoring for domain admin accounts and other assets which needs more attention than others. Here's a overview of a workbook dashboard which monitors highly privileged accounts.
+Using Microsoft Sentinel Workbooks we can implement monitoring for domain admin accounts and other assets which needs more attention than others. Here's a overview of Microsoft Sentinel Workbook that I made to monitor domain admin accounts. 
 
 ![[0000 Visualizing-Log-Data-with-Microsoft-Sentinel-Workbooks-00.png]]
 
@@ -81,7 +81,7 @@ SecurityEvent
 | take 100
 ```
 
-You should now have a workbook which monitors domain admin accounts where you can see the accounts and computers these high frequency of failed logon attempts occurred in your environment. 
+Using these custom KQL queries you should now have a workbook which monitors domain admin accounts where you will be able to view the accounts and computers these high frequency of failed logons occurred in your environment.
 
 ## Conclusion
 
