@@ -1,5 +1,5 @@
 ---
-title: "Visualizing Logs with Microsoft Sentinel Workbooks"
+title: "Visualizing Log Data with Microsoft Sentinel Workbooks"
 created: 2025-11-17
 modified: 2025-11-17
 description: "Power Automate comes with \"When I receive Email\" feature which enables us to perform actions on all new incoming emails."
@@ -16,7 +16,7 @@ Microsoft Sentinel Workbooks are designed to visualize logs that occurs in our e
 
 With Microsoft Sentinel Workbooks we can implement monitoring for domain admin accounts and other assets which needs more attention than others. Here's a overview of a workbook dashboard which monitors highly privileged accounts.
 
-![[0000 Visualizing-Logs-with-Microsoft-Sentinel-Workbooks-00.png]]
+![[0000 Visualizing-Log-Data-with-Microsoft-Sentinel-Workbooks-00.png]]
 
 We can monitor failed logon attempts to domain admin accounts through the `SecurityEvents` table. This allows us to create timechart and tiles to better highlight the total failed logon attempts and patterns. Here's KQL queries to implement the timechart and tiles.
 
@@ -45,7 +45,7 @@ SecurityEvent
 
 We can further improve the dashboard by adding another panel where we can see which computer and servers experienced these high frequency of failed logon attempts with logs. Here's a overview of the servers and computers who experienced high frequency of failed logon attempts.
 
-![[0000 Visualizing-Logs-with-Microsoft-Sentinel-Workbooks-01.png]]
+![[0000 Visualizing-Log-Data-with-Microsoft-Sentinel-Workbooks-01.png]]
 
 As mentioned previously we can continue using `SecurityEvents` table but filter the data by `Computer` to see the computer and servers that experienced these high frequency of failed logon attempts. Here's a overview of KQL queries for implementing Timechart, Tiles, and Logs.
 
