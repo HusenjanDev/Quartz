@@ -4,7 +4,7 @@ created: 2025-11-17
 modified: 2025-11-17
 description: "Power Automate comes with \"When I receive Email\" feature which enables us to perform actions on all new incoming emails."
 keywords: ["Microsoft Defender XDR", "Microsoft Sentinel", "Workbooks"]
-tags: ["SIEM", "Workbook"]
+tags: ["SIEM", "WORKBOOK"]
 draft: false
 ---
 
