@@ -5,7 +5,7 @@ modified: 2025-11-17
 description: "Power Automate comes with \"When I receive Email\" feature which enables us to perform actions on all new incoming emails."
 keywords: ["Microsoft Defender XDR", "Microsoft Sentinel", "Workbooks"]
 tags: ["SIEM", "Workbook"]
-draft: true
+draft: false
 ---
 
 ## Information
@@ -14,11 +14,11 @@ Microsoft Sentinel Workbooks are designed to visualize logs that occurs in our e
 
 ## Implemention
 
-Using Microsoft Sentinel Workbooks we can implement monitoring to highly privileged accounts and other assets which needs more attention than others. Here's a overview of a implementation which monitors failed logon attempts on accounts with domain admin privileges:
+With Microsoft Sentinel Workbooks we can implement monitoring for domain admin accounts and other assets which needs more attention than others. Here's a overview of a workbook dashboard which monitors highly privileged accounts.
 
 ![[0000 Visualizing-Logs-with-Microsoft-Sentinel-Workbooks-00.png]]
 
-Using the example above we are able to monitor failed logon attempts to domain admin accounts by the time these events occurred in our environment. We can also create tiles to better highligh the total failed logon attempts that has occurred in our environment. Here's a overview of the KQL to implement the timechart and tiles.
+We can monitor failed logon attempts to domain admin accounts through the `SecurityEvents` table. This allows us to create timechart and tiles to better highlight the total failed logon attempts and patterns. Here's KQL queries to implement the timechart and tiles.
 
 ```sql title="Workbook - Timechart for Users"
 let domainAdmins = (_GetWatchlist("DomainAdmins") | project UserPrincipalName);
@@ -43,11 +43,11 @@ SecurityEvent
 | sort by FailedLogons
 ```
 
-Additionally, we can also create another group to better display where these events occurred in our environment. Here's a overview of the implementations:
+We can further improve the dashboard by adding another panel where we can see which computer and servers experienced these high frequency of failed logon attempts with logs. Here's a overview of the servers and computers who experienced high frequency of failed logon attempts.
 
 ![[0000 Visualizing-Logs-with-Microsoft-Sentinel-Workbooks-01.png]]
 
-Using the image above that allows us to see which computers has been experiencing a high frequency of failed logon attempts so we can further investigate the high frequency of failed logon attempts. Additionally, we can also create a query to fetch logs from `SecurityEvents`. Here is a overview of all the KQL queries:
+As mentioned previously we can continue using `SecurityEvents` table but filter the data by `Computer` to see the computer and servers that experienced these high frequency of failed logon attempts. Here's a overview of KQL queries for implementing Timechart, Tiles, and Logs.
 
 ```sql title="Workbook - Timechart for Computer"
 let domainAdmins = (_GetWatchlist("DomainAdmins") | project UserPrincipalName);
@@ -81,8 +81,8 @@ SecurityEvent
 | take 100
 ```
 
-Microsoft Sentinel Workbooks can be seen as a feature that allows us to respond to incidents, alerts, and threats before they gain access to our environment. However, it can also be an excellent tool for detecting threats in our environment.
+You should now have a workbook which monitors domain admin accounts where you can see the accounts and computers these high frequency of failed logon attempts occurred in your environment. 
 
 ## Conclusion
 
-Microsoft Sentinel Workbooks is designed to assist security analysts with better detecting malicious behaviors occurring in their environment. All organizations should setup multiple of workbooks to quickly detect suspicious behaviors and quickly respond to them.
+Microsoft Sentinel Workbooks is desinged to visualize thousands of logs data. It's also excellent for security analysts as it can help with detecting and responding to alerts, incidents, and threat actors. All organization's should consider implementing Microsoft Sentinel Workbooks since it will display a quick overview of their environment.
