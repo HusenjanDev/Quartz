@@ -36,7 +36,7 @@ However, after resarching for a bit I found out that Power Automate allows us to
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-04.png]]
 
-6. Inside **Condition** use the parameters **Has Attachments** and **Name** with the following configuration.
+6. Inside **Condition** use the parameters **Has Attachments** and **Attachment Type** with the following configuration.
 
     ![[0000 Automating-Email-Sorting-with-Power-Automate-05.png]]
 
