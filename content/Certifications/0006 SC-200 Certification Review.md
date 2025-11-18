@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-At my current organization I'm configuring and setting up Microsoft Defender XDR because we are transitioning away from Cortex XDR. To ensure I'm configuring and setting up Microsoft Defender XDR properly, I decided to take the [Security Operation Analyst Associate (SC-200)](https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/?practice-assessment-type=certification) certification from Microsoft.
+At my current organization I'm configuring and setting up Microsoft Defender XDR because we are transitioning away from Cortex XDR. To ensure I'm configuring and setting up Microsoft Defender XDR properly, I decided to take the [Security Operation Analyst Associate (SC-200)](https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814) certification from Microsoft.
 
 In this article I'll go through step-by-step guide to hopefully help you with obtaining the certification...
 
@@ -55,4 +55,4 @@ Today at 12:15 PM, I decided to check out PersonVue to see if there were any sea
 
 The case studies is always the easiest and the most fun part of the exam for me. However, many of the multiple of choice questions and the multiple of choice with no way of going back and forth are the most difficult ones because the way Microsoft writes their questions is meant to confuse you between two answers. 
 
-After completing the case studies, multiple of choice questions, and the non-revertable multiple of choice questions I decided to review the answers I selected. After completing the review I delivered in the exam and saw a passing score of 883 which means I successfully obtained the [Security Oepration Analysts Associate (SC-200)](https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814) certification.
+After completing the case studies, multiple of choice questions, and the non-revertable multiple of choice questions I decided to review the answers I selected. After completing the review I delivered in the exam and saw a passing score of 883 which means I successfully obtained the [Security Operation Analysts Associate (SC-200)](https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814) certification.
