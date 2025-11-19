@@ -16,11 +16,17 @@ Additionally, the user also has to be confident with reading through log files. 
 
 ## Antivirus Scan
 
+When a malicious executable program is detected in a system we should preferrably run a full antivirus scan on the system to ensure it's safe.
+
 ## Advanced Hunting
+
+When a malicious action occurs such as a user stealing company data, clicking on phishing links, and a device connecting to a command and control center the Advanced Hunting section can come in an excellent use as it allows us to see all data, users, and devices that were affected.
 
 ## Restricting App Execution
 
 ## Collect Investigation Logs
+
+
 
 ## Isolation
 
