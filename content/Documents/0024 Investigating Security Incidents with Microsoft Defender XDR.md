@@ -19,7 +19,7 @@ Additionally, it's also important to be confident with reading log files and cre
 When a security incident occurs in any XDR products I follow the following five pillars. 
 
 * **Investigation:** Once a security incident occurs I'll try to collect as much data about the security incident such as SHA-256, Actions, Modifications, IP-Address, Email Address, and other information resources, users, and devices that has been affected by the security incident. 
-* **Decission:** Using all the data collected from the investigation phase I'll decide whether to isolate computer, disable user account, or perform a full scan on the system.
+* **Decision:** Using all the data collected from the investigation phase I'll decide whether to isolate computer, disable user account, or perform a full scan on the system.
 * **Prevention:** At the prevention stage I'll ensure that the SHA-256 and the IP-Address is added into Indication Of Compromise (IoCs) list. While also creating custom detection rule to detect the SHA-256 and IP-address to quickly isolate devices that are affected.
 * **Recovery:** This stage consists of re-imaging the laptop and re-enabling the user account so they can start working again.
 * **Documentation:** I'll create a documentation about the security incident with all the data collected from the incident including timeline. Additionally, I'll include a lesson learnt section to see where we can do better.
