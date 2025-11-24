@@ -5,7 +5,7 @@ modified: 2025-11-24
 description: ""
 keywords: ["Microsoft Defender XDR", "Microsoft Sentinel", "Microsoft Defender for Endpoint", "Security Incidents", "Investigating Seucirty Incidents with Microsoft Defender XDR"]
 tags: ["MDE", "SIEM"]
-draft: true
+draft: false
 ---
 
 ## Information
@@ -36,52 +36,89 @@ Use Artificial Intelligence (AI) to increase your productivity because it's neve
 
 ### Advanced Hunting
 
-When a malicious action occurs such as a user stealing company data, clicking on phishing links, and a device connecting to a command and control center the Advanced Hunting section can come in an excellent use as it allows us to see all data, users, and devices that were affected.
+Advanced Hunting in Microsoft Defender XDR allows us to quickly fetch data from multiple of tables such as `SignIn`, `DeviceEvents`, `DeviceFileEvents`, and much more to correlate data of a security incident. Additionally, it can also help us with finding other assets that has been affected by the security incidents. 
+
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-00.png]]
+
+All security analysts should be confident with using Advanced Hunting inside Microsoft Defender XDR because it allows you to quickly detect and respond to threats.
 
 ### VirusTotal
 
-VirusTotal is a application that is widely used for scanning executable programs and other file types. It will scan the application against multiple of extended detection and response (XDR) systems to see if any of them detects the file as malicious.
+VirusTotal is a SaaS product that is widely used for scanning executable programs and other file types. It will scan the uploaded file against multiple of extended detection and response (XDR) systems to see if any of them detects the file as a malicious file. 
 
-### Collect Investigation Logs
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-01.png]]
 
-When we are confident that a malicious application has compromised the system we should collect investigation log because these enables us to look through network connections, startup processes, running processes, and registry keys to better understand the threat. 
+Additionally, we can also obtain information's such as Signature, Compiler, Dynamic Link Library Imports, and IP-Address Connection of the file. Using these informations we can use Advanced Hunting to detect and respond to threats.
+
+### Collect Investigation Package
+
+Microsoft Defender XDR also comes with Collect Investigation Package which will collect logs of startup processes, running processes, registry keys, network connections, and smb sessions. We can use these informations to investigate the endpoint further.
+
+**Collect Investigation Package**
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-02.png]]
+
+
+**Viewing Collect Invesigation Package** 
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-03.png]]
+
+With all the data obtained through Collect Investigation Package we can craft KQL to detect other affected systems. Additionally, we can also craft scripts to automatically remove the threat from affected systems.
+
 
 ## Decission Phase 
 
 ### Antivirus Scan
 
-When a malicious executable program is detected on a system we should perferrably run a full antivirus scan on the system to ensure it's safe. 
+When Microsoft Defender XDR detects malicious executable with low critically we shouldd always run a full antivirus scan on the system to ensure it's safe instead of isolating it.
 
-### Restricting App Execution
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-04.png]]
 
-
+As a security analyst it's important to analyze the data that you have collected through the investigation phase and choose the correct option between running anti-virus scan, isolating, disabling user accounts.
 
 ### Isolation
 
-When it's confirmed that the system is compromised and all necessary investigation data is collected from the [[#Investigation Phase]] we can move forward with isolating the computer.
+Using the data from the investigation phase when we are completely sure that the endpoint is compromised we should isolate the system to ensure that threat actor cannot lateral move through our environment. 
 
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-05.png]]
+
+When we do isolate a system it's important to communicate with the user through phone or teams call so they understand the situation otherwise it might send the wrong message to the user which can lead to distress.
 
 ### Disable User Account
 
-When a decision has been made to isolate the computer it's important that we also disable the user account to the investigation is completed because the threat actors might use the account for laterally moving through our environment.
+When it's confirmed that the system is compromised we should also disable the user account as the threat actor could use the stored password to send malicious emails and laterally move through the environment.
+
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-06.png]]
+
+As mentioned in [[#Isolation]], we should always communicate with the user through teams or phone call so they understand the situation otherwise it might send the wrong message to the user which can lead to distress.
 
 ## Prevention Phase
 
 ### IoCs
 
-We should always add the SHA-256 and IP-Address to the indication of compromise list as it enables our XDR system to block the application and IP-address.
+When we are completely sure the SHA-256 signature and IP-address of the executable program is malicious we should add it to Indication Of Compromise (IoCs) lists to block the executable program and IP-address.
+
+1. Go to **Settings -> Endpoints**
+    ![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-07.png]]
+2. Select **Indicators**
+    ![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-08.png]]
+
+Using the Microsoft Defender XDR IoCs we are able to allow, warn, and block executable programs, IP-addresses, URLs, and Certificates.
 
 ### Custom Detection Rule
 
-We can also create a custom detection rule to isolate the computer and disable the user account when we see the SHA-256 or see an connection established with the malicious IP-Address.
+When we have crafted our KQL query in Advanced Hunting to detect threats within our environment we can use detection rules to create alerts when it's detected on new devices. Additionally, we can also perform actions such as isolation and disable user accounts when it's detected again. 
+
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-09.png]]
+
+When the severity of threat is high it's highly recommended to use custom detection rules to isolate endpoints, disable user accounts, and running antivirus scan. Instead of acting manually which can take minutes to hours we can act quickly within seconds after threat is detected.
 
 ## Recovery Phase
 
-At the following phase we will focus on reimaging the comptuer of the compromised user and re-enabling their account. Additionally, it's extremely important to communicate with the user that they shouldn't be worried about the situation as it's part of our security protocol and that these security incidents can happen to anyone.
+This phase consists of reimaging the endpoint and re-enabling the user account and communicating with the user so they are not stressed or affraid of losing their job because security incidents could happen to anyone including us who works within IT.
 
 ## Documentation Phase
 
-At this stage I'll create a document including only relevant data from the four different pillars including a timeframe of all actions that were performed and also include lesson learnt section for what we could do better in the future.
-
+At this stage I'll create a document including only relevant information from the different pillars such as affected users and endpoints. I'll also include actions performed to stop the threat actor and actions performed to prevent it in the future and lesson leant from the situation.
 
 ## Conclusion
+
+Microsoft Defender XDR is an extremely powerful XDR system but the security architect and security analysts using the system has to be well trained in order for the system to be effective becuase Microsoft XDR is a whole suite containing IT Asset Management, Cloud Apps Management, Email Threat Management, and Threat Analysis which can become overwhelming for a-lot of engineers.
