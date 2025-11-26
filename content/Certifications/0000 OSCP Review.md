@@ -2,8 +2,7 @@
 title: "OSCP Review"
 created: 2023-10-27
 modified: 2023-10-27
-tags:
-  - Certification
+tags: ["Certification"]
 draft: false
 ---
 ![[0000 OSCP-Certification-Showcase.png]]

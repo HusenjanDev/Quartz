@@ -3,7 +3,6 @@ title: "The Basics Of SQL"
 created: 2024-09-25
 modified: 2024-09-25
 description: "What is SQL? Why is the language so popular amongs it-professionals."
-keywords: ["SQL", "Basics of SQL", "MySQL"]
 tags: ["CPP", "MySQL"]
 draft: false
 ---

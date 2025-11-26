@@ -3,7 +3,6 @@ title: "The Basics of Intel x86 Assembly"
 created: 2023-11-20
 modified: 2023-11-20
 description:  "Intel x86 Assembly is difficult to learn but it's extremely useful to have the skillset."
-keywords: ["x86 Assembly", "Intel x86 Assembly"]
 tags: ["CPP", "Assembly"]
 draft: false
 ---

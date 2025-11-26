@@ -2,8 +2,7 @@
 title: "AZ-500 Certification Review"
 created: 2024-02-11
 modified: 2024-02-11
-tags:
-  - Certification
+tags: ["Certification"]
 draft: false
 ---
 ![[0000 AZ-500-Certification-Showcase.png]]

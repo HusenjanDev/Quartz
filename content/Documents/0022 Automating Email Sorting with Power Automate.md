@@ -3,7 +3,6 @@ title: "Automating Email Sorting with Power Automate"
 created: 2025-11-10
 modified: 2025-11-10
 description: "Power Automate comes with \"When I receive new email arrives\" feature which allows us to perform sorting on emails with specific type document attached to it."
-keywords: ["Power Automate", "Automating Email Sorting"]
 tags: ["PA"]
 draft: false
 ---

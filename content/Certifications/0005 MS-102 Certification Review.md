@@ -2,9 +2,8 @@
 title: "MS-102 Certification Review"
 created: 2024-09-03
 modified: 2024-09-03
+tags: ["Certification"]
 draft: false
-tags:
-  - Certification
 ---
 ![[0000 MS-102-Certification-Showcase.png]]
 

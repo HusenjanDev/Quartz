@@ -3,7 +3,6 @@ title: "Cortex XDR Monitoring Active Directory Events"
 created: 2025-09-18
 modified: 2025-09-18
 description: "Using Cortex XDR to monitor Active Directory events."
-keywords: ["Cortex XDR", "XQL"]
 tags: ["CORTEX", "XQL"]
 draft: false
 ---

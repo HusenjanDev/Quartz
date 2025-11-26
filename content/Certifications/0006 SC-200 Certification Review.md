@@ -2,9 +2,8 @@
 title: "SC-200 Certification Review"
 created: 2024-11-18
 modified: 2024-11-18
+tags: ["Certification"]
 draft: false
-tags:
-  - Certification
 ---
 
 ![[0000 SC-200-Certification-Showcase.png]]

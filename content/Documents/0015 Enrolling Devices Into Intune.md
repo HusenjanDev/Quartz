@@ -3,7 +3,6 @@ title: "Enrolling Windows Device Into Intune"
 created: 2025-10-01
 modified: 2025-10-01
 description: "Microsoft Intune enables us to enroll devices through two different methods and I'll go through both of these methods in this article."
-keywords: ["Microsoft 365", "Enrolling Widnows Device Into Microsoft Intune"]
 tags: ["INTUNE"]
 draft: false
 ---

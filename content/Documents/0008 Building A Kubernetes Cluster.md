@@ -3,7 +3,6 @@ title: "Building A Kubernetes Cluster"
 created: 2024-09-28
 modified: 2024-09-28
 description: "How can I build our own Kubernetes Cluster? In this document, I'll go step-by-step setting up a Kubernetes Cluster."
-keywords: ["Kubernetes", "Building a Kubernetes Cluster"]
 tags: ["KUBERNETES", "DOCKER"]
 draft: false
 ---

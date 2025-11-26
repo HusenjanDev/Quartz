@@ -2,8 +2,7 @@
 title: "MD-102 Certification Review"
 created: 2024-07-02
 modified: 2024-07-02
-tags:
-  - Certification
+tags: ["Certification"]
 draft: false
 ---
 ![[0000 MD-102-Certification-Showcase.png]]

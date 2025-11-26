@@ -3,7 +3,6 @@ title: "C++ Hooking Methods"
 created: 2023-12-27
 modified: 2023-12-27
 description: "What is C++ Hooking? It's a technique which involves changing programs control flow to by patching instruction bytes."
-keywords: ["C++ Hooking Methods", "Hooking Methods", "C++"]
 tags: ["CPP", "Hooking Methods"]
 draft: false
 ---
