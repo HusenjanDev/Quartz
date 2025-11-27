@@ -1,15 +1,15 @@
 ---
-title: "Finding Users With No Password Expiry in Active Directory"
+title: "Finding Users With Password Never Expire In Active Directory"
 created: 2025-11-27
 modified: 2025-11-27
-description: "Microsoft Defender XDR is an extremely powerful XDR system but the security analyst working within Microsoft Defender XDR needs to be experienced with Windows Operating System, PowerShell Scripting, and Kusto Query Language."
+description: "Using PowerShell with Active Directory module you can search for users with Password Never Expire (PasswordNeverExpires) enabled."
 tags: ["AD"]
 draft: false
 ---
 
 ## Introduction
 
-Many organizations nowadays has password policy to change the password frequently within a year period. However, there might be specific users who has option `NoPasswordExpiry` enabled which excludes them from the password policy. In this article I'll go through finding these users.
+Many organizations nowadays has password policy to change the password frequently within a year period. However, there might be specific users who has option `PasswordNeverExpires` enabled which excludes them from the password policy. In this article I'll go through finding these users.
 
 ## Permissions
 
@@ -84,4 +84,4 @@ What does the PowerShell script do? All the PowerShell script does is enumeratin
 
 ## Conclusion
 
-We should avoid using `NoPasswordExpiry` on user accounts because the user password might not have been changed after a data breach occurred on a service provider and threat actors can use these passwords to lateral move through our environment. It's therefore recommended to disable `NoPasswordExpiry` on all user accounts.
+We should avoid using `PasswordNeverExpires` on user accounts because the user password might not have been changed after a data breach occurred on a service provider and threat actors can use these passwords to lateral move through our environment. It's therefore recommended to disable `PasswordNeverExpires` on all user accounts.
