@@ -17,7 +17,7 @@ When a device is connected to the internal network the user can enumerate throug
 
 ## PowerShell
 
-The `ActiveDirectory` module from Microsoft enables us to enumerate through all our users in Active Directory environment using PowerShell. I decided to use that module to enumerate through all our users and find users who hasn't changed their password over a year.
+The `ActiveDirectory` module from Microsoft enables us to enumerate through all our users in Active Directory environment using PowerShell. I implemented the following script to find all users who hasn't changed their password over a year using the `ActiveDirectory` module.
 
 ```powershell hlt="<PATH>"
 # Allowing high import of functions
@@ -34,41 +34,44 @@ $othersDisbaledAccounts =  "C:\<PATH>\Others_DisbaledAccounts_NoPasswordExpiry.c
 Import-Module ActiveDirectory
 
 # Getting all users
-Get-ADUser -Filter * -Properties DisplayName, userPrincipalName, Office, PwdLastSet, Enabled | Select-Object DisplayName, userPrincipalName, Office, Enabled, PwdLastSet | ForEach-Object {
+Get-ADUser -Filter * -Properties DisplayName, userPrincipalName, Office, PwdLastSet, PasswordNeverExpires, Enabled | Select-Object DisplayName, userPrincipalName, Office, PwdLastSet, PasswordNeverExpires, Enabled | ForEach-Object {
     # Creating variables with user data
     $displayName = $_.DisplayName
     $userPrincipalName = $_.userPrincipalName
-    $PwdLastSet = [DateTime]::FromFileTime($_.PwdLastSet)
     $officeLocation = $_.Office
+    $pwdLastSet = [DateTime]::FromFileTime($_.PwdLastSet)
+    $passwordNeverExpires = $_.PasswordNeverExpires
     $accountEnabled = $_.Enabled
 
+
     # If PwdLastSet is less than 2024 continue... 
-    if ($PwdLastSet -lt (Get-Date).AddYears(-1)) {
+    if ($pwdLastSet -lt (Get-Date).AddYears(-1)) {
         # Creating a PowerShell Object with all attributes enumerated through Get-ADUser function
         $userData = [PSCustomObject]@{
             displayName = $displayName
             userPrincipalName = $userPrincipalName
-            PasswordLastSet = $PwdLastSet
+            PasswordLastSet = $pwdLastSet
             officeLocation = $officeLocation
             accountEnabled = $accountEnabled
+            passwordNeverExpires = $passwordNeverExpires
         }
 
         # If Office equals Oslo then append user data to Oslo_NoPasswordExpiry.csv file
-        if ($officeLocation -eq "Oslo") {            
+        if ($officeLocation -eq "Oslo" -and $passwordNeverExpires -eq $true) {            
             $userData | Export-Csv -Path $osloCSV -Append -NoTypeInformation -Encoding UTF8
         }
         # If Office equals Bergen then append user data to Bergen_NoPasswordExpiry.csv file
-        elseif($officeLocation -eq "Bergen") {
+        elseif($officeLocation -eq "Bergen" -and $passwordNeverExpires -eq $true) {
             $userData | Export-Csv -Path $bergenCSV -Append -NoTypeInformation -Encoding UTF8
         }
         # If Office equals Offshore then append user data to Offshore_NoPasswordExpiry.csv file
-        elseif($officeLocation -eq "Offshore") {            
+        elseif($officeLocation -eq "Offshore" -and $passwordNeverExpires -eq $true) {            
             $userData | Export-Csv -Path $offshoreCSV -Append -NoTypeInformation -Encoding UTF8
         }
         # Any other users...
         else {
             # If their account is enabled append user data to Others_EnabledAccounts_NoPasswordExpiry.csv file
-            if ($accountEnabled -eq $true) {
+            if ($accountEnabled -eq $true -and $passwordNeverExpires -eq $true) {
                 $userData | Export-Csv -Path $othersEnabledAccounts -Append -NoTypeInformation -Encoding UTF8
             }
             # Otherwise append the user data to Others_DisbalededAccounts_NoPasswordExpiry.csv file
@@ -80,7 +83,7 @@ Get-ADUser -Filter * -Properties DisplayName, userPrincipalName, Office, PwdLast
 }
 ```
 
-What does the PowerShell script do? All the PowerShell script does is enumerating through all our users and finding users with no password change over a year and from there it filters the users depending on their office and exports the user data into the CSV file.
+All the PowerShell script does is enumerating through all our users and finding the ones who hasn't changed their password for over a year and from there it will export the user data into a excel file based on their office attribute. This will allow the local IT-Support to focus on the users on their location. 
 
 ## Conclusion
 
