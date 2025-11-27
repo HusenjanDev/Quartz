@@ -1,5 +1,5 @@
 ---
-title: "Finding Users With Password Never Expire In Active Directory"
+title: "Finding Users With Password Never Expires In Active Directory"
 created: 2025-11-27
 modified: 2025-11-27
 description: "Using PowerShell with Active Directory module you can search for users with Password Never Expire (PasswordNeverExpires) enabled."
