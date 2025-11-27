@@ -7,7 +7,7 @@ tags: ["MDE", "SMARTSCREEN"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Microsoft Defender SmartScreen is desinged to protect endpoints from malicious websites, applications, and files by displaying an early warning before execution. It comes with anti-phishing, anti-malware, reputation-based url, and app protection to detect malicious applications.
 

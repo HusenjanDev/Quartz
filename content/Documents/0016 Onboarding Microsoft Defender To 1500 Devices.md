@@ -7,7 +7,7 @@ tags: ["INTUNE", "MDE", "CORTEX"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Our Cortex XDR license was about to expire in a week and since the organization had planned to move to Microsoft Defender for long time ago as it's part of our Microsoft E5 license. Therefore I was tasked to onboard as many of our endpoints over to [Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint). In this article, I'll share how I onboarded 1,000 devices to Microsoft Defender for Endpoint with the goal of helping others in similar position.
 

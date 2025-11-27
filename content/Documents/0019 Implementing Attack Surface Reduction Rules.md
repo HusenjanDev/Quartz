@@ -7,7 +7,7 @@ tags: ["MDE", "ASR"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Attack Surface Reduction (ASR) is designed to limit the attack surface for Windows endpoints. While it's effective at blocking common attack techniques which are used by ransomwares and malwares, they may interfere with legitimate enterprise tools. In this article I'll go through the best practices to implement Attack Surface Reduction into your environment without creating any distruption to business.
 

@@ -7,7 +7,7 @@ tags: ["PA"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 We are currently implementing a new system in the organization and the employees using these systems made a request to implement automatic email sorting for shared mailbox where all emails with PDFs are moved to a different folder than emails without PDF documents. Unfortunately, this is not possible with default Outlook rules becuase it doesn't allow us to check of specific file type.
 

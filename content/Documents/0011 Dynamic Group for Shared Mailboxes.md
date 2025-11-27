@@ -7,7 +7,7 @@ tags: ["M365"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 The Coordinators and Crewing department in our organization was facing challenges with organizing their emails because 7 to 10 vessels are taking contact into a single shared mailbox. It can quickly become difficult when there are 20 to 30 employees working on a single shared mailbox.
 

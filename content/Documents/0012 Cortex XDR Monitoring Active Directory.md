@@ -7,7 +7,7 @@ tags: ["CORTEX", "XQL"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 We recently experienced a incident where a company administrator changed the `userPrincipalName` of someone important in the organization. This lead to a investigation where we needed to find out who made the changes and the reasoning behind it to ensure that organization is secure.
 

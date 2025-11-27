@@ -8,7 +8,7 @@ tags: ["SIEM", "SOC", "WORKBOOK"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Microsoft Sentinel Workbooks are designed to visualize logs that occurs in our environment so we can better secure and respond to incidents, alerts, and threat actors. I recently decided to implement Microsoft Sentinel Workbooks to monitor domain admin accounts to protect them from brute-force and password spray attacks. 
 

@@ -7,7 +7,7 @@ tags: ["SIEM", "KQL"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Currently, in the organization we are forwarding all data from Windows, Cortex XDR, and Office 365 into Microsoft Sentinel so that our third-party SOC analysts can warn us about malicious and suspicious behaviours. In this article I'll go through some Kusto Query Language (KQL) which can be useful during an incident.
 

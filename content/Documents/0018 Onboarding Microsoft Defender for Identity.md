@@ -7,7 +7,7 @@ tags: ["MDE"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Microsoft Defender for Identity comes with the Microsoft Defender XDR suite. It uses the signals from Windows Active Directory to detect, investigate, and respond to cyberthreats.
 

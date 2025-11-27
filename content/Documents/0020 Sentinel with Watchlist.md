@@ -7,7 +7,7 @@ tags: ["SIEM", "KQL"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Watchlists in Microsoft Sentinel is commonly used for storing a list of data which can be retrieved by security analysts to correlate data. For example, you can create a list of executives, termninated employees, and service accounts and retrieve information such as UserPrincipalName, Business Email, and etc...
 

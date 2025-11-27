@@ -7,7 +7,7 @@ tags: ["INTUNE"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Microsoft Intune is the modern way of managing devices. It also comes with capabilities for us to automate tasks which the IT engineers are doing manually. In this article I'll go through multiple of ways to enroll a Windows device into Microsoft Intune.
 

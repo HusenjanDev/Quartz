@@ -7,7 +7,7 @@ tags: ["MDE", "SIEM", "KQL"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 Advanced Hunting in Microsoft Defender XDR allows us to create Custom Detection Rules using Kusto Query Language (KQL) to create alerts and incidents inside of Microsoft Defender Portal. Today, I decided to create a custom detection rule to create an alert when a change occurs on a highly privileged account. In this article I'll go through the step-by-step guide to implement custom detection rules.
 

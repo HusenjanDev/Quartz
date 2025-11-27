@@ -7,7 +7,7 @@ tags: ["CORTEX", "INTUNE"]
 draft: false
 ---
 
-## Information
+## Introduction
 
 The deployment of Cortex XDR can be a difficult and frustrating task especially when you're deploying it through Microsoft Intune - this can become even more difficult if your organization is large. So, I made this article to go through the steps of deploying Cortex XDR through Microsoft Intune.
 
