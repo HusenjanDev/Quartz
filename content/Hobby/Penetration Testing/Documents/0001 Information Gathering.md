@@ -2,7 +2,7 @@
 title: "Information Gathering"
 created: 2025-04-15
 modified: 2025-04-15
-tags: ["Penetration-Testing"]
+tags: ["INFO"]
 ---
 ## OSINT
 

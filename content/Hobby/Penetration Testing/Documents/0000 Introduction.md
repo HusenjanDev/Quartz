@@ -3,8 +3,7 @@ title: "Introduction to Penetration Testing"
 created: 2025-04-20
 modified: 2025-04-20
 permalink: "Introduction"
-tags:
-  - Penetration-Testing
+tags: ["INFO"]
 author: Husenjan
 ---
 ## What is Penetration Testing?
