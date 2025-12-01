@@ -52,7 +52,11 @@ When an Teams channel is deleted there should be an investigation on why the act
 * Where there any malicious sign-in logs on the user who performed the action?
 * Where there any other malicious actions performed by the user?
 
-It's important to collect as much data as possible as that will allow us to close the investigation and ensure this doesn't occur in the future.
+It's important to collect as much data as possible about the incident to ensure that the incident doesn't occur in the future.
+
+## Prevention
+
+A great way of preventing this incident from occurring in the future is by implementing an alerting system which detects when a Teams channel is deleted and sends a Teams message to all the owners to ensure it was a approved action. If the deletion of the Teams channel was not approved the owners could quickly recover it to prevent data loss and productivity loss.
 
 ## Conclusion
 
