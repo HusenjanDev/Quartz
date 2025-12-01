@@ -2,7 +2,7 @@
 title: "How to Restore Deleted Teams Channel"
 created: 2025-12-01
 modified: 2025-12-01
-description: "We can recover a Teams Channel without any issues as long it's within 30 days period but if it exceeds the 30 days period the Teams Channel is no longer recoverable."
+description: "How to Restore Deleted Teams Channel? When a Teams Channel is deleted we can restore it within 30 days through Microsoft Teams. However, if the deletion date exceeds 30 days than the Teams Channel is no longer restorable."
 tags: ["M365", "TEAMS"]
 draft: false
 ---
