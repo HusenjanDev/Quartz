@@ -47,6 +47,17 @@ It will help with detecting, investigating, and responding to attacks such as re
 2. Make a read-only account in Windows Active Directory and enter these credentials inside Add credentials.
 	![[0018 Onboarding-Microsoft-Defender-for-Identity-10.png]]
 
+## Enabling Automatic Windows Auditing Configuration
+
+1. Go to **Settings -> Identities**.
+	![[0018 Onboarding-Microsoft-Defender-for-Identity-11.png]]
+
+2. Go to **General -> Advanced Features** and enable **Automatic Windows Auditing Configuration**.
+	![[0018 Onboarding-Microsoft-Defender-for-Identity-12.png]]
+
+3. Click on **Save**.
+	![[0018 Onboarding-Microsoft-Defender-for-Identity-13.png]]
+
 ## Conclusion
 
 Once all these actions are completed the domain controllers are onboarded to Microsoft Defender for Identity. If your organization is using Microsoft Defender XDR and Microsoft highly recommends setting up Microsoft Defender for Identity as it will help with collecting signals to detect, investigate, and respond to complex cyberthreats.
