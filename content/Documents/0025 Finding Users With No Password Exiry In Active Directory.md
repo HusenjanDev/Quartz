@@ -24,11 +24,11 @@ The `ActiveDirectory` module from Microsoft enables us to enumerate through all 
 $MaximumFunctionCount = 8192
 
 # Relative Paths
-$bergenCSV = "C:\<PATH>\Bergen_NoPasswordExpiry.csv"
-$osloCSV =  "C:\<PATH>\Oslo_NoPasswordExpiry.csv"
-$offshoreCSV =  "C:\<PATH>\Offshore_NoPasswordExpiry.csv"
-$othersEnabledAccounts =  "C:\<PATH>\Others_EnabledAccounts_NoPasswordExpiry.csv"
-$othersDisbaledAccounts =  "C:\<PATH>\Others_DisbaledAccounts_NoPasswordExpiry.csv"
+$bergenCSV = ".\Bergen_NoPasswordExpiry.csv"
+$osloCSV =  ".\Oslo_NoPasswordExpiry.csv"
+$offshoreCSV =  ".\Offshore_NoPasswordExpiry.csv"
+$othersEnabledAccounts =  ".\Others_EnabledAccounts_NoPasswordExpiry.csv"
+$othersDisbaledAccounts =  ".\Others_DisbaledAccounts_NoPasswordExpiry.csv"
 
 # Importing ActiveDirectory library
 Import-Module ActiveDirectory
