@@ -37,7 +37,7 @@ Use Artificial Intelligence (AI) to increase your productivity because it's neve
 
 Advanced Hunting in Microsoft Defender XDR allows us to quickly fetch data from multiple of tables such as `SignIn`, `DeviceEvents`, `DeviceFileEvents`, and much more to correlate data of a security incident. Additionally, it can also help us with finding other assets that has been affected by the security incidents. 
 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-00.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-01.png]]
 
 All security analysts should be confident with using Advanced Hunting inside Microsoft Defender XDR because it allows you to quickly detect and respond to threats.
 
@@ -45,7 +45,7 @@ All security analysts should be confident with using Advanced Hunting inside Mic
 
 VirusTotal is a SaaS product that is widely used for scanning executable programs and other file types. It will scan the uploaded file against multiple of extended detection and response (XDR) systems to see if any of them detects the file as a malicious file. 
 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-01.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-02.png]]
 
 Additionally, we can also obtain information's such as Signature, Compiler, Dynamic Link Library Imports, and IP-Address Connection of the file. Using these informations we can use Advanced Hunting to detect and respond to threats.
 
@@ -54,11 +54,11 @@ Additionally, we can also obtain information's such as Signature, Compiler, Dyna
 Microsoft Defender XDR also comes with Collect Investigation Package which will collect logs of startup processes, running processes, registry keys, network connections, and smb sessions. We can use these informations to investigate the endpoint further.
 
 **Collect Investigation Package**
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-02.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-03.png]]
 
 
 **Viewing Collect Invesigation Package** 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-03.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-04.png]]
 
 With all the data obtained through Collect Investigation Package we can craft KQL to detect other affected systems. Additionally, we can also craft scripts to automatically remove the threat from affected systems.
 
@@ -69,7 +69,7 @@ With all the data obtained through Collect Investigation Package we can craft KQ
 
 When Microsoft Defender XDR detects malicious executable with low critically we shouldd always run a full antivirus scan on the system to ensure it's safe instead of isolating it.
 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-04.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-05.png]]
 
 As a security analyst it's important to analyze the data that you have collected through the investigation phase and choose the correct option between running anti-virus scan, isolating, disabling user accounts.
 
@@ -77,7 +77,7 @@ As a security analyst it's important to analyze the data that you have collected
 
 Using the data from the investigation phase when we are completely sure that the endpoint is compromised we should isolate the system to ensure that threat actor cannot lateral move through our environment. 
 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-05.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-06.png]]
 
 When we do isolate a system it's important to communicate with the user through phone or teams call so they understand the situation otherwise it might send the wrong message to the user which can lead to distress.
 
@@ -85,7 +85,7 @@ When we do isolate a system it's important to communicate with the user through 
 
 When it's confirmed that the system is compromised we should also disable the user account as the threat actor could use the stored password to send malicious emails and laterally move through the environment.
 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-06.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-07.png]]
 
 As mentioned in [[#Isolation]], we should always communicate with the user through teams or phone call so they understand the situation otherwise it might send the wrong message to the user which can lead to distress.
 
@@ -96,9 +96,9 @@ As mentioned in [[#Isolation]], we should always communicate with the user throu
 When we are completely sure the SHA-256 signature and IP-address of the executable program is malicious we should add it to Indication Of Compromise (IoCs) lists to block the executable program and IP-address.
 
 1. Go to **Settings -> Endpoints**
-    ![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-07.png]]
+    ![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-08.png]]
 2. Select **Indicators**
-    ![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-08.png]]
+    ![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-09.png]]
 
 Using the Microsoft Defender XDR IoCs we are able to allow, warn, and block executable programs, IP-addresses, URLs, and Certificates.
 
@@ -106,7 +106,7 @@ Using the Microsoft Defender XDR IoCs we are able to allow, warn, and block exec
 
 When we have crafted our KQL query in Advanced Hunting to detect threats within our environment we can use detection rules to create alerts when it's detected on new devices. Additionally, we can also perform actions such as isolation and disable user accounts when it's detected again. 
 
-![[0000 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-09.png]]
+![[0024 Investigating-Security-Incidents-with-Microsoft-Defender-XDR-10.png]]
 
 When the severity of threat is high it's highly recommended to use custom detection rules to isolate endpoints, disable user accounts, and running antivirus scan. Instead of acting manually which can take minutes to hours we can act quickly within seconds after threat is detected.
 

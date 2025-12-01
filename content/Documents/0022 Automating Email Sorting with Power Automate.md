@@ -17,39 +17,39 @@ However, after resarching for a bit I found out that Power Automate allows us to
 
 1. Go to **Power Automate -> Connectors -> Office 365 Outlook**.
     
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-00.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-01.png]]
 
 2. Click on **When I receive new email arrives**.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-01.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-02.png]]
 
 3. Setup connector on a account.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-02.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-03.png]]
 
 4. Initialize `hasPDF` variable with value `false`.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-03.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-04.png]]
 
 5. Create **For Each** and include **Attachment** from Outlook connector.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-04.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-05.png]]
 
 6. Inside **Condition** use the parameters **Has Attachments** and **Attachment Type** with the following configuration.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-05.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-06.png]]
 
 7. Use **Set variable** to set `hasPDF` variable to `true`.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-06.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-07.png]]
 
 8. Create another **Condition** to check if `hasPDF` is `true`.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-07.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-08.png]]
 
 9. Create **Move email (v2)** object to move email to different folder using **Message Id** from Outlook connector.
 
-    ![[0000 Automating-Email-Sorting-with-Power-Automate-08.png]]
+    ![[0022 Automating-Email-Sorting-with-Power-Automate-09.png]]
 
 The **when I receive new email arrives** feature in Power Automate allows us to do the following on the account connected to Outlook connector.
 

@@ -28,7 +28,7 @@ It was also decided that employees would only be able to send *"On Behalf Of"* e
 
 A cybersecurity risk occurred because the coordinator and crewing department deals with a-lot of confidential documents such as passports, visas, and health related documents and assigning 20 to 30 people to 20 different shared mailboxes becomes unmanageable and massive security concern.
 
-![[0000 Dynamic-Group-for-Shared-Mailbox-1.png]]
+![[0011 Dynamic-Group-for-Shared-Mailbox-01.png]]
 
 The solution that I came up after brainstorming was to create two [Mail-Enabled Security Groups](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) with the names **ACL-Vessel-Coordinator** and **ACL-Vessel-Crew-Change** which enables us to add users into these groups and the users will instantly get access to all the different shared mailboxes they are supposed to have access to rather than adding them 
 manually 10 times.

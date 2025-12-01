@@ -41,23 +41,23 @@ Instead of being dependent on the third party SOC team responses. We can investi
 
 Go to **Incident Response -> Investigation -> Query Builder**.
 
-![[0000 Cortex-XDR-Monitoring-Active-Directory-Events-1.png]]
+![[0012 Cortex-XDR-Monitoring-Active-Directory-Events-01.png]]
 
 Inside **Query Builder** select **Event Log**.
 
-![[0000 Cortex-XDR-Monitoring-Active-Directory-Events-2.png]]
+![[0012 Cortex-XDR-Monitoring-Active-Directory-Events-02.png]]
 
 In **Event_ID** enter the number **4738** and select the date the incident occurred on the account.
 
-![[0000 Cortex-XDR-Monitoring-Active-Directory-Events-3.png]]
+![[0012 Cortex-XDR-Monitoring-Active-Directory-Events-03.png]]
 
 Cortex XDR will display all the endpoints and servers the Event ID 4738 occurred.
 
-![[0000 Cortex-XDR-Monitoring-Active-Directory-Events-4.png]]
+![[0012 Cortex-XDR-Monitoring-Active-Directory-Events-04.png]]
 
 We can further investigate the event by opening it on Cortex XDR.
 
-![[0000 Cortex-XDR-Monitoring-Active-Directory-Events-5.png]]
+![[0012 Cortex-XDR-Monitoring-Active-Directory-Events-05.png]]
 
 After finding the user who changed the `userPrincipalName` of the account we can further investigate the account that made these changes by going through events such as 4624 and 4625 to see if someone was performing a brute-force attack on the account. 
 

@@ -17,15 +17,15 @@ The preperation section is about downloading Cortex XDR and converting the `.msi
 
 1. Cortex Panel-> Endpoint -> Agent Installation -> Create.
 
-	![[0000 Cortex-XDR-through-Intune-01.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-01.png]]
 
 2. Enter Name and Description -> Select Latest Version Of Cortex -> Create.
 
-	![[0000 Cortex-XDR-through-Intune-02.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-02.png]]
 
 3. Right Click -> 64-bit installer -> Download 64-bit installer (.msi)
 
-	![[0000 Cortex-XDR-through-Intune-03.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-03.png]]
 
 4. Use the [Microsoft Content Preptool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool) to conver the `.msi` to `.intunewin` file.
 
@@ -39,26 +39,26 @@ The deployment stage is about uploading the `.intunewin` file into Microsoft Int
 
 1. Microsoft Intune -> Apps -> Platforms -> Windows.
 
-	![[0000 Cortex-XDR-through-Intune-04.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-04.png]]
 
 2. Create Intune Application Profile -> Choose Windows App (Win32) -> Click on Select.
 
-	![[0000 Cortex-XDR-through-Intune-05.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-05.png]]
 	
 3. Upload `Cortex-XDR.intunewin` appplication to Microsoft Intune.
 
-	![[0000 Cortex-XDR-through-Intune-06.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-06.png]]
 
 4. Use the `/norestart` to prevent unexpected reboots.
 
-	![[0000 Cortex-XDR-through-Intune-07.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-07.png]]
 
 5. Select "Yes, Specific systems the app can be installed on" -> Select "Install x86" -> Select "Install on x64".
 
-	![[0000 Cortex-XDR-through-Intune-08.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-08.png]]
 
 6. Select Use Custom Detection Script -> Upload Cortex-Detection-Rule.ps1.
-	![[0000 Cortex-XDR-through-Intune-09.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-09.png]]
 	```powershell title="Cortex-Detection-Rule.ps1"
 	$CortexVersion = [System.Version]::new((Get-ItemPropertyvalue -Path 'HKLM:\SOFTWARE\Cyvera\Client' -Name 'Product Version'))
 
@@ -73,7 +73,7 @@ The deployment stage is about uploading the `.intunewin` file into Microsoft Int
 
 7. Inside Assignments -> Select All Devices.
 
-	![[0000 Cortex-XDR-through-Intune-10.png]]
+	![[0014 Deploying-Cortex-XDR-through-Intune-10.png]]
 
 Once all these steps are completed, Microsoft Intune should start installing Cortex XDR on all the endpoints that are enrolled in our environment. I highly recommend to deploy Cortex XDR profile in small intervals incase an issue occurs. 
 

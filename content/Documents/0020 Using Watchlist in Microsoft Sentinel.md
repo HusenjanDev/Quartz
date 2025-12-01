@@ -14,25 +14,25 @@ Watchlists in Microsoft Sentinel is commonly used for storing a list of data whi
 ## Creating Watchlist
 
 1. Go to **Microsoft Sentinel -> Watchlist**.
-    ![[0000 Using-Watchlist-in-Microsoft-Sentinel-00.png]]
+    ![[0020 Using-Watchlist-in-Microsoft-Sentinel-01.png]]
 
 2. Click on **New**.
-    ![[0000 Using-Watchlist-in-Microsoft-Sentinel-01.png]]
+    ![[0020 Using-Watchlist-in-Microsoft-Sentinel-02.png]]
 
 3. Enter **Name, Description, and Alias**.
-    ![[0000 Using-Watchlist-in-Microsoft-Sentinel-02.png]]
+    ![[0020 Using-Watchlist-in-Microsoft-Sentinel-03.png]]
 
 4. **Upload `data.tsv`** contains all data about users.
-    ![[0000 Using-Watchlist-in-Microsoft-Sentinel-03.png]]
+    ![[0020 Using-Watchlist-in-Microsoft-Sentinel-04.png]]
 
 5. **Review Configuration** and click on **Create**.
-    ![[0000 Using-Watchlist-in-Microsoft-Sentinel-04.png]]
+    ![[0020 Using-Watchlist-in-Microsoft-Sentinel-05.png]]
 
 ## Using Watchlist
 
 Once the watchlist is created, we can retrieve data through `_GetWatchlist()` function with the `project` operator to only return specific row. 
 
-![[0000 Using-Watchlist-in-Microsoft-Sentinel-05.png]]
+![[0020 Using-Watchlist-in-Microsoft-Sentinel-05.png]]
 
 ```kql title="Proof of Concept"
 let cEventID = dynamic([4625]);

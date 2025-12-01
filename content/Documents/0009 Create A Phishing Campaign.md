@@ -47,51 +47,51 @@ I'll be using Microsoft Attack Simulation feature to create our phishing campaig
 
 First we'll need to go to the [Microsoft 365 Security Portal](https://security.microsoft.com/) then we'll then need to scroll down to **Email & Collaboration** and select **Attack Simulation Training**.
 
-![[0000 Creating-A-Phishing-Campaign-1.png]]
+![[0009 Creating-A-Phishing-Campaign-01.png]]
 
 We'll then need to go to **Simulation** and select **Launch a Simulation** to create our phishing campaign.
 
-![[0000 Creating-A-Phishing-Campaign-2.png]]
+![[0009 Creating-A-Phishing-Campaign-02.png]]
 
 The attack simulation allows you to choose many methods for your phishing campaign. However, I recom-mend going with **Credential Harvest** as that is the most common method malicious actors uses for their phishing attacks. 
 
-![[0000 Creating-A-Phishing-Campaign-3.png]]
+![[0009 Creating-A-Phishing-Campaign-03.png]]
 
 We can now choose **Tenant Payloads** and **Create a payload** to create our own custom phishing email.
 
-![[0000 Creating-A-Phishing-Campaign-4.png]]
+![[0009 Creating-A-Phishing-Campaign-04.png]]
 
 Inside **Configure Payload** we can start creating our own custom phishing email using **Code** section. The language used for programming the custom email is HTML and I recommend using a IDE such as Visual Studio Code to create your custom phishing email as it comes with autocompletion and code hightlights.
 
-![[0000 Creating-A-Phishing-Campaign-5.png]]
+![[0009 Creating-A-Phishing-Campaign-05.png]]
 
 You can also customize the login page which will be displayed to the users when they click on the link by selecting the payload and going to **Login Page** section. 
 
-![[0000 Creating-A-Phishing-Campaign-6.png]]
+![[0009 Creating-A-Phishing-Campaign-06.png]]
 
 Once we are happy with our phishing email and the login page we can now select the users who will be sent the phishing email from us.
 
-![[0000 Creating-A-Phishing-Campaign-7.png]]
+![[0009 Creating-A-Phishing-Campaign-07.png]]
 
 The attack simulation also allows us to assign training to users who failed the phishing campaign by click-ing on the link or logging with their credentials. 
 
-![[0000 Creating-A-Phishing-Campaign-8.png]]
+![[0009 Creating-A-Phishing-Campaign-08.png]]
 
 Once we have choosen the traning method, we can now create our own custom landing page which will show up after the user logins to the phishing website. I highly recommend writing the message in a empat-hic way and explain how they can protect themselves and the organization from the phishing attack and ways to spot it.
 
-![[0000 Creating-A-Phishing-Campaign-9.png]]
+![[0009 Creating-A-Phishing-Campaign-09.png]]
 
 We can now configure our **User Notification Settings** to send positive reinforcement for reporting the phishing email and training reminders. The positive reinforcement will be sent to the user if they report the phishing email through Outlook report feature.
 
-![[0000 Creating-A-Phishing-Campaign-10.png]]
+![[0009 Creating-A-Phishing-Campaign-10.png]]
 
 Now we can choose when the phishing campaign will be sent out to the users. We can choose to send it out right after we submit it or choose a specific time. 
 
-![[0000 Creating-A-Phishing-Campaign-11.png]]
+![[0009 Creating-A-Phishing-Campaign-11.png]]
 
 Now once we click on submit it will automatically send out the phishing email to the employees that we selected to be a part of the phishing campaign.
 
-![[0000 Creating-A-Phishing-Campaign-12.png]]
+![[0009 Creating-A-Phishing-Campaign-12.png]]
 
 Congratulation! You have now successfully launched a phishing campaign using the attack simulation and once the phishing campaign ends you can get analysis about the amount of users who clicked on the phishing link and logged in with their credentials and the amount of employees that finished their training after failing the phishing campaign.
 

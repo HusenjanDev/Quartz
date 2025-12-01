@@ -19,28 +19,28 @@ We can restore a Teams Channel as long it's within the 30 days period with the f
 
 1. Open Microsoft Teams.
 2. Click on **Teams**.
-    ![[0026 How-to-Restore-Deleted-Teams-Channel-00.png]]
-3. Right click on **Teams group** and select **Manage Team**.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-01.png]]
-4. Click on **More...** and click on **Deleted**.
+3. Right click on **Teams group** and select **Manage Team**.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-02.png]]
-5. Click on **Restore**.
+4. Click on **More...** and click on **Deleted**.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-03.png]]
+5. Click on **Restore**.
+    ![[0026 How-to-Restore-Deleted-Teams-Channel-04.png]]
 
 ## Microsoft Teams Logs
 
 Microsoft Purview allows us to investigate all the actions that were performed against a Teams channel such as delection, modifications, and etc...
 
 1. Go to [Microsoft Purview Audit](https://purview.microsoft.com/audit).
-    ![[0026 How-to-Restore-Deleted-Teams-Channel-04.png]]
-2. Enter **Teams Channel** name on **Keywords Search**.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-05.png]]
-3. Click on **Search** and wait anywhere from 1 to 5 minutes.
+2. Enter **Teams Channel** name on **Keywords Search**.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-06.png]]
-4. Scoll down and click on **Search Name**.
+3. Click on **Search** and wait anywhere from 1 to 5 minutes.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-07.png]]
-5. You can click on the log and it will display user, action performed time, and much more..
+4. Scoll down and click on **Search Name**.
     ![[0026 How-to-Restore-Deleted-Teams-Channel-08.png]]
+5. You can click on the log and it will display user, action performed time, and much more..
+    ![[0026 How-to-Restore-Deleted-Teams-Channel-09.png]]
 
 ## Investigation
 

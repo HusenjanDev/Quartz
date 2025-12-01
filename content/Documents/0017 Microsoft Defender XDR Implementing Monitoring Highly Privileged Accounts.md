@@ -29,32 +29,32 @@ SecurityEvent
 The query is getting all the events that has occurred on users `husenjan-admin` and `john-admin`. It's then filtering out the data where the actions where performed by `MSOL` and `NT AUTHORITY\ANONYMOUS LOGON` because these are expected behaviors. It's then getting all log data which has event id of 4723 and 4738. Now since we are familiar with KQL query let's implement custom detection rule through Microsoft Defender Portal.
 
 1. Go to **Microsoft Defender -> Investigation and Response -> Advanced Hunting**.
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-01.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-01.png]]
 
 2. Write KQL Query and click on **Create Detection Rule -> Create Custom Detection Rule**.
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-02.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-02.png]]
 
 3. Enter **Detection Name, Rule Description** and choose **frequency to execute each 15 minutes**.
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-03.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-03.png]]
 
 4. Enter **Alert Title and Description** using `{{TargetUserName}}` and `{{SubjectUserName}}` to see who performed the action.
 
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-04.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-04.png]]
 
 5. Scroll down, and create **Entities** using `{{TargetSid}}` and `{{SubjectUserSid}}` to reference accounts inside the alert.
 
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-05.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-05.png]]
 
 6. Choose specific actions to perform once alert is triggered.
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-06.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-06.png]]
 
 7. **Review Configuration** and click on **Create**.
 
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-07.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-07.png]]
 
 8. When the custom detection rule is triggered the following alert will occur.
 
-    ![[0000 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-08.png]]
+    ![[0017 Microsoft-Defender-XDR-Monitoring-Highly-Privileged-Accounts-08.png]]
 
 ## Conclusion
 

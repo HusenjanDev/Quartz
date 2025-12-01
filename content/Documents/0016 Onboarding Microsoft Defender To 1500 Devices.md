@@ -112,32 +112,32 @@ This script significantly increased the efficiency of our onboarding as we could
 Endpoint Detection and Response Policy (EDR Policy) allows us to onboard devices that are in Microsoft Intune into Microsoft Defender. To create a EDR policy follow the following instructions:
 
 1. Go to Microsoft Intune -> Endpoint Security -> Endpoint Detection and Response.
-![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-01.png]]
+![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-01.png]]
 
 2. Click on **Create Policy** and select the following configurations.
     * **Platform:** Select Windows
     * **Profile:** Endpoint detection and response 
 
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-02.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-02.png]]
 
 3. In Basics section, specify **Policy Name** as **Microsoft Defender Onboarding** and write a short summary for description (optional).
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-03.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-03.png]]
 
 4. In Configuration Setting section use the following configurations.
     * **Microsoft Defender for Endpoint client configuration package type:** Choose the client configuration package type. Select **Auto Connector**.
     * **Sample Sharing:** Sends maliicous files to Microsoft for deep analysis. Select **All (Default)**.
     * **Telemetry Reporting Frequency:** This feature is deprecated. **Select Normal**.
 
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-04.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-04.png]]
 
 5. Select the scope tags which is prepared to be onboarded to Microsoft Defender.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-05.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-05.png]]
 
 6. Select the **Security Group** of users or devices which should be onboarded to Microsoft Defender.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-06.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-06.png]]
 
 7. Review the configuration and create it.
-     ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-07.png]]
+     ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-07.png]]
 
 Once the policy is created we can now start onboarding devices into Microsoft Defender by adding them into the `ACL-MicrosoftDefender` security group.
 
@@ -146,32 +146,32 @@ Once the policy is created we can now start onboarding devices into Microsoft De
 Currently, all our organizational devices are onboarded to Cortex XDR and to onboard them into Microsoft Defender we can export a list of devices in Cortex XDR Panel and from there we can use [[#Automation]] script to onboard these devices into Microsoft Defender.
 
 1. Go to Cortex XDR -> Endpoint Groups. 
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-08.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-08.png]]
 
 2. On the **Endpoint Groups**, create a **Endpoint Group** with all devices to onboard to Microsoft Defender.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-09.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-09.png]]
 
 3. Right click on the group and export the device list.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-10.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-10.png]]
     
 4. Open PowerShell terminal and connect to Microsoft Graph and execute the script.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-11.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-11.png]]
 
 5. On **Azure Portal** we can see that the devices were successfully added into ACL-MicrosoftDefender.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-12.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-12.png]]
 
 6. We can view all onboarded devices through Microsoft Intune -> Endpoint Security -> Microsoft Defender Onboarding Policy.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-13.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-13.png]]
 
 ## Cortex Removal
 
 Once it's confirmed that all these devices are onboarded to Microsoft Defender we can start performing Cortex XDR uninstall through the following procedure.
 
 1. Go to Cortex XDR Panel -> Endpoint Groups -> View endpoints.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-14.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-14.png]]
 
 2. Select All Devices -> Right Click -> Endpoint Control -> Uninstall Agents.
-    ![[0000 Onboarding-Microsoft-Defender-to-1500-Devices-15.png]]
+    ![[0016 Onboarding-Microsoft-Defender-to-1500-Devices-15.png]]
 
 Once the devices are connected to the internet Cortex XDR will start uninstalling itself. Once all the uninstalls are successful we can celebrate that we have successfully managed to onboard devices into Microsoft Defender.
 
