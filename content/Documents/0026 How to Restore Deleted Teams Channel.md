@@ -29,7 +29,7 @@ We can restore a Teams Channel as long it's within the 30 days period with the f
 
 ## Microsoft Teams Logs
 
-Microsoft Purview allows us to investigate all the actions that were performed against a Teams channel.
+Microsoft Purview allows us to investigate all the actions that were performed against a Teams channel such as delection, modifications, and etc...
 
 1. Go to [Microsoft Purview Audit](https://purview.microsoft.com/audit).
     ![[0026 How-to-Restore-Deleted-Teams-Channel-04.png]]
