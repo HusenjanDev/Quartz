@@ -19,12 +19,16 @@ Microsoft Purview allows us to investigate all actions that were performed on a 
 
 1. Go to [Microsoft Purview Audit](https://purview.microsoft.com/audit).
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-05.png]]
+
 2. Enter **Teams Channel** name on **Keywords Search**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-06.png]]
+
 3. Click on **Search** and wait anywhere from 1 to 5 minutes.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-07.png]]
+
 4. Scoll down and click on **Search Name**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-08.png]]
+
 5. You can click on the log and it will display user, action performed time, and much more..
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-09.png]]
 
@@ -33,12 +37,16 @@ Microsoft Purview allows us to investigate all actions that were performed on a 
 We can restore a Teams Channel as long it's within the 30 days period with the following steps.
 
 1. Open Microsoft Teams.
+
 2. Click on **Teams**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-01.png]]
+
 3. Right click on **Teams group** and select **Manage Team**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-02.png]]
+
 4. Click on **More...** and click on **Deleted**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-03.png]]
+
 5. Click on **Restore**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-04.png]]
 
