@@ -3,7 +3,7 @@ title: "Terraform for Microsoft Azure"
 created: 2024-10-02
 modified: 2024-10-02
 description: "Combining Terraform with Microsoft Azure is a game changer."
-tags: ["AZURE", "TERRAFORM", "IAAC"]
+tags: ["AZURE", "TERRAFORM", "IAC"]
 draft: false
 ---
 
