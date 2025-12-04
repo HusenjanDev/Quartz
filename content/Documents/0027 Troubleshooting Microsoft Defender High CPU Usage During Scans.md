@@ -24,23 +24,23 @@ We can configure `AvgLoadFactor{:PowerShell}` and `Enable Low CPU Priority{:Powe
 3. Create a new policy and configure the `AvgLoadFactor{:PowerShell}` to `15{:number}`.
 4. Apply these changes.
 
-Once the Microsoft Defender Antivirus Policy is applied to our machines we can view `AvgLoadFactor{:PowerShell}` with the following command.
+Once the Microsoft Defender Antivirus Policy is applied to our machines we can use the following command to view the `AvgLoadFactor{:PowerShell}` and that value should be set to `15{:PowerShell}`. 
 
 ```powershell
 Get-MpPreference | Select ScanAvgCPULoadFactor
 ```
 
-If users experiences performance issues after these setting are applied to their system, I recommend reading through the next section as that will go through why they might be experiencing that.
+If users are experiencing performance issues after these configurations are applied to their machine, I recommend reading through the next section as it goes through fixing the performance issues.
 
 ## Performance Issues
 
-When `ScanOnlyIfIdleEnabled{:PowerShell}` and `DisableCpuThrottleOnIdleScans{:PowerShell}` options are enabled on the Windows machine `ScanAvgCPULoadFactor{:PowerShell}` is ignored which can lead to performance issues. 
+When `ScanOnlyIfIdleEnabled{:PowerShell}` and `DisableCpuThrottleOnIdleScans{:PowerShell}` options are set to `true{:PowerShell}` on the Windows machine the `ScanAvgCPULoadFactor{:PowerShell}` is ignored which can lead to performance issues. 
 
 ```powershell
 Get-MpPreference | Select ScanAvgCPULoadFactor, DisableCpuThrottleOnIdleScans, ScanOnlyIfIdleEnabled
 ```
 
-We can disable `ScanOnlyIfIdleEnabled{:Powershell}` and `DisableCpuThrottleOnIdleScans{:PowerShell}` by creating a new configuration profile through Microsoft Intune. 
+The `ScanOnlyIfIdleEnabled{:Powershell}` and `DisableCpuThrottleOnIdleScans{:PowerShell}` options can be disabled by creating creating a configuration profile on Microsoft Intune.
 
 1. Go to Microsoft Intune Admin Center.
 2. Click on Browser -> Configuration.
@@ -53,14 +53,8 @@ We can disable `ScanOnlyIfIdleEnabled{:Powershell}` and `DisableCpuThrottleOnIdl
 9. On **Scan Only If Idle Enabled** click on **Run scheduled scans regardless of whether the system is idle**.
 10. On **Disable CPU Throttle On Idle Scan** turn it on.
 
-Once all these changes are applied to the following registry keys should be at `0x0` value,.
-
-* Directory: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Policy Manager`
-* Key: `DisableCpuThrottleOnIdleScans` = `0x00000000`.
-* Key: `ScanOnlyIfIdleEnabled` = `0x00000000`.
-
-This should hopefully resolve the issues that users were experiencing with Microsoft Defender scheduled scans.
-
+Once the configuration profile is applied to the machines with High CPU Usage (CPU Throttles) these machines should no longer experience these performance issues from here on. 
 
 ## Conclusions
 
+If your organization also uses scheduled scans with Microsoft Defender XDR it's recommended to use a low value on `AvgLoadFactor{:PowerShell}` and use the feature `Enable Low CPU Priority` as it will help with preventing users experiencing performance issues. If your users are still experiencing these performance issues it's recommended to disable the options `ScanOnlyIfIdleEnabled{:Powershell}` and `DisableCpuThrottleOnIdleScans{:PowerShell}` as they can interfere with with the `ScanAvgCPULoadFactor`.
