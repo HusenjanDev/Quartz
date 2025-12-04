@@ -11,7 +11,7 @@ draft: false
 
 Many organizations nowadays has password policy to change the password frequently within a year period. However, there might be specific users who has option `PasswordNeverExpires` enabled which excludes them from the password policy. In this article I'll go through finding these users and disabling the feature with minimal efforts.
 
-## PowerShell Export Script
+## Export Script
 
 The `ActiveDirectory` module from Microsoft enables us to enumerate through all our users in Active Directory environment using PowerShell. I made the following script to find all the users who has `PasswordNeverExpires` enabled on them and export them into a CSV file.
 
@@ -38,7 +38,6 @@ Get-ADUser -Filter * -Properties DisplayName, userPrincipalName, Office, PwdLast
     $pwdLastSet = [DateTime]::FromFileTime($_.PwdLastSet)
     $passwordNeverExpires = $_.PasswordNeverExpires
     $accountEnabled = $_.Enabled
-
 
     # Creating a PowerShell Object with all attributes enumerated through Get-ADUser function
     $userData = [PSCustomObject]@{
@@ -78,7 +77,7 @@ Get-ADUser -Filter * -Properties DisplayName, userPrincipalName, Office, PwdLast
 
 The PowerShell script will enumerate through all the users inside the Active Directory and to find the users with `PasswordNeverExpires` configured on them. It will then export these users into a CSV file with their display name, user principal name, and other informations.
 
-## PowerShell Disable Script
+## Disable Script
 
 We can also automate the process of disabling `PasswordNeverExpires` on all the users inside the Active Directory using the following PowerShell script. It's important to note that you will need to be a domain administrator to use the following PowerShell script.
 
@@ -98,7 +97,6 @@ Get-ADUser -Filter * -Properties DisplayName, userPrincipalName, Office, PwdLast
     $pwdLastSet = [DateTime]::FromFileTime($_.PwdLastSet)
     $passwordNeverExpires = $_.PasswordNeverExpires
     $accountEnabled = $_.Enabled
-
 
     # Creating a PowerShell Object with all attributes enumerated through Get-ADUser function
     $userData = [PSCustomObject]@{

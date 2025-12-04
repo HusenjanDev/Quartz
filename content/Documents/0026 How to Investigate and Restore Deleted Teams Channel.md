@@ -36,7 +36,7 @@ Microsoft Purview allows us to investigate all actions that were performed on a 
 
 We can restore a Teams Channel as long it's within the 30 days period with the following steps.
 
-1. Open Microsoft Teams.
+1. Open **Microsoft Teams**.
 
 2. Click on **Teams**.
     ![[0026 How-to-Investigate-and-Restore-Deleted-Microsoft-Teams-Channel-01.png]]
