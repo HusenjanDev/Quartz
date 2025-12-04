@@ -9,7 +9,7 @@ draft: true
 
 ## Introduction
 
-We recently migrated all our devices into Microsoft Defender XDR and some of our users have been experiencing performance issues when the weekly scheduled scan is running on their system. In this article I'll go through the configurations to setup in order to solve the performance issue.
+I recently migrated all our devices into Microsoft Defender XDR and some of our users have been experiencing performance issues when the weekly scheduled scan is running on their system. In this article I'll go through the configurations to setup in order to solve the performance issue.
 
 ## AvgCPULoadFactor & Low CPU Priority
 
