@@ -5,8 +5,6 @@ created: 2020-01-01
 modified: 2025-11-16
 ---
 
-## About Me
-
 Hey, I'm Husenjan!
 
 I'm an IT Engineer who is experienced with Windows & Linux Servers, Cloud Technologies, Mcirosoft Intune, Cortex XDR, Microsoft Defender XDR, and Microsoft 365 Administration. I decided to start this blog to share projects, trobuleshooting issues, and tutorials with the goal to help others facing similar challenges.
