@@ -6,7 +6,7 @@ tags: ["Certification"]
 draft: false
 ---
 
-![[0000 SC-200-Certification-Showcase.png]]
+![[0006 SC-200-Certification-Showcase.png]]
 
 ## Introduction
 

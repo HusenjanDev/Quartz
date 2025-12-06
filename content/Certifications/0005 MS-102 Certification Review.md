@@ -5,7 +5,7 @@ modified: 2024-09-03
 tags: ["Certification"]
 draft: false
 ---
-![[0000 MS-102-Certification-Showcase.png]]
+![[0005 MS-102-Certification-Showcase.png]]
 
 ## Introduction
 

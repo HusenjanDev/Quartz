@@ -5,7 +5,7 @@ modified: 2024-07-02
 tags: ["Certification"]
 draft: false
 ---
-![[0000 MD-102-Certification-Showcase.png]]
+![[0004 MD-102-Certification-Showcase.png]]
 
 ## Introduction
 

@@ -5,7 +5,7 @@ modified: 2023-11-30
 tags: ["Certification"]
 draft: false
 ---
-![[0000 AZ-104-Certification-Showcase.png]]
+![[0001 AZ-104-Certification-Showcase.png]]
 
 ## Introduction
 
