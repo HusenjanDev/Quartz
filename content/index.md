@@ -7,7 +7,7 @@ modified: 2025-11-16
 
 Hey, I'm Husenjan!
 
-I'm an IT Engineer who is experienced with Windows & Linux Servers, Cloud Technologies, Mcirosoft Intune, Cortex XDR, Microsoft Defender XDR, and Microsoft 365 Administration. I decided to start this blog to share projects, trobuleshooting issues, and tutorials with the goal to help others facing similar challenges.
+I'm an IT Engineer who is experienced with Windows & Linux Servers, Cloud Technologies, Mcirosoft Intune, Cortex XDR, Microsoft Defender XDR, Microsoft 365 Administration, and Programming. I decided to start this blog to share projects, trobuleshooting issues, and tutorials with the goal to help others facing similar challenges.
 
 I strongly believe that continuous learning is extremely important as an IT Engineer that is why I'm pursuing on obtaining certifications for technologies I work with at my workplace. Here's a quick overview of all certifications that I currently got and ones I'm working on.
 
