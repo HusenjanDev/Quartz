@@ -1,15 +1,15 @@
 ---
-title: "Troubleshooting Microsoft Defender XDR High CPU Usage During Scans"
+title: "Troubleshooting Microsoft Defender XDR High CPU Usage During Scheduled Scans"
 created: 2025-12-08
 modified: 2025-12-08
 description: "High CPU usage during a scheduled scan with Microsoft Defender XDR means there is a misconfiguration in the Microsoft Defender Antivirus Policy. In this article I'll go through AvgLoadCPUFactor, Low CPU Priority, ScanOnlyIfIdleEnabled, and DisableCpuThrottleOnIdleScans to hopefully resolve the performance issue that you're experiencing with scheduled scans."
 tags: ["MDE"]
-draft: true
+draft: false
 ---
 
 ## Introduction
 
-I recently migrated all our devices into Microsoft Defender XDR and some of our users have been experiencing performance issues when the weekly scheduled scan is running on their system. In this article I'll go through the configurations to setup in order to solve the performance issue.
+I recently migrated all our devices into Microsoft Defender XDR and some of our users have been experiencing performance issues when the weekly scheduled scan is running on their system. In this article I decided to go through the configurations I applied to resolve the performance issue.
 
 ## AvgCPULoadFactor & Low CPU Priority
 
@@ -43,7 +43,7 @@ If your users are experiencing performance issues after these configurations are
 
 ## Performance Issues
 
-When `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options are set to `true` on the Windows machine the `AvgCPULoadFactor` is ignored which can lead to performance issues. 
+When `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options are set to `true` on the Windows machine the `AvgCPULoadFactor` value set on Microsoft Antivirus Policy is ignored which can lead to performance issues. 
 
 ```powershell
 Get-MpPreference | Select ScanAvgCPULoadFactor, DisableCpuThrottleOnIdleScans, ScanOnlyIfIdleEnabled
