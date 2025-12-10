@@ -4,6 +4,7 @@ created: 2025-04-15
 modified: 2025-04-15
 tags: ["INFO"]
 ---
+
 ## OSINT
 
 OSINT (Open Source Intelligence) is about gathering information about our target using public resources available for us in the internet. It's a-lot of information's that is possible to obtain through internet because employees are simply not aware of best security practices.
