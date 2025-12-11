@@ -2,7 +2,7 @@
 title: "AZ-305 Certification Review"
 created: 2024-03-26
 modified: 2024-03-26
-tags: ["Certification"]
+tags: ["CERTIFICATION"]
 draft: false
 ---
 ![[0003 AZ-305-Certification-Showcase.png]]

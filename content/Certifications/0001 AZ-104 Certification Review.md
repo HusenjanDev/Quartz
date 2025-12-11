@@ -2,7 +2,7 @@
 title: "AZ-104 Certification Review"
 created: 2023-11-25
 modified: 2023-11-30
-tags: ["Certification"]
+tags: ["CERTIFICATION"]
 draft: false
 ---
 ![[0001 AZ-104-Certification-Showcase.png]]
