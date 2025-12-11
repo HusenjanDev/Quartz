@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting Microsoft Intune Devices"
+title: "Troubleshooting Microsoft Entra ID Joined Devices"
 created: 2025-12-22
 modified: 2025-12-22
 description: ""
@@ -9,7 +9,7 @@ draft: true
 
 ## Information
 
-When a device is onbaorded to Microsoft Intune the `dsregcmd` command can be used to understand the state of device in Microsoft Entra ID. In Microsoft Entra ID the device could be set to a different stage which can conflict with policies such as conditional access and etc...
+When a device is onboarded to Microsoft Intune the `dsregcmd` command can be used to understand the state of device in Microsoft Entra ID. In Microsoft Entra ID the device can be in multiple of different stages.
 
 | AzureAdJoined	| EnterpriseJoined | DomainJoined | Device state                   | 
 | ------------- | ---------------- | ------------ | ------------------------------ |
@@ -18,13 +18,11 @@ When a device is onbaorded to Microsoft Intune the `dsregcmd` command can be use
 | YES           | NO               | YES          |	Microsoft Entra hybrid joined  |
 | NO            | YES	           | YES	      | On-premises DRS Joined         |
 
-The `dsregcmd` comes with the ability to show informations such as Device State, Device Details, Tenant Details, User State, SSO State, Diagnostic Data, and Ngt Prerequisite check which are great informations to have when there are issues with the device related to Microsoft Intune.
+The `dsregcmd` also shows us information about the device such as Device State, Device Details, Tenant Details, User State, SSO State, and Diagnostics Data, and Ngt Prerequisities which are great information to have when there are issues between our device and Microsoft Entra ID.
 
-## Troubleshooting
+## Device Info
 
-When there is a issue occurring between the device and Microsoft Entra ID these are the commands which I recommend becoming familiar with as they will be extremely useful in these situations. 
-
-The `dmsregcmd /status` command will show information about the device and the user. However, the information we are mostly interested in are `AzureAdJoined` and `DomainJoined` which will allow us to see if the device state is correct for our environment.
+The `dsregcmd /status` command will show all the information about the device that is in the Microsoft Entra ID environment. Additionally, it will provide us with information if there are any issues between device and Microsoft Entra ID.
 
 ```powershell {6-8}
 C:\Users\husenjan> dsregcmd /status
@@ -40,7 +38,11 @@ C:\Users\husenjan> dsregcmd /status
                Device Name : Norway-PC001.int.husenjan.com
 ```
 
-In some circumstances the device might need to be unjoined and rejoined from Microsoft Entra ID environment because a Windows update broke the configurations. Here are the commands which will allow us to perform a unjoin and rejoin on a device.
+All the information shown with the `dsregcmd` command can be useful to troubleshoot the issue that is occurring in our environment but the user has to be technical.
+
+## Leaving & Joining
+
+In some circumstances the device might need to be unjoined and rejoined from Microsoft Entra ID environment because a Windows Update or something may have modified or deleted the registry keys.
 
 ```powershell
 # Unjoins the device from Microsoft Entra ID 
@@ -48,10 +50,15 @@ dsregcmd /leave
 
 # Rejoins the device to Microsoft Entra ID
 dsregcmd /join
+
+# Automatically unjoins and rejoin the device on Microsoft Entra ID
+dsregcmd /forcerecovery
 ```
 
+It's worth noting that when the device is unjoined and rejoined a login prompt requesting credentials will occur which requires valid credentials. If there are any issues with executing any of these commands the `/debug` parameter can be used to trobuleshoot why the command is failing.
 
+## Single Sign On
 
+## Tenant
 
-
-
+## Conclusion
