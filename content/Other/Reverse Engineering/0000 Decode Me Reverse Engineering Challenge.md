@@ -9,7 +9,7 @@ draft: false
 
 ## Introduction
 
-The [Decode Me](https://crackmes.one/crackme/69245c422d267f28f69b806e) challenge from crackmes.one consists of understanding basic assembly code such as loops, character replacement, and encoding. I would highly recommend beginners who are interested in reverse engineering to try it out.
+The [Decode Me Challenge](https://crackmes.one/crackme/69245c422d267f28f69b806e) from crackmes.one consists of understanding basic assembly code such as loops, character replacement, and encoding. I would highly recommend beginners who are interested in reverse engineering to try it out.
 
 Anyway in this article I'll go through the technical details for the challenge to help you if you were struggling with challenge.
 
