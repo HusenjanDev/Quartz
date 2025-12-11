@@ -11,7 +11,7 @@ draft: false
 
 The [Decode Me Challenge](https://crackmes.one/crackme/69245c422d267f28f69b806e) from crackmes.one consists of understanding basic assembly code such as loops, character replacement, and encoding. I would highly recommend beginners who are interested in reverse engineering to try it out.
 
-Anyway in this article I'll go through the technical details for the challenge to help you if you were struggling with challenge.
+In this article I'll go through the technical details and solving the reverse engineering challenge.
 
 ## Application Information
 
@@ -65,4 +65,4 @@ I would highly recommend solving the challenges using a programming language as 
 
 ## Conclusion
 
-The `decodeme.exe` was actually a really fun reverse engineering challenge and I would recommend beginners to try it out as it will help them with understanding reverse engineering more in-depth the way programmers obfuscates secret keys. Hopefully, the article helped you with solving the `decodeme.exe` challenge.
+The [Decode Me Challenge](https://crackmes.one/crackme/69245c422d267f28f69b806e) was actually a really fun reverse engineering challenge which I would highly recommend beginners to try out as it will help them with understanding reverse engineering and assembly code concept more in-depth such as  loops, character replacement, and encoding.
