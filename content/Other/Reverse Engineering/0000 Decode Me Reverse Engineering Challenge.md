@@ -2,7 +2,7 @@
 title: "Decode Me - Reverse Engineering Challenge"
 created: 2025-11-11
 modified: 2024-11-11
-description: "The decodeme.exe is a challenge from crackmes.one which consists of understanding basic assembly code, string replacement, and encodiing. In this article I'll go through technical details of solving the decodeme.exe challenge."
+description: "The \"Decode Me\" challenge from crackmes.one consists of understanding basic assembly code such as loops, character replacement, and encoding. In this article I'll go through the technical details for solving the \"Decode Me\" challenge."
 tags: ["RE", "IDA"]
 draft: false
 ---
