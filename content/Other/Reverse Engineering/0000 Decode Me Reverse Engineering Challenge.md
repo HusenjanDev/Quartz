@@ -4,7 +4,7 @@ created: 2025-11-11
 modified: 2024-11-11
 description: "The decodeme.exe is a challenge from crackmes.one which consists of understanding basic assembly code, string replacement, and encodiing. In this article I'll go through technical details of solving the decodeme.exe challenge."
 tags: ["RE", "IDA"]
-draft: true
+draft: false
 ---
 
 ## Introduction
@@ -22,7 +22,7 @@ The `main` function has the password in plaintext `Pa100-322-1L@101` and the pas
 
 ![[0000 Decode-Me-Reverse-Engineering-Challenge-01.png]]
 
-The `transformChar` functoin performs modifications to the plaintext password by looping through all the characters and replacing characters such as 1, 2, and 3 with special characters _, >, and \.
+The `transformChar` functoin performs modifications to the plaintext password by looping through all the characters and replacing characters such as 1, 2, and 3 with special characters `_`, `>`, and `\`.
 
 ![[0000 Decode-Me-Reverse-Engineering-Challenge-02.png]]
 
@@ -38,7 +38,7 @@ The user will need to replace the characters inside `Pa100-322-1L@101` with spec
 
 ## Programming
 
-Instead of manually modifing the password I decided to create a python script which will replace characters such as 1, 2, and 3 with the special characters.
+Instead of manually modifing the password I decided to create a python script which will replace characters such as 1, 2, and 3 with the special characters `_`, `>`, and `\`.
 
 ```python title="solve.py"
 def solve(password : str):
@@ -63,4 +63,4 @@ I would highly recommend solving the challenges using a programming language as 
 
 ## Conclusion
 
-The `decodeme.exe` was actually a really easy and fun challenge which I would recommend beginners to try out because it will help them with understanding reverse engineering more in-depth and the way programmers tries to obfuscate secret keys. Hopefully, the article helped you with solving the `decodeme.exe` challenge.
+The `decodeme.exe` was actually a really fun reverse engineering challenge and I would recommend beginners to try it out as it will help them with understanding reverse engineering more in-depth the way programmers obfuscates secret keys. Hopefully, the article helped you with solving the `decodeme.exe` challenge.
