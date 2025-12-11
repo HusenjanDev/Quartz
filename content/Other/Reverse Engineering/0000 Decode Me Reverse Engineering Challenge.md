@@ -9,7 +9,9 @@ draft: false
 
 ## Introduction
 
-The `decodeme.exe` is a challenge which consists of understanding basic assembly code and the ways applications replaces, encodes, and checks if the strings matches. It's a really fun challenge which I would highly recommend for beginners. In this article I'll go through reverse engineering application to hopefully help you with the challenges that you were facing.
+The [Decode Me](https://crackmes.one/crackme/69245c422d267f28f69b806e) challenge from crackmes.one consists of understanding basic assembly code such as loops, character replacement, and encoding. I would highly recommend beginners who are interested in reverse engineering to try it out.
+
+Anyway in this article I'll go through the technical details for the challenge to help you if you were struggling with challenge.
 
 ## Application Information
 
