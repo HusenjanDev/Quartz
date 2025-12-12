@@ -2,7 +2,6 @@
 title: "Decode Me - Reverse Engineering Challenge"
 created: 2025-11-11
 modified: 2024-11-11
-description: "The \"Decode Me\" challenge from crackmes.one consists of understanding basic assembly code such as loops, character replacement, and encoding. In this article I'll go through the technical details for solving the \"Decode Me\" challenge."
 tags: ["RE", "IDA"]
 draft: false
 ---
@@ -18,7 +17,7 @@ In this article I'll go through the technical details and solving the reverse en
 * **Application Name:** `decodeme.exe`
 * **SHA-256:** `0D900E451D636A0E915FFEB35FC96C68AB3D14D055A8EAFFA8FD1E6E40533136`
 
-## Reversing Application
+## Reversing
 
 The `main` function has the password in plaintext `Pa100-322-1L@101` and the password address is assinged to `RCX` register which will be used with the `transformChar` function.
 
@@ -38,9 +37,9 @@ The `checker` function will remove characters such as `\` and `x` from the hexad
 
 The user will need to replace the characters inside `Pa100-322-1L@101` with special characters that are shown in above and from there enter that password to the application. If the password is correct the application will print `Yes!` otherwise the application will print `No!` which means we failed the challenge.
 
-## Programming
+## Solution
 
-Instead of manually modifing the password I decided to create a python script which will replace characters such as 1, 2, and 3 with the special characters `_`, `>`, and `\`.
+Instead of manually modifying the password, I wrote a Python script which will replace the characters such as `1`, `2`, and `3` with special characters  `_`, `>`, and `\`.
 
 ```python title="solve.py"
 def solve(password : str):
@@ -61,8 +60,7 @@ Yes!
 Press any key to continue . . .
 ```
 
-I would highly recommend solving the challenges using a programming language as that will allow us to become more familiar with the programming language but also solve complex problems quicker in the future.
-
+I would highly recommend solving the challenge using Python as it's commonly used to perform complex tasks quickly and efficiently which is important in reverse engineering.
 ## Conclusion
 
 The [Decode Me Challenge](https://crackmes.one/crackme/69245c422d267f28f69b806e) was actually a really fun reverse engineering challenge which I would highly recommend beginners to try out as it will help them with understanding reverse engineering and assembly code concept more in-depth such as  loops, character replacement, and encoding.

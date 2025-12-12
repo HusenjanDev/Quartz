@@ -59,6 +59,12 @@ It's worth noting that when the device is unjoined and rejoined a login prompt r
 
 ## Single Sign On
 
+
+
 ## Tenant
 
+
+
 ## Conclusion
+
+
