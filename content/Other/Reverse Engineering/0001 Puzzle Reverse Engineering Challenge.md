@@ -47,7 +47,7 @@ Instead of restarting the application multiple of times to obtain the password, 
 
 ```python title="solve.py"
 def main():
-    hex_password = (
+    xor_password = (
         210, # 0D2h
         198, # 0C6h
         207, # 0CFh
@@ -59,9 +59,13 @@ def main():
         172  # 0ACh
     )
 
-    for number in hex_password:
-        character = number ^ 159 # XOR with 159 number in hex
-        print("Password: " + chr(character), end="")
+    characters = ""
+
+    for number in xor_password:
+        characters += chr(number ^ 159)
+    
+    print("Password: " + characters)
+        
 
 if __name__ == "__main__":
     main()
