@@ -48,7 +48,11 @@ When `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options are set
 **What is `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans`?** The `ScanOnlyIfIdleEnabled` configuration ensures that Microsoft Defender XDR onlys cans during idle to prevent interuptions. And on the other side `DisableCpuThrottleOnIdleScans` ignores the CPU limits set by us to finish off scan quicker. You can view these configurations with the following command.
 
 ```powershell
-Get-MpPreference | Select ScanAvgCPULoadFactor, ScanOnlyIfIdleEnabled, DisableCpuThrottleOnIdleScans
+PS C:\Users\Student> Get-MpPreference | Select ScanAvgCPULoadFactor, ScanOnlyIfIdleEnabled, DisableCpuThrottleOnIdleScans
+
+ScanAvgCPULoadFactor ScanOnlyIfIdleEnabled DisableCpuThrottleOnIdleScans
+-------------------- --------------------- -----------------------------
+                  20                  True                          True
 ```
 
 The `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options can be disabled by creating creating a configuration profile on Microsoft Intune.
