@@ -43,7 +43,9 @@ If your users are experiencing performance issues after these configurations are
 
 ## Performance Issues
 
-When `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options are set to `true` on the Windows machine the `AvgCPULoadFactor` value set on Microsoft Antivirus Policy is ignored which can lead to performance issues. 
+When `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options are set to `true` on Windows machine the `AvgCPULoadFactor` value set by our Microsoft Antivirus Policy is ignored which can lead to performance issues.
+
+**What is `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans`?** The `ScanOnlyIfIdleEnabled` configuration ensures that Microsoft Defender XDR onlys cans during idle to prevent interuptions. And on the other side `DisableCpuThrottleOnIdleScans` ignores the CPU limits set by us to finish off scan quicker. You can view these configurations with the following command.
 
 ```powershell
 Get-MpPreference | Select ScanAvgCPULoadFactor, DisableCpuThrottleOnIdleScans, ScanOnlyIfIdleEnabled
