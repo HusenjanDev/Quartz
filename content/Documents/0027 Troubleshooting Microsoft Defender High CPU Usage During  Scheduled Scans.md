@@ -48,7 +48,7 @@ When `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options are set
 **What is `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans`?** The `ScanOnlyIfIdleEnabled` configuration ensures that Microsoft Defender XDR onlys cans during idle to prevent interuptions. And on the other side `DisableCpuThrottleOnIdleScans` ignores the CPU limits set by us to finish off scan quicker. You can view these configurations with the following command.
 
 ```powershell
-Get-MpPreference | Select ScanAvgCPULoadFactor, DisableCpuThrottleOnIdleScans, ScanOnlyIfIdleEnabled
+Get-MpPreference | Select ScanAvgCPULoadFactor, ScanOnlyIfIdleEnabled, DisableCpuThrottleOnIdleScans
 ```
 
 The `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options can be disabled by creating creating a configuration profile on Microsoft Intune.
@@ -74,7 +74,12 @@ The `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` options can be d
 7. Use the following configurations.
     ![[0027 Troubleshooting-Microsoft-Defender-High-CPU-Usage-During-Scans-11.png]]
 
-8. Assign and create the configuration profile.
+8. **Assign the configuration profile and create it.** Use the following command after 1 hour to ensure the `ScanOnlyIfIdleEnabled` and `DisableCpuThrottleOnIdleScans` is `false`.
+    ```powershell
+    Get-MpPreference | Select ScanAvgCPULoadFactor, ScanOnlyIfIdleEnabled, DisableCpuThrottleOnIdleScans
+    ```
+
+
 
 Once the configuration profile is applied to the machines with High CPU Usage during scheduled scans these machines should no longer experience these performance issues from here on. 
 
