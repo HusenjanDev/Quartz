@@ -2,7 +2,6 @@
 title: "Enable Auto-Expanding Archiving for Exchange Online Mailboxes"
 created: 2025-12-15
 modified: 2025-12-15
-description: "Exchange Online comes with the ability to archive emails up to 100 GB. However, with Microsoft E5 license the archive can be extended to 1.5 TB by enabling the Auto-Expanding Archiving feature in Microsoft Exchange Online."
 tags: ["EXCHANGE"]
 draft: true
 ---

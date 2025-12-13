@@ -2,7 +2,6 @@
 title: "Why PowerShell Automation is Amazing - Part One"
 created: 2025-12-22
 modified: 2025-12-22
-description: "High CPU usage during a scheduled scan with Microsoft Defender XDR means there is a misconfiguration in the Microsoft Defender Antivirus Policy. In this article I'll go through AvgLoadCPUFactor, Low CPU Priority, ScanOnlyIfIdleEnabled, and DisableCpuThrottleOnIdleScans to hopefully resolve the performance issue that you're experiencing with scheduled scans."
 tags: ["POWERSHELL"]
 draft: true
 ---

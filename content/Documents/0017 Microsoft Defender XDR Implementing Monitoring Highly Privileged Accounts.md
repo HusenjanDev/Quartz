@@ -2,7 +2,6 @@
 title: "Microsoft Defender XDR: Implementing Monitoring Highly Privileged Accounts"
 created: 2025-10-20
 modified: 2025-10-20
-description: "Advanced Hunting in Microsoft Defender XDR enables us to create custom detection rules which we can use to monitor highly privileged accounts such as executives accounts and service accounts in our enterprise."
 tags: ["MDE", "SIEM", "KQL"]
 draft: false
 ---

@@ -2,7 +2,6 @@
 title: "Understanding JSON Web Token (JWT)"
 created: 2024-10-25
 modified: 2024-10-25
-description: "What is JSON Web Token? How can I use it for authentication and authorization?"
 tags: ["NODEJS", "JWT"]
 draft: false
 ---

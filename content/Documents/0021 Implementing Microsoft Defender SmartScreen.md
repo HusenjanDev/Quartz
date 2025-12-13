@@ -2,7 +2,6 @@
 title: "Implementing Microsoft Defender SmartScreen"
 created: 2025-11-05
 modified: 2025-11-05
-description: "Microsoft Defender SmartScreen is designed to protect endpoints from phishing sites, malwares, and ransomwares by using reputation-based detection to notify the user that the object is malicious."
 tags: ["MDE", "SMARTSCREEN"]
 draft: false
 ---

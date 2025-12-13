@@ -2,7 +2,6 @@
 title: "The Microsoft Azure Documentation"
 created: 2024-10-19
 modified: 2024-10-19
-description: "Useful information's about Microsoft Azure."
 draft: false
 ---
 

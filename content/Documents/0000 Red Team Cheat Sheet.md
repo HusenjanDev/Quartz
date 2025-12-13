@@ -2,7 +2,6 @@
 title: "The Red Team Cheat Sheet"
 created: 2023-10-26
 modified: 2023-10-26
-description: "Convinent commands and advies for penetration testing."
 tags: ["Penetration-Testing"]
 draft: false
 ---

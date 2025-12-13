@@ -2,7 +2,6 @@
 title: "Investigating Security Incidents with Microsoft Defender XDR"
 created: 2025-11-24
 modified: 2025-11-24
-description: "Microsoft Defender XDR is an extremely powerful XDR system but the security analyst working within Microsoft Defender XDR needs to be experienced with Windows Operating System, PowerShell Scripting, and Kusto Query Language."
 tags: ["MDE", "SIEM"]
 draft: false
 ---

@@ -2,7 +2,6 @@
 title: "Dynamic Group for Shared Mailboxes"
 created: 2025-09-16
 modified: 2025-09-16
-description: "Implementing strict user access control for shared mailboxes"
 tags: ["M365"]
 draft: false
 ---

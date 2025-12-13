@@ -2,7 +2,6 @@
 title: "Creating A Phishing Campaign"
 created: 2024-12-25
 modified: 2024-12-25
-description: "Performing phishing campaign using Attack Simulation in Micrsofot 365 Defender."
 tags: ["M365", "MDE"]
 draft: false
 ---

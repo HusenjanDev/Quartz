@@ -2,8 +2,6 @@
 title: "Visualizing Log Data with Microsoft Sentinel Workbooks"
 created: 2025-11-17
 modified: 2025-11-17
-description: "Microsoft Sentinel Workbooks is an exceptional tool for visualizing thousands of log data into simple graphs. This can help security analysts with detecting and investigating threats more efficiently."
-keywords: ["Microsoft Defender XDR", "Microsoft Sentinel", "Workbooks", "Visualizing Log Data with Microsoft Sentinel Workbook"]
 tags: ["SIEM", "SOC", "WORKBOOK"]
 draft: false
 ---

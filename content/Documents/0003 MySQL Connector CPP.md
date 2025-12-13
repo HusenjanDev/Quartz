@@ -2,7 +2,6 @@
 title: "MySQL Connector C++"
 created: 2024-04-20
 modified: 2024-04-20
-description: "MySQL Connector C++ is an C++ API which enables us to interact with MySQL server in real-time."
 tags: ["MySQL", "SQL"]
 draft: false
 ---

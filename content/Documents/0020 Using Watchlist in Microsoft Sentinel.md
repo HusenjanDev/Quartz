@@ -2,7 +2,6 @@
 title: "Using Watchlist in Microsoft Sentinel"
 created: 2025-11-3
 modified: 2025-11-3
-description: "Watchlists in Microsoft Sentinel is made to assist security analysts with quickly correlate data by getting the data from a list. An example of watchlist coming into great use is storing UserPrincipalName of executives accounts and service accounts."
 tags: ["SIEM", "KQL"]
 draft: false
 ---
