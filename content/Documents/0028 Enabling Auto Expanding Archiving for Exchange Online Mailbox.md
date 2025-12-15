@@ -1,5 +1,5 @@
 ---
-title: "Enable Auto-Expanding Archiving for Exchange Online Mailboxes"
+title: "Enable Auto-Expanding Archiving for Exchange Online Mailbox"
 created: 2025-12-15
 modified: 2025-12-15
 tags: ["M365", "EXCHANGE"]
