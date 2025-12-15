@@ -16,7 +16,6 @@ This article walks through enabling Auto-Expanding Archiving feature for a singl
 
 You will need the Exchange Online Administrator role in Microsoft 365 environment to enable Auto-Expanding Archiving feature.
 
-
 1. Open PowerShell and Install [Microsoft Exchange Online Module](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps).
     ```powershell
     Install-Module ExchangeOnlineManagement
