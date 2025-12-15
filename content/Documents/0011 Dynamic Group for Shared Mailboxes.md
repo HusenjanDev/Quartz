@@ -2,7 +2,7 @@
 title: "Dynamic Group for Shared Mailboxes"
 created: 2025-09-16
 modified: 2025-09-16
-tags: ["M365"]
+tags: ["EXCHANGE"]
 draft: false
 ---
 

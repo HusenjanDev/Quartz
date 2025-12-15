@@ -3,20 +3,22 @@ title: "Enable Auto-Expanding Archiving for Exchange Online Mailboxes"
 created: 2025-12-15
 modified: 2025-12-15
 tags: ["EXCHANGE"]
-draft: true
+draft: false
 ---
 
 ## Introduction
 
-The Chief Commerical Officer (CCO) recently contacted me about their archive storage in Exchange Online was close to 100 GB and requested a larger archive. I remembered that Microsoft E5 license comes with Auto-Expanding Archiving feature which allows users to archive emails up to 1.5 TB.
+The Chief Commerical Officer (CCO) recently reported to me that their Exchange Online archive storage was approaching 100GB and requested an increase. The issue was resolved by enabling Auto-Expanding Archiving which is included in Microsoft E5, Microsoft A3, and Microsoft E3 license. 
 
-In this article, I'll go through enabling auto-expanding archiving feature for a specific user to help you solve those archive storage limits.
+
+This article walks through enabling Auto-Expanding Archiving feature for a single user to remove Exchange Online archiving limits.
 
 ## Auto-Expanding Archive
 
-You will need the Exchange Administrator role in Microsoft 365 environment to enable auto-expanding archiving feature.
+You will need the Exchange Online Administrator role in Microsoft 365 environment to enable Auto-Expanding Archiving feature.
 
-1. Open PowerShell and [Microsoft Exchange Online Module](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps).
+
+1. Open PowerShell and Install [Microsoft Exchange Online Module](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps).
     ```powershell
     Install-Module ExchangeOnlineManagement
     ```
@@ -37,8 +39,10 @@ You will need the Exchange Administrator role in Microsoft 365 environment to en
     Enable-Mailbox <EMAIL> -AutoExpandingArchive
     ```
 
-Once the command is used the user should now have a auto-expanding archive mailbox which can hold up to 1.5 TB emails.
+After enabling the Auto-Expanding Archiving feature it can take 1 hour for the change to take effect. However, once the change is applied the user should be able to store 1.5 TB of archive emails.
 
 ## Conclusion
 
-The requirements to enable Auto-Expanding Archiving in Microsoft 365 is a Microsoft E5 license. I would recommend enabling Auto-Expanding Archive on heavy users such as CEO, CFO, CCO, and CTO as that will allow them to archive all their emails in-case it's needed in the future. Hopefully, this article helped you with enabling auto-expanding archiving feature.
+The Chief Executive Officer, Chief Financial Officer, and Chief Commercial Officer typically recieves a-lot of emails and the archive storage allows them to store old emails without deleting them. When the emails are stored in the archive folder they are only accessible when they are online and this helps with combating caching issues that commonly occurs with the Outlook client.
+
+The executives can quickly fill up the archive storage therefore eabling Auto-Expanding Archiving on their account is a great move as that will allow them to store emails up to 1.5 TB.
