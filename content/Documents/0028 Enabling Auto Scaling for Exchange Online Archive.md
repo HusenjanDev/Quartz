@@ -13,7 +13,7 @@ The Chief Commerical Officer (CCO) recently reported to me that their Exchange O
 
 This article walks through enabling Auto-Expanding Archiving feature for a single user to remove Exchange Online archiving limits.
 
-## Auto-Expanding Archive
+## Enabling Auto-Expanding Archive
 
 You will need the Exchange Online Administrator role in Microsoft 365 environment to enable Auto-Expanding Archiving feature.
 
