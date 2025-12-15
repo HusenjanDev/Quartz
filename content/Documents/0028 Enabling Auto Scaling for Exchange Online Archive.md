@@ -10,7 +10,6 @@ draft: false
 
 The Chief Commerical Officer (CCO) recently reported to me that their Exchange Online archive storage was approaching 100GB and requested an increase. The issue was resolved by enabling Auto-Expanding Archiving which is included in Microsoft E5, Microsoft A3, and Microsoft E3 license. 
 
-
 This article walks through enabling Auto-Expanding Archiving feature for a single user to remove Exchange Online archiving limits.
 
 ## Enabling Auto-Expanding Archive
