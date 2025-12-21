@@ -1,8 +1,5 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import { ContentDetails } from "./quartz/plugins/emitters/contentIndex"
-import { FileTrieNode } from "./quartz/util/fileTrie"
-import { FilePath, FullSlug } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -43,8 +40,9 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer(),
     Component.RecentNotes({
-      filter: (file) => file.slug?.includes("index") ? false : true,
-      showTags: false
+      filter: (file) => file.slug?.includes("index") ? false : true && file.frontmatter?.tags?.find(item => item === "project") ? false : true,
+      showTags: false,
+      limit: 4
     })
   ],
   right: [

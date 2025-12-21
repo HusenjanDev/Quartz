@@ -40,7 +40,7 @@ const defaultOptions: Options = {
           numeric: true,    
           sensitivity: "base",    
         })    
-      }    
+      }
           
       // If both are files, sort by creation date (newest first)  
       const aCreated = a.data?.date  // Changed from frontmatter.created  
