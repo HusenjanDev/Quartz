@@ -11,7 +11,7 @@ The Security Asset Platform is a project I decided to build to increase my knowl
 
 ## 22 December 2025
 
-![[0000 Asset-Management-System-01.png]]
+![[0000 Security-Asset-Platform-01.png]]
 
 Today was a productive day for Security Asset Platform SaaS product. I implemented the sidebar navigation component and integrated authentication and authorization using Auth.JS. Here is a overview of the source code structure.
 
