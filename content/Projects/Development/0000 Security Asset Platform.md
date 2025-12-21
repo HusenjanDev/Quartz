@@ -7,7 +7,7 @@ draft: false
 
 ## About Project
 
-The Security Asset Platform is a project I decided to build to increase my knowledge about software development and  cybersecurity. The idea is to build a application using C++ or Rust which sends changes occurring on the system to a backend API and use these datas to summarize logs from the servers.
+The Security Asset Platform is a project I decided to build to increase my knowledge about software development and  cybersecurity. The idea is to build a application using C++ or Rust which sends changes occurring on the system to a backend API and use these datas to summarize logs from the servers. I will be open sourcing once the product is ready to be used in production to then I'll be blogging about the platform.
 
 ## 22 December 2025
 
