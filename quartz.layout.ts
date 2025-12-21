@@ -1,5 +1,8 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { ContentDetails } from "./quartz/plugins/emitters/contentIndex"
+import { FileTrieNode } from "./quartz/util/fileTrie"
+import { FilePath, FullSlug } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
