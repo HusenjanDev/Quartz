@@ -41,7 +41,11 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer()
+    Component.Explorer(),
+    Component.RecentNotes({
+      filter: (file) => file.slug?.includes("index") ? false : true,
+      showTags: false
+    })
   ],
   right: [
     Component.Graph(),
