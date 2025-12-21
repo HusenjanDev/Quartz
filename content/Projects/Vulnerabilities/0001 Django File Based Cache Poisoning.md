@@ -2,7 +2,6 @@
 title: "Django File Based Cache Poisoning"
 created: 2025-09-27
 modified: 2025-09-27
-description: "Django comes with many caching systems but the Filesystem Based Caching enables threat actors to elevate their privileges by overwriting the cache file."
 tags: ["LINUX", "PYTHON", "DJANGO"]
 draft: false
 ---

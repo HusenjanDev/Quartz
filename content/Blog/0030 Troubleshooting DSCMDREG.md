@@ -34,7 +34,7 @@ C:\Users\husenjan> dsregcmd /status
               DomainJoined : YES
                 DomainName : HUSENJAN
            Virtual Desktop : NOT SET
-               Device Name : Norway-PC001.int.husenjan.com
+               Device Name : NO-PC001.int.husenjan.com
 ```
 
 All the information shown with the `dsregcmd` command can be useful to troubleshoot the issue that is occurring in our environment but the user has to be technical.

@@ -66,7 +66,7 @@ function sluggify(s: string): string {
         .replace(/#/g, ""),
     )
     .join("/") // always use / as sep
-    .replace(/\/$/, "")
+    .replace(/\/$/, "").toLowerCase()
 }
 
 export function slugifyFilePath(fp: FilePath, excludeExt?: boolean): FullSlug {

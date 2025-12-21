@@ -2,7 +2,6 @@
 title: "Exploiting Active Directory Certificate Service"
 created: 2024-12-31
 modified: 2024-12-31
-description: "The Active Directory Certificate Service (ADCS) can be exploited to compromise the whole environment."
 tags: ["WIN", "AD"]
 draft: false
 ---
