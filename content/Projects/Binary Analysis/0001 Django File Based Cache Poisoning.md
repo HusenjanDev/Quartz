@@ -1,7 +1,7 @@
 ---
 title: "Django File Based Cache Poisoning"
-created: 2025-09-27
-modified: 2025-09-27
+created: 2024-09-27
+modified: 2024-09-27
 tags: ["LINUX", "PYTHON", "DJANGO"]
 draft: false
 ---

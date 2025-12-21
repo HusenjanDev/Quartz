@@ -1,7 +1,7 @@
 ---
 title: "Puzzle - Reverse Engineering Challenge"
 created: 2025-12-13
-modified: 2024-12-13
+modified: 2025-12-13
 tags: ["RE", "IDA"]
 draft: false
 ---

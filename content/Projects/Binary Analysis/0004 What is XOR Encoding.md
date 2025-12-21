@@ -1,7 +1,7 @@
 ---
 title: "What is XOR Encoding?"
 created: 2025-12-20
-modified: 2024-12-20
+modified: 2025-12-20
 tags: ["RE", "IDA", "XOR"]
 draft: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Exploiting Active Directory Certificate Service"
-created: 2024-12-31
-modified: 2024-12-31
+created: 2024-12-29
+modified: 2024-12-29
 tags: ["WIN", "AD"]
 draft: false
 ---
