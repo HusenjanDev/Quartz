@@ -120,7 +120,7 @@ At runtime, the XOR encoded shellcode is decoded in memory and then the shellcod
 
 ## Disassembly Code
 
-When the XOR encoding and decoding function is compiled in release mode the function is shown as below in x86 disassembly.
+When the XOR encoding and decoding function is compiled in release mode the XOR function is shown as the following in x86 assembly.
 
 ![[0002 What-is-XOR-Encoding-01.png]]
 
