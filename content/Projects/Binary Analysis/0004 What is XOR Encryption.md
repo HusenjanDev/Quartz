@@ -1,5 +1,5 @@
 ---
-title: "What is XOR Encoding?"
+title: "What is XOR Encryption?"
 created: 2025-12-20
 modified: 2025-12-20
 tags: ["RE", "IDA", "XOR"]
@@ -8,11 +8,11 @@ draft: false
 
 ## Introduction
 
-XOR Encoding is used to obfuscate strings and shellcodes to avoid signature-based detections. The payload is decoded at runtime using a XOR Key restoring the original bytes into the memory before execution. This article will go through XOR encoding and decoding concept and explain the way XOR encoding is used in the real world.  
+XOR Encryption is used to obfuscate strings and shellcodes to avoid signature-based detections. The payload is decoded at runtime using a XOR Key restoring the original bytes into the memory before execution. This article will go through XOR encryption and decoding concept and explain the way XOR Encryption is used in the real world.  
 
-## XOR Encoding & Decoding
+## XOR Encryption & Decryption
 
-XOR encoding is symmetric which means the same function can be used for both encoding and decoding by applying the same key. 
+XOR Encryption is symmetric which means the same function can be used for both encryption and decryption by applying the same key. 
 
 ```cpp title="Encryption & Decryption"
 void XOR(IN unsigned char* buffer, size_t bufferSize, IN unsigned char key[]) {
@@ -25,7 +25,7 @@ void XOR(IN unsigned char* buffer, size_t bufferSize, IN unsigned char key[]) {
 
 Using the function above, the shellcode can be XOR encoded as shown below. A larger `bufferSize` value is recommended to prevent shellcode corruption.
 
-```cpp title="Encoding Shellcode"
+```cpp title="Encrypting Shellcode"
 void XOR(IN unsigned char* buffer, size_t bufferSize, IN unsigned char key[]) {
     for (int i = 0; i < bufferSize; ++i) {
         buffer[i] ^= (key[i % strlen((char*)key)] + 1);
@@ -66,14 +66,14 @@ Copy the output from the terminal and replace the `shellcode` array inside the m
 
 ## Real Life Example
 
-The XOR encoding is used by threat actors to bypass signature-based detection by XOR Encoding the shellcode. Here is a real world example of XOR decoding a shellcode and executing it. 
+The XOR encryption is used by threat actors to bypass signature-based detection by XOR encrypting the shellcode. Here is a real world example of XOR decoding a shellcode and executing it. 
 
 ```cpp title="main.cpp"
 #include <iostream>
 #include <Windows.h>
 
 /*
-    Description: The XOR() function is responsible for encoding and decoding shellcode.
+    Description: The XOR() function is responsible for encrypting and decrypting shellcode.
 */
 void XOR(IN unsigned char* buffer, size_t bufferSize, IN unsigned char key[]) {
     for (int i = 0; i < bufferSize; ++i) {
@@ -120,12 +120,12 @@ At runtime, the XOR encoded shellcode is decoded in memory and then the shellcod
 
 ## Disassembly Code
 
-When the XOR encoding and decoding function is compiled in release mode the XOR function is shown as the following in x86 assembly.
+When the XOR encryption and decryption function is compiled in release mode the XOR function is shown as the following in x86 assembly.
 
-![[0002 What-is-XOR-Encoding-01.png]]
+![[0002 What-is-XOR-Encryption-01.png]]
 
 Experienced reverse engineers will quickly see that the x86 assembly code is performing XOR decoding by viewing the actions the instructions performs. 
 
 ## Conclusion
 
-XOR Encoding/Decoding is used by developers and threat actors to obfuscate strings and shellcodes to confuse the reverse engineer. The XOR decoding happens at runtime where it's decoded in a memory space. It can be used for both good and bad purposes such as developers uses it to protect their code and threat actors uses it to bypass signature-based detection and confuse reverse engineer.
+XOR Encrypting/Decrypting is used by developers and threat actors to obfuscate strings and shellcodes to confuse the reverse engineer. The XOR decoding happens at runtime where it's decoded in a memory space. It can be used for both good and bad purposes such as developers uses it to protect their code and threat actors uses it to bypass signature-based detection and confuse reverse engineer.
