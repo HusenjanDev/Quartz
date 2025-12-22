@@ -16,7 +16,7 @@ Security Incidents can occur at anytime ranging from low severity to high severi
 
 Many professionals will wonder why I choose LaTex to build the template instead of using Microsoft Word. The reason I choose Latex is because the headers, texts, and images can be updated without breaking the document. Additonally, LaTeX comes with more customization features.
 
-## Building Latex Document Template
+## Template Structure
 
 This section will go through each component inside the [Security Incident Documentation Template](https://github.com/HusenjanDev/Security-Incident-Documentation-Template/blob/main/Security-Incident-Documentation-Template.tex). In Latex the libaries gives us capabilities to customize our document and the required libraries for document is the following.
 
