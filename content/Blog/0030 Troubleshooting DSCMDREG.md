@@ -12,10 +12,10 @@ When a device is onboarded to Microsoft Intune the `dsregcmd` command can be use
 
 | AzureAdJoined	| EnterpriseJoined | DomainJoined | Device state                   | 
 | ------------- | ---------------- | ------------ | ------------------------------ |
-| YES	        | NO               | NO           |	Microsoft Entra joined         |
-| NO	        | NO               | YES          |	Domain Joined                  |
-| YES           | NO               | YES          |	Microsoft Entra hybrid joined  |
-| NO            | YES	           | YES	      | On-premises DRS Joined         |
+| YES	        | NO                | NO            |	Microsoft Entra joined         |
+| NO	        | NO                | YES           |	Domain Joined                  |
+| YES         | NO                | YES           |	Microsoft Entra hybrid joined  |
+| NO          | YES	              | YES	          | On-premises DRS Joined         |
 
 The `dsregcmd` also shows us information about the device such as Device State, Device Details, Tenant Details, User State, SSO State, and Diagnostics Data, and Ngt Prerequisities which are great information to have when there are issues between our device and Microsoft Entra ID.
 
