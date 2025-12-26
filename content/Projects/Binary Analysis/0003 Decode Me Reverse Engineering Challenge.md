@@ -2,7 +2,7 @@
 title: "Decode Me - Reverse Engineering Challenge"
 created: 2025-12-11
 modified: 2025-12-11
-tags: ["RE", "IDA"]
+tags: ["CRACKMES", "RE", "IDA"]
 draft: false
 ---
 
