@@ -58,15 +58,14 @@ def main():
         173, # 0ADh
         172  # 0ACh
     )
-
+ 
     characters = ""
-
+ 
     for number in xor_password:
-        characters += chr(number ^ 159)
+        characters += chr(number ^ 159)                                                
     
     print("Password: " + characters)
         
-
 if __name__ == "__main__":
     main()
 ```
