@@ -3,7 +3,7 @@ title: "Nexus - Reverse Engineering Challenge"
 created: 2025-12-26
 modified: 2025-12-26
 tags: ["CRACKMES", "RE", "IDA"]
-draft: false
+draft: true
 ---
 
 ## Introduction
@@ -13,7 +13,7 @@ The [Nexus! Reverse Engineering Challenge](https://crackmes.one/crackme/694af49f
 ## Application Information
 
 * **Application Name:** `nexus-lite.exe`
-* **SHA-256:** `05BFA131FEF54FFC3DEC074FD61009118E7B7880F50CC0262F7BA25020393557`
+* **Application SHA-256:** `05BFA131FEF54FFC3DEC074FD61009118E7B7880F50CC0262F7BA25020393557`
 
 ## Reverse Engineering
 
