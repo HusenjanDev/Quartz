@@ -3,7 +3,7 @@ title: "Nexus - Reverse Engineering Challenge"
 created: 2025-12-26
 modified: 2025-12-26
 tags: ["CRACKMES", "RE", "IDA"]
-draft: true
+draft: false
 ---
 
 ## Introduction
@@ -17,40 +17,39 @@ The [Nexus! Reverse Engineering Challenge](https://crackmes.one/crackme/694af49f
 
 ## Reverse Engineering
 
-The secret key can be found inside the `main` function with the variable name `aNexusMasterKey`. 
+Loading `nexus-lite.exe` into IDA Pro reveals the secret key in `main()` as variable `aNexusMasterKey`.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-01.png]]
 
-After running the `nexus-lite.exe` application and entering the secret key `NEXUS-MASTER-KEY-2025` the encrypted form of the string is shown. 
+Running `nexus-lite.exe` and providing the value of `aMasterKey` (`NEXUS-MASTER-KEY-2025`) results in the encrypted form of the `aNexusMasterKey` being printed out.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-02.png]]
 
-I becmae interested the way the application encrypts the secret key therefore I decided to dig deeper into the application code and after researching for a bit I found the function `sub_140001800`.
+The encrypted output of `aNexusMasterKey` increased couriousity which lead to deeper analysis and identifying `sub_140001800()` which is responsible for encryting the `aNexusMasterKey`.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-03.png]]
 
-The `sub_140001800` is responsible for handling all the different encryptions for the secret key.
+Further analysis shows that  `sub_140001800()` calls `sub_140001630()`, `sub_140001470()`, and `sub_1400012A0()` - all the called functions performs modifications to `aNexusMasterKey`.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-04.png]]
 
-The `sub_140001630`, `sub_140001470`, and `sub_1400012A0` functions are responsible for encrypting the `NEXUS-MASTER-KEY-2025` secret key.
+The `sub_140001630()` performs XOR encryption on `aNexusMasterKey`, using the character `@` as the static key.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-05.png]]
 
-The `sub_140001630` is performing XOR encryption on the `NEXUS-MASTER-KEY-2025` string using a single character as `@` as a key.
+The `sub_140001470()` performs operation `((array[i] - 84) % 26 + 97)` on all lowercase characters of the XOR-encrypted `aNexusMasterKey`.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-06.png]]
 
-The `sub_140001470` function was a bit more difficult to understand but after researching for a while I figred out that the function is performing calculation on all characters that are lowercase using the calculation `((array[i]- 84) % 26 + 97)`.
-
+The `sub_1400012A0()` applies Base64 encoding to the `aNexusMasterKey` as a final touch to add additional layer of obfuscation.
 
 ![[0005 Nexus-Reverse-Engineering-Challenge-07.png]]
 
-The `sub_1400012A0` performs the base64 encoding to the string to add extra complexity to decrypt the secret key.
+Congratulations! At this point the secret key has been recovered and the encryption methods used by the application has been reverse engineerd.
 
 ## Solution
 
-After finding out the application performs XOR encryption using `@` character then performs a complex calculation on lowercase characters `((array[i]- 84) % 26 + 97)` and then base64 encodes the function, I decided to build the following script which allows us to encode and decode the string.
+As always I highly recommend reverse engineering the application to understand the encryption methods it applies and then create a Python script which can encrypt and decrypt these strings.
 
 ```python title="main.py"
 import base64
@@ -115,4 +114,8 @@ DgUYFRN6DQETFAUSegsFGXplY2Vo
 NEXUS-MASTER-KEY-2025
 ```
 
+The `encrypt()` performs actions which encrypts the string while `decrypt()` performs actions to decrypt the string. The reason these functions are separated is because multiple of actions are performed to encrypt and decrypt the strings.
+
 ## Conclusion
+
+The `nexus-lite.exe` allowed us to recver the plaintext version of `aNexusMasterKey` from `main()`. Further analysis revealed that the application obfuscates the key using combination of XOR encryption, ROT-13 encryption, and Base64 encoding. I highly recommend reverse engineering the encryption methods the application uses instead of blindly submitting the secret key as that will help with increasing your understanding of low level code.
