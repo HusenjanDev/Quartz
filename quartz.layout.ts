@@ -40,7 +40,8 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer(),
     Component.RecentNotes({
-      filter: (file) => file.slug?.includes("index") ? false : true && file.frontmatter?.tags?.find(item => item === "project") ? false : true,
+      title: "Featured Posts",
+      filter: (file) => file.slug?.includes("index") ? false : true && file.frontmatter?.tags?.find(item => item === "featured") ? true : false,
       showTags: false,
       limit: 4
     })

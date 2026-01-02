@@ -2,7 +2,7 @@
 title: "Investigating Security Incidents with Microsoft Defender XDR"
 created: 2025-11-24
 modified: 2025-11-24
-tags: ["MDE", "SIEM"]
+tags: ["MDE", "SIEM", "FEATURED"]
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 title: "Troubleshooting Microsoft Defender XDR High CPU Usage During Scheduled Scans"
 created: 2025-12-08
 modified: 2025-12-08
-tags: ["MDE", "INTUNE"]
+tags: ["MDE", "INTUNE", "FEATURED"]
 draft: false
 ---
 
