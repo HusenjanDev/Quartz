@@ -2,7 +2,7 @@
 title: "Onboarding Microsoft Defender to 1500 Devices"
 created: 2025-10-15
 modified: 2025-10-15
-tags: ["INTUNE", "MDE", "CORTEX", "FEATURED"]
+tags: ["INTUNE", "MDE", "CORTEX"]
 draft: false
 ---
 
