@@ -43,6 +43,10 @@ DeviceEvents
 
 The KQL query fetches known vulnerable kernel driver hashes from [LOLDrivers](https://www.loldrivers.io/) and then it compares the hashes to the ones that our endpoints recently loaded.
 
+## Workbooks
+
+I would highly recommend including the KQL inside a workbook as that will allow your colleagues to view all the devices whom have loaded a vulnerable devices into their system.
+
 ## Conclusion
 
 Microsoft has implemented a blocklist for vulnerable kernel drivers but these blocklists aren't updated in real-time and sometimes these vulnerable kernel drivers are never added into the blocklist. However, using the KQL provided by LOLDrivers allows us to consistently monitor our environment for vulnerable kernel drivers and patch them quickly. 
