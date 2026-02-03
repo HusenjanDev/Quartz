@@ -33,11 +33,19 @@ DeviceFileEvents
 ```
 
 The [Rapid7 Team](https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/) researched the Notepad++ Security Incident and provided some IoC which we can use to detect if any of our endpoints were affected. 
-```sql title="DeviceNetworkEvents"
+
+```sql title="DeviceNetworkEvents - IPv4"
 let ioc = dynamic(["124.222.137.114", "59.110.7.32", "61.4.102.97", "95.179.213.0"]);
 DeviceNetworkEvents
 | where TimeGenerated > ago(360d)
 | where RemoteIP has_any (ioc)
+```
+
+```sql title="DeviceNetworkEvents - URLs"
+let ioc = dynamic(["api.skycloudcenter.com", "api.wiresguard.com"]);
+DeviceNetworkEvents
+| where TimeGenerated > ago(360d)
+| where RemoteUrl has_any (ioc)
 ```
 
 ```sql title="DeviceFileEvents"
