@@ -8,11 +8,21 @@ draft: false
 
 ## Introduction
 
-Notepad++ infastructure was recently compromised by state sponsored hackers where they rediected the update traffic from notepad-plus-plus.org to an malicious site which contains a malicious executable program. According to Rapid7 the executable program responsible for updating notepad++ `gup.exe` executed a suspicious process `update.exe` which was downloaded from `95.179.213.0`.
+Notepad++ infrastructure was compromised by state sponsored hackers where they redirected the update traffic from notepad-plus-plus.org to an site which downloads `update.exe` executable program. According to [Rapid7 Labs](https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/) the executable program which is responsible for updating Notepad++ (`gup.exe`) executed a suspicious process `update.exe` which was downloaded from `95.179.213.0`.
 
 ## Threat Hunting
 
-Using Azure Sentinel we can craft custom queries to investigate if any of our endpoints were affected by the Notepad++ security incident. This KQL query detects if any of our endpoints made connection to unauthorized URLs.
+Using Azure Sentinel from Microsoft Security Portal, we can craft custom queries to investigate if any of our endpoints were affected by the Notepad++ security incident. However, we first need to identify all our endpoints that has Notepad++ installed on them.
+
+```sql title="DeviceTvmSoftwareInventory"
+DeviceTvmSoftwareInventory
+| where SoftwareName contains "notepad"
+| where not(SoftwareVersion == "8.9.1")
+| project DeviceId, DeviceName, OSVersion, SoftwareVendor, SoftwareName, SoftwareVersion
+| summarize total = count() by SoftwareVersion
+```
+
+We can now investigate the process `gup.exe` to see if it made any connections to unauthorized URLs which is possible with the following query.
 
 ```sql title="DeviceNetworkEvents"
 let AllowedUrls = dynamic(["notepad-plus-plus.org", "github.com", "release-assets.githubusercontent.com", "raw.githubusercontent.com"]);
@@ -24,7 +34,7 @@ DeviceNetworkEvents
 | where isnotempty(RemoteIP)
 ```
 
-This KQL query allows us to identify all the executables, dynamic link libraries, and other files the `gup.exe` made in our endpoints.
+We can also use the following query to identify all the executables programs, dynamic link libraries, and other files the process `gup.exe` made in our endpoints. 
 
 ```sql
 DeviceFileEvents
@@ -32,7 +42,7 @@ DeviceFileEvents
 | where InitiatingProcessFileName startswith "gup.exe"
 ```
 
-The [Rapid7 Team](https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/) researched the Notepad++ Security Incident and provided some IoC which we can use to detect if any of our endpoints were affected. 
+The [Rapid7 Labs](https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/) researched the Notepad++ Security Incident and provided some IoCs which we can use to investigate if any of our endpoints were affected.
 
 ```sql title="DeviceNetworkEvents - IPv4"
 let ioc = dynamic(["124.222.137.114", "59.110.7.32", "61.4.102.97", "95.179.213.0"]);
@@ -55,11 +65,11 @@ DeviceFileEvents
 | where SHA256 has_any (ioc)
 ```
 
-If no endpoints in your organization made connections to these URLs or IPv4 addresses, and the file hash doesn't exist in your environment, it's safe to assume your endpoints were not affected by the incident.
+If no endpoints in your organizations made connections to these URLs or IPv4 addresses, and the file hash doesn't exist in your environment, it's safe to assume your endpoints were not affected by the incident.
 
 ## Mitigation
 
-I would recommend updating the Notepad++ application profile on Microsoft Intune with the latest version as that comes with improved security controls for updates.
+I would recommend updating the Notepad++ application profile on Microsoft Intune which the latest version of Notepad++ as it comes with improved security controls for updates. 
 
 ## Conclusion
 
