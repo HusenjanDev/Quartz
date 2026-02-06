@@ -36,7 +36,7 @@ DeviceNetworkEvents
 
 We can also use the following query to identify all the executables programs, dynamic link libraries, and other files the process `gup.exe` made in our endpoints. 
 
-```sql
+```sql title="DeviceFileEvents"
 DeviceFileEvents
 | where TimeGenerated > ago(360d)
 | where InitiatingProcessFileName startswith "gup.exe"
