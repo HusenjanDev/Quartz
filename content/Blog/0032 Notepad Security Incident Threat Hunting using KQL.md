@@ -1,7 +1,7 @@
 ---
 title: "Notepad++ Security Incident Threat Hunting using KQL"
-created: 2026-02-02
-modified: 2026-02-02
+created: 2026-02-03
+modified: 2026-02-03
 tags: ["SIEM", "KQL"]
 draft: false
 ---
