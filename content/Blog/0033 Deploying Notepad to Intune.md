@@ -75,4 +75,4 @@ The Notepad++ installer comes in `.exe` format which means we will need to gener
 
 ## Conclusion
 
-The Notepad++ installer comes with `.exe` format installer instead of `.msi` and that forces us to use [Microsoft Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool) to create an `.intunewin` file. However, after the `.intunewin` file is generated all that needs to be done is setting up the profile.
+The Notepad++ installer comes with `.exe` format installer instead of `.msi` and that forces us to use [Microsoft Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool) to create an `.intunewin` file. However, after the `.intunewin` file is generated all that needs to be done is setting up the profile using the custom PowerShell detection script.
