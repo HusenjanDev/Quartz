@@ -8,20 +8,18 @@ draft: false
 
 ## Information
 
-Notepad++ infrastructure was recently compromised by state sponsored hackers which lead to some endpoints being compromised. The Notepad++ creators recommended everyone to update their Notepad++ to the latest version 8.91 which comes with improved security controls for updates.
+Notepad++ infrastructure was recently compromised by state sponsored hackers which lead to some endpoints being compromised. The Notepad++ creators recommended everyone to update their Notepad++ to the latest version 8.91 which comes with improved security controls for updates. In this article, I'll go through creating an Notepad++ application profile in Microsoft Intune.
 
 ## Intunewin
 
-The Notepad++ application comes in `.exe` format which means we will need to create an `.intunewin` file using the Microsoft Content Prep Tool. The `.intunewin` format will allow us to install executables with `.exe` formats through Intune.
+The Notepad++ installer comes in `.exe` format which means we will need to generate an `.intunewin` file using Microsoft Content Prep Tool since that will allow us to setup the application profile in Microsoft Intune.
 
 1. Download [Notepad++](https://notepad-plus-plus.org)
 2. Download [Microsoft Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
 3. Start **IntuneWinAppUtil** and enter the following details. 
-
     ![[0033 Deploying-Notepad-to-Intune-01.png]]
 
 4. **IntuneWinAppUtil** will generate an `.intunewin` file inside of the output folder.
-
     ![[0033 Deploying-Notepad-to-Intune-02.png]]
 
 ## Deployment
@@ -54,7 +52,7 @@ The Notepad++ application comes in `.exe` format which means we will need to cre
 
     ![[0033 Deploying-Notepad-to-Intune-08.png]]
 
-7. Select **Use a custom detection script** and use the following script.
+7. Select **Use a custom detection script** and use the following detection script.
 
     ```powershell 
     $notepad = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Notepad++" -ErrorAction SilentlyContinue
