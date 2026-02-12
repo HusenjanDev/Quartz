@@ -14,7 +14,7 @@ The Thread Environment Block (TEB) and Process Environment Block (PEB) are data 
 
 The Thread Environment Block (TEB) is also known as Thread Information Block (TIB) is the `_TEB` data structure in both 32-bit and 64-bit systems and it contains information about the current running thread. The TEB data structure contains pointers to Process Environment Block, Structured Exception Handler, and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block) 
 
-* In 32-bit systems the TEB can be accessed through `FS:[]0x18`.
+* In 32-bit systems the TEB can be accessed through `GS:[0x18]`.
 * In 64-bit systems the TEB can be accessed through `GS:[0x30]`.
 
 The TEB is commonly accessed to access the PEB data structure which allows us to access informations about the process.
