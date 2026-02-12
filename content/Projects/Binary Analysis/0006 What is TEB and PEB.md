@@ -1,36 +1,36 @@
 ---
 title: "What is TEB and PEB?"
-created: 2026-01-10
-modified: 2026-01-10
+created: 2026-02-12
+modified: 2026-02-12
 tags: ["EXPDEV", "RE"]
-draft: true
+draft: false
 ---
 
 ## Introduction
 
-The Thread Environment Block (TEB) and Process Environment Block (PEB) are data structures that contains information about the thread and process. The TEB and PEB is commonly accessed by developers and threat actors to obtain critical informations about the running process.
+The Thread Environment Block (TEB) and Process Environment Block (PEB) are data structures that contains information about the thread and process. The TEB and PEB is commonly accessed by developers and threat actors to obtain information about the process and the system.
 
 ## Thread Environment Block
 
-The Thread Environment Block (TEB) is also known as Thread Information Block (TIB) is a the `_TEB` data structure in 32-bit and 64-bit systems that stores information about the currently running thread. The TEB data structure contains pointers to Process Environment Block, Structured Exception Handler, and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block) 
+The Thread Environment Block (TEB) is also known as Thread Information Block (TIB) is the `_TEB` data structure in both 32-bit and 64-bit systems and it contains information about the current running thread. The TEB data structure contains pointers to Process Environment Block, Structured Exception Handler, and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block) 
 
 * In 32-bit systems the TEB can be accessed through `FS:[]0x18`.
 * In 64-bit systems the TEB can be accessed through `GS:[0x30]`.
 
-The TEB is commonly accessed to obtain the `ProcessEnvironmentBlock` (PEB) pointer to obtain the base address of loaded modules in the current running process. 
+The TEB is commonly accessed to access the PEB data structure which allows us to access informations about the process.
 
 ## Process Environment Block
 
-The Process Environment Block (PEB) is the `_PEB` data structure that contains information about the process itself. The PEB contains information's such as BeingDebugged, Ldr, Process Parameters, OSBuiidNumber and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Process_Environment_Block).
+The Process Environment Block (PEB) is the `_PEB` data structure that contains information about the process itself. The PEB contains informations such as BeingDebugged, Ldr, Process Parameters, OSBuiidNumber, and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Process_Environment_Block).
 
 * In 32-bit systems the PEB can be accessed through `FS:[0x30]`.
 * In 32-bit systems the PEB can be accessed through `FS:[0x60]`.
 
-The PEB is accessed to access the `Ldr` pointer to obtain the base addresses of all the loaded modules such as their base addess, names, and etc... 
+The PEB is commonly accessed to access the `Ldr` data structure as it points to `InLoadOrderModuleList` which contains all the modules base address, names, and etc... 
 
 ## LDR
 
-The Process Environment Block (PEB) has a pointer to `Ldr` which is the `_PEB_LDR_DATA` data structure that will allow us to locate modules inside the our process.
+The Process Environment Block (PEB) has a pointer to `Ldr` which is the `_PEB_LDR_DATA` data structure that will allow us to locate all modules loaded by our process.
 
 * **InLoadOrderModuleList** : The list is sorted by the order the modules were loaded.
 * **InMemoryOrderModuleList** : The list sorts the modules by the base address.
@@ -61,7 +61,7 @@ In this section I'll go through analyzing the TEB, PEB, LDR and the way to locat
 
 ## Traversing with Code
 
-This section of the article will focus on developing an terminal application using Rust to traverse through the `InLoadOrderModuleList`  to obtain the data inside `DllBase` and `DllBaseName`.
+I understand that it can be difficult to grasp the TEB, PEB, and LDR concepts therefore I programmed an terminal application which enumerates through all loaded modules in our process to access `DllBase` and `DllBaseName`.
 
 ```rust title="main.rs"
 use std::{os::raw::c_void};
@@ -159,8 +159,8 @@ Module Name: "KERNELBASE.dll"           Module Location: 0x7ffe2ff90000
 Module Name: "ucrtbase.dll"             Module Location: 0x7ffe2f820000
 ```
 
-All the Rust code does is obtaining the `TEB` pointer address by using `GS:[0x30]` and from there it's using the data structures declared by us to access the `InLoadOrderModuleList` to locate the different modules.
+All the code does is it accesses the `TEB` by using `GS:[0x30]` and from there it accesses the different data structures such as `_TEB`, `_PEB`, and `_PEB_LDR_DATA` to access the different modules loaded by our process.
 
 ## Conclusion
 
-Understanding the TEB and PEB can be difficult as it requires us to understand the way structures, pointers, and offsets works. I would recommend getting hands on experience by programming an application which enumerates through the module list using the TEb. This will help with increasing your understanding about the way TEB and PEB works.
+Understanding the purpose of TEB and PEB can be difficult as it requires us to understand the way structures, pointers, and offsets works. I would recommend getting hands on experience by programming an simple application which enumerates through the TEB and PEB to find the `InLoadOrderModuleList` and then enumerate through all the libraries.
