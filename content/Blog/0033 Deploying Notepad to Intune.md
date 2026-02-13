@@ -57,7 +57,7 @@ The Notepad++ installer comes in `.exe` format which means we will need to gener
     ```powershell 
     $notepad = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Notepad++" -ErrorAction SilentlyContinue
 
-    if ($notepad.DisplayVersion -eq "8.91") {
+    if ($notepad.DisplayVersion -eq "8.9.1") {
         exit 0
     }
     else {
