@@ -152,7 +152,7 @@ _TEB Address: 0x72ab8db000
 _TEB -> _PEB Address: 0x72ab8da000
 _TEB -> _PEB -> _PEB_LDR_DATA Address: 0x72ab8da000
 _TEB -> _PEB -> _PEB_LDR_DATA -> InLoadOrderModuleList Address: 0x7ffe328728e0
-Module Name: "PEB-Enum.exe"             Module Location: 0x7ff74d7a0000
+Module Name: "peb.exe"             Module Location: 0x7ff74d7a0000
 Module Name: "ntdll.dll"                Module Location: 0x7ffe326a0000
 Module Name: "KERNEL32.DLL"             Module Location: 0x7ffe312d0000
 Module Name: "KERNELBASE.dll"           Module Location: 0x7ffe2ff90000
