@@ -20,5 +20,9 @@ The way threat actors calls these functions without them showing up on the impor
 
 ## API Hashing
 
+```
+
+```
+
 ## Conclusion
 
