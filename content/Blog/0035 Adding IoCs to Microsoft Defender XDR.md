@@ -3,7 +3,7 @@ title: "Adding IoCs to Microsoft Defender XDR"
 created: 2026-02-23
 modified: 2026-02-23
 tags: ["MDE", "SIEM"]
-draft: true
+draft: false
 ---
 
 ## Introduction
@@ -58,4 +58,4 @@ We should no longer receive false positive security alerts related to that file.
 
 ## Conclusion
 
-Microsoft Defender XDR is no doubt one of the most powerfull XDR systems out there but sometimes finding features can be difficult. Hopefully, this post has helped you with finding the correct place and reduce the false positive alerts that you have been receiving from Microsoft Defender XDR.
+Microsoft Defender XDR is no doubt one of the most powerfull XDR systems out there but sometimes finding features can be difficult because it comes with so many features. Hopefully, this post has helped you with finding the correct place and reduce the false positive alerts that you have been receiving from Microsoft Defender XDR.
