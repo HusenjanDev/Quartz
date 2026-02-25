@@ -3,7 +3,7 @@ title: "Deploying Dynamic 365 to Intune (Android & iOS)"
 created: 2026-02-29
 modified: 2026-02-29
 tags: ["INTUNE"]
-draft: false
+draft: true
 ---
 
 ## Introduction
