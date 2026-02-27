@@ -36,7 +36,6 @@ We recently choose to migrate from Salesforce over to Microsoft Dynamics 365 Sal
 
     ![[0038 Deploying-Dynamic-365-to-Intune-(Android-and-iOS)-06.png]]
 
-
 ## iOS Deployment
 
 1. Go to **Apps -> iOS/iPadOS**
