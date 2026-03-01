@@ -1,33 +1,34 @@
 ---
 title: "Information Gathering"
-created: 2025-04-15
-modified: 2025-04-15
+created: 2025-04-20
+modified: 2025-04-20
 tags: ["INFO"]
 ---
 
 ## OSINT
 
-OSINT (Open Source Intelligence) is about gathering information about our target using public resources available for us in the internet. It's a-lot of information's that is possible to obtain through internet because employees are simply not aware of best security practices.
+OSINT (Open Source Intelligence) is about gathering information about our target using public resources. It's possible to gather a-lot of information about the company through public resources as many employees are not aware of best security practices.
 
 ### Employees
 
-Simplest and easiest way to obtain information's about a organization is by inspecting job requirements and employees social media accounts as these will contain information's about laptops, technologies, and operating system the organization uses. Here are some real scenarios where employees might be sharing confidential information's without being aware of it.
+The simplest and easiest way to gather information about a company is by inspecting job posting and social media accounts of employees. Using these resources we can obtain the following information about the company:
 
-**What laptops, computers, and operating systems does the organization use?** This information is critical for threat actors as that allows them to prepare their payloads for the specific laptop, computer, and operating system. An employee can easily and quickly leak these information's by posting a picture of their workspace on social media or by posting a comment about a issue which they are experiencing with their laptops.
+* **Vendors, suppliers, and third-parties that deals with the company**
+* **Standard laptops, computers, and operating systems the company uses**
+* **The technologies the organization uses**
+* **The user principal name of employees**
 
-**What are the user principal name of employees in a organization?** This information is also critical for threat actors as it allows them to do password brute-force attack on users after accessing our network. This information is easily collectable through LinkedIn as most companies uses the first character of first name and the full last name as their user principal name. An example of that is Joe Doe user principal is JDoe.
+All these informations can be used by threat actors to send spear phishing emails, mimic a vendor, and craft malicious payload for our systems. 
 
-**What technologies does the organization use?** This information is also critical for threat actors as allows them to research our technologies to potentially find a weakness. This information can easily be obtained through LinkedIn job specifications or by an employee asking for advice in [StackOverflow](https://stackoverflow.com).
+### Domain Name Records
 
-A employee could also be getting bribed or blackmailed by the threat actor to leak these information's. A important thing to note is a threat actor can be a employee, competitor, or malicious threat actor that wants to compromise your organization for financial gain.
+The Domain Name Records consists of a-lot of informations such as owner of domain, subdomains, and TXT records which can be used to obtain the technologies the organization uses. 
 
-### Domain Name
 
-Domain Name contains a-lot of valuable information's such as owner of domain, subdomains, and text records which can be used to obtain the technologies the organization uses. Here are some tools which can assist us with obtaining all these information's.
 
-[CRT.SH](https://crt.sh/) is a tool that allows us to obtain information’s about the subdomains and the IP-addresses that belongs to the subdomain. It's possible for us to use the CURL with the CRT.SH web application to obtain these information's.
+[CRT.SH](https://crt.sh/) and [Censys](https://search.censys.io/) are that allows us enumerate subdomains and their associated IPv4/IPv6 addresses.
 
-```shell title="Curling CRT.SH"
+```shell title="CRT.SH"
 # Curling information about a website
 curl -s 'https://crt.sh/?q=husenjan.com&output=json' | jq . | grep name | cut -d ':' -f 2 | grep -v 'CN=' | cut -d '"' -f 2 | awk '{gsub(/\\n/,"\n");}1;' | sort -u > subdomainlist
 
@@ -35,13 +36,11 @@ curl -s 'https://crt.sh/?q=husenjan.com&output=json' | jq . | grep name | cut -d
 for i in $(cat subdomainlist);do host $i | grep 'has address' | grep 'husenjan.com' | cut -d" " -f1,4 | sort -u; done
 ```
 
-[Censys](https://search.censys.io/) is a great alternative to [CRT.SH](https://crt.sh/) it also allows us to obtain informations about the subdomains and IP-addresses that belongs to the subdomain.
-
-```shell title="Domain Name"
+```shell title="Censys"
 curl https://search.censys.io/search?resource=hosts&sort=RELEVANCE&per_page=25&virtual_hosts=EXCLUDE&q=husenjan.com
 ```
 
-[Shodan.io](https://www.shodan.io/) is the perfect tool to use after obtaining the IP-addresses of our targets as it allows us to see which ports are open on our targets and potential links between the IP-address and another IP-address.
+[Shodan.io](https://www.shodan.io/) is a great tool for enumerating open ports on the IPv4/IPv6 addresses.
 
 ```shell title="Obaiting Information with Shodan"
 # Capturing only IP-addresses 
@@ -51,13 +50,13 @@ for i in $(cat subdomainlist); do host $i | grep 'has address' | grep 'husenjan.
 for i in $(cat iplist); do shodan host $i; done
 ```
 
-Dig is a good command to be familiar with as it allows us to fetch domain name records such as IP-addresses and text records.
+The `dig` command allows us to fetch domain name records such as A records, TXT records, and much more.
 
 ```shell title="Obtaining Information with Dig"
 dig any 'husenjan.com'
 ```
 
-The text records can contain information's about the technologies the organization uses such as Outlook, Gmail, LogMeIn and so forth. Which are valuable information as it allows us to create phishing email which bypasses these technologies.
+The TXT records can contain a-lot informations such as the technologies the organization uses *(Microsoft 365, Google, and etc...)* which are valuable information that can be used to craft phishing emails to bypass these technologies. 
 
 ### Cloud Storage
 

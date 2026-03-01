@@ -1,11 +1,12 @@
 ---
-title: "Introduction to Penetration Testing"
-created: 2025-04-20
-modified: 2025-04-20
+title: "What is Pentesting?"
+created: 2025-04-15
+modified: 2025-04-15
 permalink: "Introduction"
 tags: ["INFO"]
 author: Husenjan
 ---
+
 ## What is Penetration Testing?
 
 Penetration Testing (Pentest) is a organized and authorized attack which the purpose is about finding security vulnerabilities in an organization and use these security vulnerabilities to gain access to the organization’s systems and then further elevate our privileges by compromising more systems.
@@ -29,9 +30,9 @@ Penetration Testers mostly spends their time in the information gathering and vu
 
 ## Risk Management
 
-Risk Management is about analyzing the different security issues and risks to ensure the organization is protected. In some instances the organization may choose to accept certain risks as the system or software is business critical and in those instances, it’s highly recommended to have insurance on those systems and software’s incase it’s compromised in the future.
+Risk Management is about analyzing the different security issues and risks to ensure the organization is protected. In some instances the organization may choose to accept certain risks as the system or software is business critical and in those instances it's important to have insurance on those systems. 
 
-Risk Management also plays a critical role in a penetration test since the system could be vulnerable for multiple of vulnerabilities and executing these vulnerabilities against the system could potentially crash the system and affect the business negatively. An example is if the system is vulnerable for remote code execution and SQL injection, it’s always recommended to use SQL injection to minimize the risks of crashing the system.
+Risk Management also plays a critical role in a penetration testing since the system could be vulnerable for multiple of vulnerabilities and executing these vulnerabilities against the system could potentially crash the system and affect the business negatively. An example is if the system is vulnerable for remote code execution and SQL injection, it’s always recommended to use SQL injection to minimize the risks of crashing the system.
 
 ## Open Web Application Security Project (OWASP)
 
@@ -50,4 +51,4 @@ Open Web Application Security Project (OWASP) has a list over the top 10 most da
 | 9          | [Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)     | Security logs and monitoring failures can help us detect malicious activities and prevent them from escalating further.                                                       |
 | 10         | [Server-Side Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)                            | Server-Side Forgery (SSRF) allows a threat actor to fetch internal websites and sources if the user input isn’t validated.                                                    |
 
-It’s important to note that the [OWASP Top 10](https://owasp.org/Top10/) could be different in the near future as new vulnerabilities and attack factors are discovered by security researchers. I highly recommend memorizing the [OWASP Top 10](https://owasp.org/Top10/) as it’s a great thing to talk about during a interview as it can help you stand out from others.
+It’s important to note that the [OWASP Top 10](https://owasp.org/Top10/) could be different in the near future as new technologies comes out. I highly recommend becoming familiar with the [OWASP Top 10](https://owasp.org/Top10/) if you're interested in specializing in bug bounty hunting.

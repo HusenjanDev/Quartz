@@ -2,7 +2,7 @@
 title: "Security Asset Platform"
 created: 2025-12-21
 tags: ["PROJECT"]
-draft: false
+draft: true
 ---
 
 ## About Project

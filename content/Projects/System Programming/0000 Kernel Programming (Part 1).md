@@ -1,10 +1,14 @@
 ---
-title: "Kernel Programming (Part 1)"
+title: "Kernel Programming Fundamentals"
 created: 2026-02-30
 modified: 2026-02-30
 tags: ["C++", "Driver"]
-draft: true
+draft: false
 ---
+
+## Process vs. Threads
+
+
 
 ## DriverEntry
 
