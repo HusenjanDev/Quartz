@@ -3,7 +3,7 @@ title: "Kernel Programming Fundamentals"
 created: 2026-02-30
 modified: 2026-02-30
 tags: ["C++", "Driver"]
-draft: false
+draft: true
 ---
 
 ## Process vs. Threads
