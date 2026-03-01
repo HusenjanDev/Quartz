@@ -16,7 +16,6 @@ A process is an object representing a running process. It consists of metadata, 
 
 Each process has their own virtual memory. A 32-bit process has a virtual memory with an address space of 2GB which can be extended to 3GB using `LARGEADDRESSAWARE`. A 64-bit process has a virtual memory with an address space of 8TB. 
 
-
 The virtual memory is separated in pages where each page is 4096 bytes. Each pages are also mapped to the physical memory or disk space. Multiple of pages from different processes can be mapped to the same physical memory location as that will save a-lot of memory space.
 ## System Calls
 
