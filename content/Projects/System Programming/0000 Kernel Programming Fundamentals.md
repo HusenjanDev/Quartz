@@ -2,7 +2,7 @@
 title: "Kernel Programming Fundamentals"
 created: 2026-03-01
 modified: 2026-03-01
-tags: ["C++", "Driver"]
+tags: ["C++"]
 draft: false
 ---
 
