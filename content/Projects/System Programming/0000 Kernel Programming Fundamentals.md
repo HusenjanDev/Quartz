@@ -8,7 +8,7 @@ draft: false
 
 ## Process vs Thread
 
-A process is an object representing a instance of a running program and it consists of virtual address space, executable code, and handle table. The threads uses the resources from the process to execute the instructions. Each threads has their own stack within the process virtual memory.
+A process is an object representing a running process and it consists of virtual address space, executable code, and handle table. The threads uses these resources from the process to execute the code. Each thread has its own stack memory within the process memory which is used to handle operations.
 
 ## Virtual Memory vs Physical Memory
 
