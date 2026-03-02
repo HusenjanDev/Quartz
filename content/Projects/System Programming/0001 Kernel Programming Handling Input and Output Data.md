@@ -6,7 +6,7 @@ tags: ["C++", "KERNEL"]
 draft: true
 ---
 
-
+## Kernel Mode
 
 ```cpp
 #include "pch.h"
@@ -148,5 +148,38 @@ NTSTATUS DriverControl(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 	}
 
 	return CompleteRequest(Irp);
+}
+```
+
+## Client Mode
+
+```cpp
+#include <Windows.h>
+#include <iostream>
+#include <vector>
+
+#define DRIVER 0x8010
+#define IOCTL_ADD_PROCESS CTL_CODE(DRIVER, 0x8001, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+int main() {
+	HANDLE hDevice = CreateFile(L"\\\\.\\LKernel", GENERIC_READ | GENERIC_WRITE, NULL, NULL, OPEN_EXISTING, NULL, NULL);
+
+	if (hDevice == INVALID_HANDLE_VALUE) {
+		printf("[!] hDevice is a invalid handle value.\n");
+		return -1;
+	}
+
+	std::vector<std::wstring> m_Processes;
+
+	m_Processes.push_back(L"brave.exe");
+	m_Processes.push_back(L"cmd.exe");
+
+	for (int i = 0; i < m_Processes.size(); ++i) {
+		if (DeviceIoControl(hDevice, IOCTL_ADD_PROCESS, (LPVOID)m_Processes[i].c_str(), sizeof(WCHAR) * m_Processes[i].size(), NULL, NULL, NULL, NULL)) {
+			printf("[+] Successfully sent %ws to kernel driver.\n", m_Processes[i].c_str());
+		}
+	}
+
+	return 0;
 }
 ```
