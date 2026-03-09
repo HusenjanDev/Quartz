@@ -26,6 +26,8 @@ NTSTATUS CompleteRequest(PIRP Irp, NTSTATUS status, NTSTATUS info);
 NTSTATUS DriverCreateClose(PDEVICE_OBJECT DeviceObject, PIRP Irp);
 NTSTATUS InsertProcess(UNICODE_STRING ProcessName);
 NTSTATUS DriverControl(PDEVICE_OBJECT DeviceObject, PIRP Irp);
+NTSTATUS RemoveProcess(UNICODE_STRING ProcessName);
+NTSTATUS IterateProcesses();
 
 extern "C" NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryKey) {
 	UNREFERENCED_PARAMETER(DriverObject);
@@ -55,6 +57,13 @@ extern "C" NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING Reg
 	DriverObject->MajorFunction[IRP_MJ_CLOSE]			= DriverCreateClose;
 
 	InitializeListHead(&g_ProcessListHead);
+	UNICODE_STRING exampleProcess1 = RTL_CONSTANT_STRING(L"brave.exe");
+	UNICODE_STRING exampleProcess2 = RTL_CONSTANT_STRING(L"cmd.exe");
+
+	InsertProcess(exampleProcess1);
+	InsertProcess(exampleProcess2);
+	IterateProcesses();
+	RemoveProcess(exampleProcess1);
 
 	return STATUS_SUCCESS;
 }
@@ -113,6 +122,42 @@ NTSTATUS InsertProcess(UNICODE_STRING ProcessName) {
 	KdPrint(("[+] Adding - ProcessName: %ws\n", entry->ProcessName.Buffer));
 
 	InsertTailList(&g_ProcessListHead, &entry->ListEntry);
+
+	return STATUS_SUCCESS;
+}
+
+NTSTATUS RemoveProcess(UNICODE_STRING ProcessName) {
+	LIST_ENTRY* e = g_ProcessListHead.Flink;
+
+	while (e != &g_ProcessListHead) {
+		ProcessList* entry = CONTAINING_RECORD(e, ProcessList, ListEntry);
+
+		if (RtlCompareUnicodeString(&entry->ProcessName, &ProcessName, TRUE) == 0) {
+			RemoveEntryList(e);
+
+			KdPrint(("[-] RemoveProcess - ProcessName : %ws\n", entry->ProcessName.Buffer));
+
+			if (entry->ProcessName.Buffer) {
+				ExFreePoolWithTag(entry->ProcessName.Buffer, 'c0rp');
+			}
+
+			ExFreePoolWithTag(entry, 'c0rp');
+		}
+
+		e = e->Flink;
+	}
+
+	return STATUS_SUCCESS;
+}
+
+NTSTATUS IterateProcesses() {
+	LIST_ENTRY* e = g_ProcessListHead.Flink;
+
+	while (e != &g_ProcessListHead) {
+		ProcessList* entry = CONTAINING_RECORD(e, ProcessList, ListEntry);
+		KdPrint(("[#] IterateProcess - Process Name: %ws\n", entry->ProcessName.Buffer));
+		e = e->Flink;
+	}
 
 	return STATUS_SUCCESS;
 }
