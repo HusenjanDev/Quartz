@@ -12,6 +12,8 @@ The Thread Environment Block (TEB) and Process Environment Block (PEB) are data 
 
 ## Thread Environment Block
 
+<image style="display:flex; width: 80%; margin: auto;align-items: center;justify-content: center;" src="0006 What-is-TEB-and-PEB-01.svg"/>
+
 The Thread Environment Block (TEB) is also known as Thread Information Block (TIB) is the `_TEB` data structure in both 32-bit and 64-bit systems and it contains information about the current running thread. The TEB data structure contains pointers to Process Environment Block, Structured Exception Handler, and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block) 
 
 * In 32-bit systems the TEB can be accessed through `GS:[0x18]`.
@@ -21,6 +23,8 @@ The TEB is commonly accessed to access the PEB data structure which allows us to
 
 ## Process Environment Block
 
+<image style="display:flex; width: 80%; margin: auto;align-items: center;justify-content: center;" src="0006 What-is-TEB-and-PEB-02.svg"/>
+
 The Process Environment Block (PEB) is the `_PEB` data structure that contains information about the process itself. The PEB contains informations such as BeingDebugged, Ldr, Process Parameters, OSBuiidNumber, and much more which is available at [Wikipedia](https://en.wikipedia.org/wiki/Process_Environment_Block).
 
 * In 32-bit systems the PEB can be accessed through `FS:[0x30]`.
@@ -29,6 +33,8 @@ The Process Environment Block (PEB) is the `_PEB` data structure that contains i
 The PEB is commonly accessed to access the `Ldr` data structure as it points to `InLoadOrderModuleList` which contains all the modules base address, names, and etc... 
 
 ## LDR
+
+<image style="display:flex; width: 80%; margin: auto;align-items: center;justify-content: center;" src="0006 What-is-TEB-and-PEB-03.svg"/>
 
 The Process Environment Block (PEB) has a pointer to `Ldr` which is the `_PEB_LDR_DATA` data structure that will allow us to locate all modules loaded by our process.
 
@@ -45,19 +51,19 @@ In this section I'll go through analyzing the TEB, PEB, LDR and the way to locat
 1. Attach `Windbg` to any process.
 
 2. Use the command `dt ntdll!_TEB @$TEB` to access TEB.
-![[0006 What-is-TEB-and-PEB-01.png]]
-
-3. Use the command `dt ntdll!_PEB <PEB-ADDRESS>` to access PEB.
-![[0006 What-is-TEB-and-PEB-02.png]]
-
-4. Use the command `dt ntdll!_PEB_LDR_DATA <ADDRESS>` to access the data structure which consists of different stages of loaded modules.
-![[0006 What-is-TEB-and-PEB-03.png]]
-
-5. Use the command `dt ntdll!_LIST_ENTRY <ADDRESS>` to obtain address of a module.
 ![[0006 What-is-TEB-and-PEB-04.png]]
 
-6. Use the command `dt ntdll!_LDR_DATA_TABLE_ENTRY <ADDRESS>` to obtain information about the module.
+3. Use the command `dt ntdll!_PEB <PEB-ADDRESS>` to access PEB.
 ![[0006 What-is-TEB-and-PEB-05.png]]
+
+4. Use the command `dt ntdll!_PEB_LDR_DATA <ADDRESS>` to access the data structure which consists of different stages of loaded modules.
+![[0006 What-is-TEB-and-PEB-06.png]]
+
+5. Use the command `dt ntdll!_LIST_ENTRY <ADDRESS>` to obtain address of a module.
+![[0006 What-is-TEB-and-PEB-07.png]]
+
+6. Use the command `dt ntdll!_LDR_DATA_TABLE_ENTRY <ADDRESS>` to obtain information about the module.
+![[0006 What-is-TEB-and-PEB-08.png]]
 
 ## Traversing with Code
 
