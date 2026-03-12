@@ -41,10 +41,10 @@ A colleague of mine requested a internal certificate from our Active Direcotry C
 2. Go to **Certificates - Local Computer -> Personal -> Certificates**.
     <image style="display:flex; width: 80%;" src="0041 Issuing-Internal-SSL-Certificates-from-AD-CS-08.png"/>
 
-3. Click on **All Tasks -> Export**/
+3. Click on **All Tasks -> Export**.
     <image style="display:flex; width: 80%;" src="0041 Issuing-Internal-SSL-Certificates-from-AD-CS-09.png"/>
 
-4. On **Certificate Export Wizard** click on **Next**
+4. On **Certificate Export Wizard** click on **Next**.
     <image style="display:flex; width: 45%;" src="0041 Issuing-Internal-SSL-Certificates-from-AD-CS-10.png"/>
 
 5. On **Export Private Key** select **Yes, export the private key**.
@@ -64,4 +64,4 @@ A colleague of mine requested a internal certificate from our Active Direcotry C
 
 ## Conclusion
 
-Generating a SSL certificate is fairly easy but the most important part is to ensure the **Common Name** and **DNS** is the internal domain name otherwise an error message will be thrown when the certificate is used in a internal web application. Hopefully, this article has assisted you with generating your own SSL certificate.
+While generating a certificate the most important part is to ensure the **Common Name** and **DNS** is the internal domain name otherwise the `ERR_CERT_COMMON_NAME_INVALID` error message will be thrown when it's used on the internal web application. Hopefully, this article has assisted you with generating your own SSL certificate.
