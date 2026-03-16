@@ -21,7 +21,7 @@ A user-mode process must create a handle using the symbolic link and that will r
 
 I will be building a kernel driver which will allow the user-mode process to add and remove data structures from a linked list in the kernel driver. The data structure itself has a process name variable which we will use to remove processes from the linked list. In a future article I'll go through blocking process execution depending on the process name.
 
-The source code for the kernel driver will be available at [Github](https://github.com).
+The source code for the kernel driver will be available at [Github](https://github.com/HusenjanDev/LKernel.git).
 
 ### IOCTL
 
