@@ -3,7 +3,7 @@ title: "Kernel Drivers Handling I/O Data"
 created: 2026-03-17
 modified: 2026-03-17
 tags: ["Kernel", "C++"]
-draft: false
+draft: true
 ---
 ## Introduction
 
