@@ -1,10 +1,11 @@
 ---
-title: "Kernel Drivers Handling I/O Data"
+title: "Kernel Driver Handling Inputs"
 created: 2026-03-17
 modified: 2026-03-17
-tags: ["Kernel", "C++"]
-draft: true
+tags: ["C++", "WINOS", "KERNEL"]
+draft: false
 ---
+
 ## Introduction
 
 I recently have been learning about programming kernel drivers to dig further into the Windows operating system. I have learnt a lot about Windows while building kernel drivers and I decided to share that knowledge by building a simple kernel driver which handles inputs from the user-mode process. Now let's get our hands dirty and start building a kernel driver.
@@ -124,10 +125,43 @@ NTSTATUS DriverCreateClose(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 
 The `DriverCreateClose` uses the `CompleteRequest()` function to complete IRP requests for `IRP_MJ_CREATE`, `IRP_MJ_READ`, and `IRP_MJ_CLOSE` which are commonly used by kernel drivers to perform specific operations such as establishing a handle, releasing the handle, and reading data.
 
+### Insert Process
+
+The `InsertProcess()` function will append a new entry to the linked list using the `ProcessList` data structure. It will then allocate memory for the `ProcessName.Buffer` and set the `ProcessName.Length` and the `ProcessName.MaximumLength` to prevent memory corruption by preventing out-of-bounds reads and writes.
+
+```c++ title="InsertProcess()"
+NTSTATUS InsertProcess(UNICODE_STRING ProcessName) {
+    ProcessList* entry = (ProcessList*)ExAllocatePool2(POOL_FLAG_PAGED, sizeof(ProcessList), 'c0rp');
+
+    if (!entry) {
+        KdPrint(("[!] Failed to allocate ProcessList in InsertProcess()\n"));
+        return STATUS_INSUFFICIENT_RESOURCES;
+    }
+
+    entry->ProcessName.Buffer = (PWCH)ExAllocatePool2(POOL_FLAG_PAGED, ProcessName.Length, 'c0rp');
+    
+    if (!entry->ProcessName.Buffer) {
+        ExFreePoolWithTag(entry, 'c0rp');
+        KdPrint(("[!] Failed to allocate entry->ProcessName.Buffer in InsertProcess()\n"));
+        return STATUS_INSUFFICIENT_RESOURCES;
+    }
+    
+    entry->ProcessName.Length = ProcessName.Length;
+    entry->ProcessName.MaximumLength = entry->ProcessName.Length;
+	RtlCopyUnicodeString(&entry->ProcessName, &ProcessName);
+
+    KdPrint(("[+] Adding - ProcessName: %ws\n", entry->ProcessName.Buffer));
+    InsertTailList(&g_ProcessListHead, &entry->ListEntry);
+
+    return STATUS_SUCCESS;
+}
+````
+
+The `InsertTailList()` function is responsible for appending the object to the end of the linked list and once the function executes successfully it returns the `STATUS_SUCCESS` code.
 
 ### Remove Process
 
-The `RemoveProcess()` function will remove a object from the linked list when it has the specific process name. An entry variable is made which is pointing to the head of the linked list and then it enumerates through the linked list to the process name we are searching after is found or to the loop is over.
+The `RemoveProcess()` function will remove a node from the linked list and delete the allocated data structure. The way it deletes the node is by going through all the nodes in the linked list and then compare the process names.
 
 ```c++ title="RemoveProcess()"
 NTSTATUS RemoveProcess(UNICODE_STRING ProcessName) {
@@ -156,6 +190,8 @@ NTSTATUS RemoveProcess(UNICODE_STRING ProcessName) {
 }
 ```
 
+The `CONTAINING_RECORD()` function is responsible for getting the data structure that belongs to the node while the `RemoveEntry()` function is responsible for unlinking the node from the linked list. The `ExFreePoolWithTag()` function is used to deallocate the node and data structure. 
+
 ### Iterate Processes
 
 The `IterateProcesses()` function will be used to go through the linked list and print out the process name. I mainly made this for debugging purposes as it will allow us to view the data inside of our linked list.
@@ -176,7 +212,7 @@ NTSTATUS IterateProcesses() {
 
 ### DeviceControl
 
-The `DeviceControl()` function is responsible for the I/O Control Codes (IOCTL) requests and this function will allow us to declare the way the kernel driver should respond to these IOCTL requests.
+The `DeviceControl()` function is responsible for handling the I/O Control Codes (IOCTL) requests. This function allows us to declare the way the kernel should respond to the different IOCTL requests.
 
 ```cpp title="DeviceControl()"
 NTSTATUS DriverControl(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
@@ -237,16 +273,14 @@ NTSTATUS DriverControl(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 }
 ```
 
-When the user-mode process uses the `IOCTL_ADD_PROCESS` a process is added into the linked list and when the user-mode process uses `IOCTL_REMOVE_PROCESS` the process is removed from the list.
+When the user-mode process uses the `IOCTL_ADD_PROCESS` a node is added into the linked list and when the user-mode process uses `IOCTL_REMOVE_PROCESS` the node is removed from the linked list. 
 
 ### Driver Unloading
 
-The driver unload function will be executed when the driver is going to be unloaded and this function is crucial to setup correctly since it will be responsible for deleting symbolic link, device object, and data that is on the memory pool. 
+The `DriverUnload()` function is always executed when the driver is going to be unloaded because it's responsible for deallocating symbolic link, device object, and other memory pools which were in use by the kernel driver.
 
 ```cpp title="DriverUnload()"
 VOID DriverUnload(PDRIVER_OBJECT DriverObject) {
-	UNREFERENCED_PARAMETER(DriverObject);
-
 	while (!IsListEmpty(&g_ProcessListHead)) {
 		LIST_ENTRY* e = RemoveHeadList(&g_ProcessListHead);
 		ProcessList* entry = CONTAINING_RECORD(e, ProcessList, ListEntry);
@@ -260,16 +294,16 @@ VOID DriverUnload(PDRIVER_OBJECT DriverObject) {
 	}
 
 	UNICODE_STRING symName = RTL_CONSTANT_STRING(L"\\??\\LKernel");
-	IoDeleteDevice(DriverObject->DeviceObject);
 	IoDeleteSymbolicLink(&symName);
+	IoDeleteDevice(DriverObject->DeviceObject);
 }
 ```
 
-All that is done inside of the driver unload function is the linked list data is cleaned up and the device object and symbolic object are deleted.
+In the beginning of the code the nodes of the linked list is being deleted and then the `IoDeleteSymbolicLink()` function is called to delete the symbolic link and the `IoDeleteDevice()` is called to delete the device object.
 
 ## User-Mode Process
 
-The user-mode client will communicate with the kernel driver by creating a handle and then use that handle with the `DeviceIoControl` function using the IOCTL to call the operation that will allow it to add a process into the linked list inside of kernel driver. 
+The user-mode process will communicate with the kernel driver by creating a handle and then use that handle with the `DeviceIoControl()` function using the IOCTL `IOCTL_ADD_PROCESS` to call the operation that will allow us to add a process name to the linked list.
 
 ```cpp title="main.cpp"
 #include <Windows.h>
@@ -302,8 +336,8 @@ int main() {
 }
 ```
 
-The reason we are using a `std::vector` with `std::wstring` is because the kernel driver uses the UNICODE strings. Otherwise we would need to convert all the ASCII strings to UNICODE which requires additional code so I decided to simplify the process.
+The reason a vector with wstring is declared is because the kernel driver uses UNICODE strings otherwise we would need to convert all the ASCII characters to UNICODE characters which requires additional code.
 
 ## Conclusion
 
-Our simple kernel driver can now handle input and outputs and respond to IOCTL requests from the user-mode process. Additionally, the kernel driver also cleans up the memory before unloading itself. In future chapters I'll go through blocking processes from being executed using the process names from linked list.
+Our simple kernel driver can now handle input requests and perform specific operations requested by the user-mode process. Additionally, the kernel driver is also cleaning up the memory before unloading itself which helps with preventing memory corruption and BSOD. In future chapters I'll go through blocking processes from being executed using the process names from the linked list.
