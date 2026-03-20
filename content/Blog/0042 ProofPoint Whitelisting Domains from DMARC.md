@@ -3,7 +3,7 @@ title: "ProofPoint Whitelisting Domains from DMARC"
 created: 2026-04-29
 modified: 2026-04-29
 tags: ["Proofpoint"]
-draft: false
+draft: true
 ---
 
 ## Introduction
