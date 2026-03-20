@@ -1,8 +1,8 @@
 ---
-title: "Kernel Driver Handling Inputs"
+title: "Windows Kernel Driver Handling Inputs"
 created: 2026-03-17
 modified: 2026-03-17
-tags: ["C++", "WINOS", "KERNEL"]
+tags: ["C++", "WINDOWS"]
 draft: false
 ---
 
