@@ -1,24 +1,29 @@
 ---
 title: "Sorting Event Viewer Logs using Python-EVTX (Part 1)"
-created: 2026-02-29
-modified: 2026-02-29
+created: 2026-03-23
+modified: 2026-03-23
 tags: ["PYTHON", "EVTX", "WINDOWS"]
-draft: true
+draft: false 
 ---
 
 ## Introduction
 
-In Windows the Event Viewer Logs are a gold mine since it contains informations about login attempts, user account updates,  computer account updates, and much more. Intead of viewing these events manually we can instead use Python-EVTX library. In this article I'll go through implementing a python script which reads through Event Viewer Logs using the python-evtx library.
+Windows Event Viewer consists of a-lot of informations such as login attempts, account updates, computer account updates and much more. Nowadays all logs inside of Windows Event Viewer is sent over to Microsoft Sentinel where the data can be fecthed using KQL.
+
+However, in the offshore industry in some circumstances the event viewer logs aren't sent over to Microsoft Sentinel because of brandwidth costs or that the company doesn't have the budget to send extreme amount of data to Microsoft Sentinel. In these circumstances python libraries such as `Python-EVTX` will come in handy, as these will allow us to quickly investigate security incidents through a pre-built script.
 
 ## Event Viewer Logs
 
 ![[0037 Sorting-Event-Viewer-Logs-using-Python-EVTX-01.png]]
 
-All events in Windows is assigned a `EventID` which identifies the action that the user performed on the system. An example the `EventID: 4625` means a failed login attempt occurred on our environment. The [Windows Security Log Events](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/) is a gold mine for finding all the event ids that exists in Windows.
+All events in WIndows is assigned a `EventID` which identifies the purpose of the event. An example a `Event ID: 4624` means the user successfully logged on meanwhile the `Event ID: 4625` means the user failed to login because of invalid credentials.
+
+The [Windows Security Log Events](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/) is a great resource for finding and learning about all the different Windows Event IDs. I would highly recommend checking out Rany's work.
+
 
 ## Sorting Events
 
-I'll be using the event viewer sample data from [DeepBlueCLI](https://github.com/sans-blue-team/DeepBlueCLI) to detect total failed login that occurred on a account and assign it a risk score. You can use real events from your domain controller but in my case I'm writing a blog therefore I'll be using public sample data.
+Anyway enough with technical details let's build a python script which will detect total amount of failed logins that occurred in our active directory environment. I'll be using the event viewer sample data from [DeepBlueCLI](https://github.com/sans-blue-team/DeepBlueCLI) since I'm writing a blog which will be publicly available.
 
 ```python
 import argparse
@@ -103,8 +108,9 @@ main()
 [*] Total Failed Logon: 3560
 ```
 
-I also built a `--username` parameter which returns total failed logon attempt that occurred on a specific account instead of all accounts in out environment.
+This simple python script will allow us to investigate our environment 10x quicker rather than spending time on manually going through each event and manually counting them. I'll be blogging about more about this library once I find out what other things are possible with it.
+
 
 ## Conclusion
 
-A-lot of security engineers uses the Event Viewer to investigate a security incident but that is so 2010. Instead we should become familiar with python libraries such as `python-evtx` to quickly craft a python script which can detect threats in our environment. Hopefully, this article has helped you with understanding `python-evtx` library and the purpose of it.
+Many security engineers uses event viewer to investigate security incidents but that is ineffective since it requires a-lot of manual labour. Instead we should build python scripts using libraries such as `pyhton-evtx` to detect threats within our active directory environment. Anyway, I hope this article was a good resource for someone who needed it.
