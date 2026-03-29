@@ -97,7 +97,7 @@ def main():
 main()
 ```
 
-```plaintext title="Terminal"
+```shell title="Terminal"
 > python .\main2.py --evtx events/smb-password-guessing-security.evtx --eid 4625
 [#] Suspicious Activities (RISK LOW)
 [*] Username: JcDfcZTc
