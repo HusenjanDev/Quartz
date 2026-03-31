@@ -27,9 +27,12 @@ We recently experienced a issue where an client was receiving DMARC error when s
     ![[0042 ProofPoint-Whitelisting-Domains-from-DMARC-04.png]]
 
 6. Use the following configuration on the condition.
-    * **Policy Route Condition**: Envelope Sender 
-    * **Operator**: Contains
-    * **Text**: @husenjan.com
+    
+    **Policy Route Condition**: Envelope Sender 
+    
+    **Operator**: Contains
+    
+    **Text**: @husenjan.com
     ![[0042 ProofPoint-Whitelisting-Domains-from-DMARC-05.png]]
 
 7. Click on **Enable this Policy Route** and **Save**.

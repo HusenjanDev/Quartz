@@ -1,16 +1,18 @@
 ---
 title: "Deploying Dynamic 365 to Intune (Android & iOS)"
-created: 2026-02-29
-modified: 2026-02-29
+created: 2026-03-30
+modified: 2026-03-30
 tags: ["INTUNE"]
-draft: true
+draft: false
 ---
 
 ## Introduction
 
-We recently choose to migrate from Salesforce over to Microsoft Dynamics 365 Sales. The Sales Team has requested me to roll out the Dynamics 365 Sales application on Android so they can login and view the data from there. In this post I'll go through setting up Dynamics 365 Sales application on Intune.
+The C-Suite Management decided to migrate from Salesforce over to Microsoft Dynamics 365 Sales to reduce license costs and unify the organization around Microsoft products. The Sales Team requested me to onboard Microsoft Dynamics 365 Sales application on Android and iOS so they can view the data directly from their phone. In this post I'll be going through setting up Microsoft Dynamics 365 Sales on Microsoft Intune. 
 
 ## Android Deployment
+
+This section of the article goes through setting up the application profile for Android endpoints.
 
 1. Go to **Apps -> Android**.
     
@@ -20,7 +22,7 @@ We recently choose to migrate from Salesforce over to Microsoft Dynamics 365 Sal
     
     ![[0038 Deploying-Dynamic-365-to-Intune-(Android-and-iOS)-02.png]]
 
-3. Select **Android Store App**
+3. Select **Managed Google Play Store App**
 
     ![[0038 Deploying-Dynamic-365-to-Intune-(Android-and-iOS)-03.png]]
 
@@ -37,6 +39,8 @@ We recently choose to migrate from Salesforce over to Microsoft Dynamics 365 Sal
     ![[0038 Deploying-Dynamic-365-to-Intune-(Android-and-iOS)-06.png]]
 
 ## iOS Deployment
+
+This section of the article goes through setting up application profile for iOS endpoints.
 
 1. Go to **Apps -> iOS/iPadOS**
 
@@ -74,5 +78,10 @@ We recently choose to migrate from Salesforce over to Microsoft Dynamics 365 Sal
 
     ![[0038 Deploying-Dynamic-365-to-Intune-(Android-and-iOS)-15.png]]
 
+## Synchronization
+
+The Microsoft Dynamics 365 Sales application will be installed on all the users/endpoints that is inside of the security group `ACL-Dynamics365-Users` within 8 hour time-frame. I would recommend setting it up so it's available at Company Portal marketplace instead of requiring the application to be installed on their endpoints.
+
 ## Conclusion
 
+The reason a application profile has to be deployed in order for Sales Team to access Micrsofot Dynamics 365 Sales is because our Microsoft Intune configuration requires all applications that are accessed with company account to be managed by us. It's fairly easy to deploy Microsoft Dynamics 365 Sales application profile as you can see.
