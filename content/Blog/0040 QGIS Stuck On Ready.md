@@ -3,7 +3,7 @@ title: "QGIS 3.4 Stuck On Ready"
 created: 2026-04-07
 modified: 2026-04-07
 tags: ["WINDOWS", "QGIS"]
-draft: false
+draft: true
 ---
 
 ## Introduction
