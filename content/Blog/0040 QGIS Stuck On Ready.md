@@ -30,6 +30,4 @@ So basically an inactive Azure Fileshare can interfere with QGIS application whe
 
 ## Conclusion
 
-
-
 I primarily work on Information Security related tasks but there are times where I'll need to dig into issues employees are experiencing. This was one of the cases where I implemented a policy which gave the impression that the ASR policy lead to QGIS stopping to work but it was actually related to an inactive Azure Fileshare.

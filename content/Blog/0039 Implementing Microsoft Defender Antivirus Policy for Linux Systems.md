@@ -1,14 +1,16 @@
 ---
 title: "Implementing Microsoft Defender Antivirus Policy for Linux Systems"
-created: 2026-03-20
-modified: 2026-03-20
-tags: ["MDE", "ANTIVIRUS", "LINUX"]
-draft: true
+created: 2026-04-07
+modified: 2026-04-07
+tags: ["MDE", "LINUX"]
+draft: false
 ---
 
 ## Introduction
 
-I resigned from my current company for few days ago since then I have been assigned tasks to implement stricter security protocols for both Windows and Linux systems. In this article I'll go through implementing Antivirus Policy for Linux systems.
+I resigned from my current company for a few weeks ago since I got a much better opportunity at another company. And since my resignation I have been assigned tasks to implement stricter security controls for both Windows and Linux systems. Currently, we are relatively new to migrating Linux servers to Microsoft Defender for Endpoint but we are testing with some servers. 
+
+In this article I'll go through the steps to implement Microsoft Antivirus Policy for Linux systems.
 
 ## Enforcement Scope
 
@@ -66,7 +68,7 @@ I resigned from my current company for few days ago since then I have been assig
     
     ![[0039 Implementing-Microsoft-Defender-Antivirus-Policy-for-Linux-12.png]]
 
-7. In **Scanning Options** I decided to enable more strict features since the system administrator wanted to see how much it would affect the performance. However, to reduce the impact it has on Linux systems I decided to only use a single thread for scanning.
+7. In **Scanning Options** I decided to enable more strict features since the system administrator wanted to see how much it would affect the performance.
 
     ![[0039 Implementing-Microsoft-Defender-Antivirus-Policy-for-Linux-13.png]]
 
@@ -82,11 +84,12 @@ I resigned from my current company for few days ago since then I have been assig
 
     ![[0039 Implementing-Microsoft-Defender-Antivirus-Policy-for-Linux-16.png]]
 
-11. Review the configurations.
+11. Review the configurations and click **Save**.
 
     ![[0039 Implementing-Microsoft-Defender-Antivirus-Policy-for-Linux-17.png]]
 
-All devices with the `MDE-Management` will now have the Antivirus policy assigned to them without them being onboarded to Microsoft Defender.
+All devices with the `MDE-Management` tag will automatically be assigned the Antivirus Policy without them being onboarded to Microsoft Defender for Cloud.
 
 ## Conclusion
 
+Microsoft Defender XDR comes with a-lot of features. I originally thought it wouldn't be possible to onboard Antivirus Policy on Linux systems since these aren't onboarded through Microsoft Intune. However, using **Enforcement Scope** and **Tagging** it's possible to enable Antivirus Policy on Linux systems.
