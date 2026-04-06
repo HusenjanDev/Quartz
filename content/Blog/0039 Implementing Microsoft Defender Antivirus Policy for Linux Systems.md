@@ -1,7 +1,7 @@
 ---
 title: "Implementing Microsoft Defender Antivirus Policy for Linux Systems"
-created: 2026-04-07
-modified: 2026-04-07
+created: 2026-04-06
+modified: 2026-04-06
 tags: ["MDE", "LINUX"]
 draft: false
 ---
