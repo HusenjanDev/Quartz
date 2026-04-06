@@ -1,18 +1,20 @@
 ---
-title: "QGIS Stuck On Ready"
-created: 2026-03-29
-modified: 2026-03-29
-tags: ["WINDOWS", "ISSUE"]
-draft: true
+title: "QGIS 3.4 Stuck On Ready"
+created: 2026-04-07
+modified: 2026-04-07
+tags: ["WINDOWS", "QGIS"]
+draft: false
 ---
 
 ## Introduction
 
-I recently pushed out Attack Surface Reduction Rules (ASR Rules) to all our endpoints and right after that a issue started occurring related to QGIS. I originally though the issue occurred because of our ASR rules but after troubleshooting for hours, I found out that the issue was related to Azure File Share (File-Share).
+I pushed out Attack Surface Reduction Rules (ASR) to all endpoints in our organization and right after deploying it to the production a issue occurred with [QGIS 3.4](https://qgis.org/), which is a business application used by navigators. I spent hours troubleshooting the issue and found out that the issue was related to Azure File Share.
 
-In this article I'll go through resolving the issue where QGIS is stuck at on ready stage.
+I decided to create this article to help someone who is experiencing the same issue with [QGIS 3.4](https://qgis.org/) application since I wasn't able to find anything in Google regarding it.
 
-## Instructions
+## Solution
+
+So basically an inactive Azure Fileshare can interfere with QGIS application where it will lead to crashes. The only way to solve the issue is by removing the Azure Fileshare through following instructions.
 
 1. Open **File Explorer** and then select **This PC**.
 
@@ -28,3 +30,6 @@ In this article I'll go through resolving the issue where QGIS is stuck at on re
 
 ## Conclusion
 
+
+
+I primarily work on Information Security related tasks but there are times where I'll need to dig into issues employees are experiencing. This was one of the cases where I implemented a policy which gave the impression that the ASR policy lead to QGIS stopping to work but it was actually related to an inactive Azure Fileshare.
