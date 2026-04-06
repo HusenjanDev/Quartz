@@ -8,7 +8,10 @@ draft: false
 
 ## Introduction
 
-The C-Suite Management decided to migrate from Salesforce over to Microsoft Dynamics 365 Sales to reduce license costs and unify the organization around Microsoft products. The Sales Team requested me to onboard Microsoft Dynamics 365 Sales application on Android and iOS so they can view the data directly from their phone. In this post I'll be going through setting up Microsoft Dynamics 365 Sales on Microsoft Intune. 
+The C-Suite Management made the decission to migrate from Salesforce over to Microsoft Dynamics 365 Sales to reduce license costs and unify the organization around Microsoft products.
+
+
+ The Sales Team requested me to onboard Microsoft Dynamics 365 Sales application on Android and iOS so they can view the data directly from their phone. In this post I'll be going through setting up Microsoft Dynamics 365 Sales on Microsoft Intune. 
 
 ## Android Deployment
 
