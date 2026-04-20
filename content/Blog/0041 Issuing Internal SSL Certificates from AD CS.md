@@ -1,14 +1,20 @@
 ---
 title: "Issuing Internal SSL Certificates from AD CS"
-created: 2026-03-29
-modified: 2026-03-29
+created: 2026-04-20
+modified: 2026-04-20
 tags: ["SSL", "ADCS"]
-draft: true
+draft: false
 ---
 
 ## Introduction
 
-A colleague of mine requested a internal certificate from our Active Direcotry Certificate Services (AD CS) for an internal domain. I issued multiple of certificates for the internal domain but all of them threw the following error message `ERR_CERT_COMMON_NAME_INVALID` but after some research I found the solution to the issue.
+In our organization we have many internal web applications which uses the certificate provided by our Active Directory Certificate Services (AD CS). The information about internal certificates where lost because the colleague who was responsible for these requests resigned from the organization.
+
+None of my colleagues took the ticket for a long time therefore I decided to take it and resolve it. I issued multiple of certificates but received the following error message `ERR_CERT_COMMON_NAME_INVALID` but after many failures I found out the solution and decided to share it here. 
+
+## What was the issue?
+
+The reason the internal certificate was throwing the error message `ERR_CERT_COMMON_NAME_INVALID` is because the **Common Name** and **DNS** had to contain the domain name. And I had only applied the domain name to DNS and not Common Name... 
 
 ## Issuing SSL Certificate
 
@@ -64,4 +70,4 @@ A colleague of mine requested a internal certificate from our Active Direcotry C
 
 ## Conclusion
 
-While generating a certificate the most important part is to ensure the **Common Name** and **DNS** is the internal domain name otherwise the `ERR_CERT_COMMON_NAME_INVALID` error message will be thrown when it's used on the internal web application. Hopefully, this article has assisted you with generating your own SSL certificate.
+While generating a certificate the most important part is to ensure the **Common Name** and **DNS** is the internal domain name otherwise the `ERR_CERT_COMMON_NAME_INVALID` error message will be thrown. Hopefully, someone with similar issue will solve their issues with this article.
