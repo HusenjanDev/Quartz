@@ -11,9 +11,9 @@ I'm an Engineer who's primarily focused on Information Security.
 
 I'm experienced with Microsoft Defender XDR, Cortex XDR, ProofPoint, and Microsoft 365 Admin Panels. I'm also experienced with programming languages such as C++, Rust, and Python. I'm currently working on diving deeper into Windows Internals to understand core functionalities of operating systems.
 
-I built this blog to share projects, troubleshooting insights, and tutorials with the goal of helping others whom are facing similar issues as me. I strongly believe it's important to share information so we can solve issues more efficiently.
+I built this blog to share projects, troubleshooting insights, and tutorials with the goal of helping others whom are facing similar issues as me. I strongly believe it's important to share information so we can solve issues more efficiently. 
 
-I also strongly believe that continuous learning is important as an engineer and that is why I'm pursuing on obtaining certifications for technologies I work with at my workplace. Here is a overview of all the certifications that I currently have and ones I'm working on getting.
+I also strongly believe that continuous learning is important as an engineer and that is why I'm pursuing on obtaining certifications for technologies I work with at my workplace.
 
 <table class="certs-table">
   <tr>
