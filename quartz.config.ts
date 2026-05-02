@@ -25,7 +25,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Bricolage Grotesque",
         body: "Bricolage Grotesque",
-        code: "Jebtrains Mono",
+        code: "Google Sans Code",
       },
       colors: {
         lightMode: {
