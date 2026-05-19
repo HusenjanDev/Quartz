@@ -3,12 +3,16 @@ title: "ProofPoint Whitelisting Domains from DMARC"
 created: 2026-05-19
 modified: 2026-05-19
 tags: ["Proofpoint"]
-draft: true    
+draft: false    
 ---
 
 ## Introduction
 
 I recently received a complaint from a user in the organization that they are not able to communicate with the vendor through email. I investigated the issue and found out the issue was related to the vendor's DMARC configuration therefore I decided to whitelist the vendor temporarily. In this article I'll go through whitelisting a domain from DMARC on ProofPoint.
+
+## What is DMARC?
+
+The DMARC is a email authentication protocol that helps with organizations with protecting their domain from unauthorized use (email spoofing). It's built ontop of SPF and DKIM which provides a incredible defense against email spoofing. If a client misconfigured their DMARC settings ProofPoint will start quarantining the emails therefore we will need to whitelist the domain while the client works on resolving the issue.
 
 ## Policy Routes
 
