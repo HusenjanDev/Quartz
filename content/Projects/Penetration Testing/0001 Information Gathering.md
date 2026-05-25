@@ -22,9 +22,7 @@ All these informations can be used by threat actors to send spear phishing email
 
 ### Domain Name Records
 
-The Domain Name Records consists of a-lot of informations such as owner of domain, subdomains, and TXT records which can be used to obtain the technologies the organization uses. 
-
-
+The Domain Name Records consists of a-lot of informations such as owner of domain, subdomains, and TXT records which can be used to obtain the technologies the organization uses.
 
 [CRT.SH](https://crt.sh/) and [Censys](https://search.censys.io/) are that allows us enumerate subdomains and their associated IPv4/IPv6 addresses.
 
