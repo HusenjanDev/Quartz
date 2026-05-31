@@ -48,7 +48,7 @@ I also believe that continuous learning is important as an Information Security 
   </tr>
 </table>
 
-These certifications has helped me with getting a board knowledge about penetration testing, cloud security, AI security, a which has allowed me to implement and secure different systems. Additionally, since I have a board knowledge about different topics it has allowed me to build relationships with people. 
+These certifications has helped me with getting a board knowledge about penetration testing, cloud security, and AI security which has allowed me to implement and secure different systems. Additionally, since I have a board knowledge about different topics it has allowed me to build relationships with people. 
 
 Kind regards,
 <p id="signature">Husenjan</p>
