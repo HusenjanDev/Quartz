@@ -7,13 +7,13 @@ modified: 2025-11-16
 
 Hey, I'm Husenjan!
 
-I'm an Engineer who's primarily focused on Information Security.
+I'm an Information Security Engineer who's primarily focused on cybersecurity.
 
-I'm experienced with Microsoft Defender XDR, Cortex XDR, ProofPoint, and Microsoft 365 Admin Panels. I'm also experienced with programming languages such as C++, Rust, and Python. I'm currently working on diving deeper into Windows Internals to understand core functionalities of operating systems.
+I'm experienced with Microsoft Defender XDR, Cortex XDR, SentinelOne, ProofPoint, and Microsoft 365 Admin Suite. I'm also experienced with programming in languages such as C++, Rust, and Python. I spend majority of my time diving into Windows Internals to better understand operating system.
 
-I built this blog to share projects, troubleshooting insights, and tutorials with the goal of helping others whom are facing similar issues as me. I strongly believe it's important to share information so we can solve issues more efficiently. 
+I built this blog in 2023 to share projects, troubleshooting insights, and tutorials with the goal of helping others whom are facing smiliar issues as me. I strongly believe that sharing information is critical as it allows us to solve issues more efficiently.
 
-I also strongly believe that continuous learning is important as an engineer and that is why I'm pursuing on obtaining certifications for technologies I work with at my workplace.
+I also believe that continuous learning is important as an Information Security Engineer since the cybersecurity field is moving quicker than ever before and that is why I'm pursuing the following certifications. 
 
 <table class="certs-table">
   <tr>
@@ -48,7 +48,7 @@ I also strongly believe that continuous learning is important as an engineer and
   </tr>
 </table>
 
-All these certifications has helped me with getting a board understanding about the different fields in IT which has allowed me to implement and secure the different systems and build relationships with people. Hopefully, this blog helps you out in some way.
+These certifications has helped me with getting a board knowledge about penetration testing, cloud security, AI security, a which has allowed me to implement and secure different systems. Additionally, since I have a board knowledge about different topics it has allowed me to build relationships with people. 
 
 Kind regards,
 <p id="signature">Husenjan</p>

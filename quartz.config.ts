@@ -23,8 +23,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Bricolage Grotesque",
-        body: "Bricolage Grotesque",
+        header: "SN Pro",
+        body: "SN Pro",
         code: "Google Sans Code",
       },
       colors: {
