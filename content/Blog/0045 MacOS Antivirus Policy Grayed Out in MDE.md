@@ -10,7 +10,7 @@ draft: false
 
 In Microsoft Defender for Endpoint there are two types of antivirus policies for macOS endpoints where one of them is legacy and the other one is newer as it allows us to configure features such as cloud protection, scheduled scanning, archive bomb, and potentially unwanted applications.
 
-Whenever I tried to create the modern antivirus policy for macOS endpoints the **"Next"** button was grayed out and wouldn't let me proceed with creating the antivirus policy. In this article I'll go through solving that issue.
+Whenever I tried to create the modern antivirus policy for macOS endpoints the **"Next"** button was grayed out and wouldn't let me proceed with creating the antivirus policy. In this article I'll go through solving the issue where the **"Next"** button is grayed out in macOS and provide security configuration.
 
 ## Solution
 
