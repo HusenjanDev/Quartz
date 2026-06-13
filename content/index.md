@@ -35,7 +35,6 @@ I also believe that continuous learning is important as an Information Security 
   </tr>
   <tr>
     <th data-status="pending">In Progress</th>
-    <td><div class="certs-cell"><span class="certs-chip">PL-500</span></div></td>
   </tr>
   <tr>
     <th data-status="todo">Todo</th>
