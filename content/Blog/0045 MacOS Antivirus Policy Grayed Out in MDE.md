@@ -1,43 +1,43 @@
 ---
-title: "MacOS Antivirus Policy Grayed Out in MDE"
+title: "macOS Antivirus Policy Grayed Out in MDE"
 created: 2026-06-12
 modified: 2026-06-12
-tags: ["MDE", "Antivirus", "MacOS"]
+tags: ["MDE", "Antivirus", "macOS"]
 draft: false
 ---
 
 ## Introduction
 
-In Microsoft Defender for Endpoint there are two types of antivirus policies for MacOS endpoints where one of them is legacy and the other one is newer as it allows us to configure features such as cloud protection, scheduled scanning, archive bomb, and potentially unwanted applications.
+In Microsoft Defender for Endpoint there are two types of antivirus policies for macOS endpoints where one of them is legacy and the other one is newer as it allows us to configure features such as cloud protection, scheduled scanning, archive bomb, and potentially unwanted applications.
 
-Whenever I tried to create the modern antivirus policy for MacOS endpoints the **"Next"** button was grayed out and wouldn't let me proceed with creating the antivirus policy. In this article I'll go through solving that issue.
+Whenever I tried to create the modern antivirus policy for macOS endpoints the **"Next"** button was grayed out and wouldn't let me proceed with creating the antivirus policy. In this article I'll go through solving that issue.
 
 ## Solution
 
-In this section I'll go through implementing modern Microsoft Defender Antivirus policy for MacOS endpoints.
+In this section I'll go through implementing modern Microsoft Defender Antivirus policy for macOS endpoints.
 
 1. Go to [Microsoft Intune](https://intune.microsoft.com)
 
 2. Click on **Endpoint Security -> Antivirus**.
-    ![[0045 MacOS Antivirus Policy Grayed Out in MDE 01.png]]
+    ![[0045 macOS Antivirus Policy Grayed Out in MDE 01.png]]
 
-3. Click on **Create** then select **MacOS -> Microsoft Defender Antivirus**.
-    ![[0045 MacOS Antivirus Policy Grayed Out in MDE 02.png]]
+3. Click on **Create** then select **macOS -> Microsoft Defender Antivirus**.
+    ![[0045 macOS Antivirus Policy Grayed Out in MDE 02.png]]
 
 3. Enter the **Name and Description**.
-    ![[0045 MacOS Antivirus Policy Grayed Out in MDE 03.png]]
+    ![[0045 macOS Antivirus Policy Grayed Out in MDE 03.png]]
 
 4. After configuring the **Antivirus Engine** section the **"Next"** button is disabled.
-    ![[0045 MacOS Antivirus Policy Grayed Out in MDE 04.png]]
+    ![[0045 macOS Antivirus Policy Grayed Out in MDE 04.png]]
 
 5. The **"Next"** button will be disabled until the **"Allow Threats"** is configured with a single entry.
-    ![[0045 MacOS Antivirus Policy Grayed Out in MDE 05.png]]
+    ![[0045 macOS Antivirus Policy Grayed Out in MDE 05.png]]
 
-So basically the **"Next"** button will be disabled until someone configures the **"Allow Threats"** with a minimum of a single entry otherwise it will not allow us to create the Microsoft Defender Antivirus Policy for MacOS. Unfortunately, I don't know the reasoning why Microsoft demands minimum a single entry...
+So basically the **"Next"** button will be disabled until someone configures the **"Allow Threats"** with a minimum of a single entry otherwise it will not allow us to create the Microsoft Defender Antivirus Policy for macOS. Unfortunately, I don't know the reasoning why Microsoft demands minimum a single entry...
 
 ## Recommendations
 
-I would recommend configuring Microsoft Defender Antivirus Policy for MacOS endpoints with the following configurations to secure them.
+I would recommend configuring Microsoft Defender Antivirus Policy for macOS endpoints with the following configurations to secure them.
 
 | Section | Setting | Value |
 |---|---|---|
@@ -80,8 +80,8 @@ I would recommend configuring Microsoft Defender Antivirus Policy for MacOS endp
 | | Potentially Unwanted Application | Block | 
 | | Archive Bomb | Block |
 
-Once the configurations are applied successfully to MacOS endpoints without any issues I would enable randomized scheduled scanning as it will help with detecting threats that are more complex.
+Once the configurations are applied successfully to macOS endpoints without any issues I would enable randomized scheduled scanning as it will help with detecting threats that are more complex.
 
 ## Conclusion
 
-The modern version of Microsoft Defender Antivirus policy comes with more configurations which allows us to secure our MacOS endpoints. However, to  create the configuration the **"Allow Threats"** feature must have at minimum have a single entry otherwise the **"Next"** button will be grayed out and it won't let us create the policy. 
+The modern version of Microsoft Defender Antivirus policy comes with more configurations which allows us to secure our macOS endpoints. However, to  create the configuration the **"Allow Threats"** feature must have at minimum have a single entry otherwise the **"Next"** button will be grayed out and it won't let us create the policy. 
