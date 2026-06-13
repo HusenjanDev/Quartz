@@ -9,11 +9,11 @@ Hey, I'm Husenjan!
 
 I'm an Information Security Engineer who's primarily focused on cybersecurity.
 
-I'm experienced with Microsoft Defender XDR, Cortex XDR, SentinelOne, ProofPoint, and Microsoft 365 Admin Suite. I'm also experienced with programming in languages such as C++, Rust, and Python. I spend majority of my time diving into Windows Internals to better understand operating system.
+On a day-to-day basis I work across tools like Microsoft Defender XDR, Cortex XDR, SentinelOne, Proofpoint, and the Microsoft 365 Admin Suite. On the programming side, I'm comfortable in C++, Rust, and Python, and I spend a lot of my time digging into Windows Internals to better understand how the operating system actually works.
 
-I built this blog in 2023 to share projects, troubleshooting insights, and tutorials with the goal of helping others whom are facing smiliar issues as me. I strongly believe that sharing information is critical as it allows us to solve issues more efficiently.
+I built this blog in 2023 to share projects, troubleshooting notes, and tutorials for anyone running into the same issues I have. Sharing what we learn just makes solving problems faster for everyone. 
 
-I also believe that continuous learning is important as an Information Security Engineer since the cybersecurity field is moving quicker than ever before and that is why I'm pursuing the following certifications. 
+Cybersecurity is a field that moves fast, so continuous learning is a big part of the job. That is why I'm working on getting the certifications below.
 
 <table class="certs-table">
   <tr>
@@ -47,7 +47,7 @@ I also believe that continuous learning is important as an Information Security 
   </tr>
 </table>
 
-These certifications has helped me with getting a board knowledge about penetration testing, cloud security, and AI security which has allowed me to implement and secure different systems. Additionally, since I have a board knowledge about different topics it has allowed me to build relationships with people. 
+These certifications have given me a broad knowledge about penetration testing, cloud security, and AI security — enough to design, implement, and harden systems with more confidence. It has also allowed me to network and build relationships with people in different fields.
 
 Kind regards,
 <p id="signature">Husenjan</p>
