@@ -8,9 +8,9 @@ draft: false
 
 ## Introduction
 
-Claude comes with Claude Code which is a product that allows developers to analyze and build applications through the terminal. It's also used by developers to automate repetitive tasks which allows them to focus on more important things such as optimization and architecture.
+Claude comes with Claude Code, a product that allows developers to analyze and build applications through the terminal. It's also used by developers to automate repetitive tasks, which lets them focus on more important things such as optimization and architecture.
 
-Claude Code can also read, write, and execute commands on the system therefore it's important to secure Claude Code from reading, writing, and executing specific things. 
+Claude Code can also read, write, and execute commands on the system, therefore it's important to secure Claude Code from reading, writing, and executing specific things.
 
 ## Claude Code Security
 
@@ -22,7 +22,7 @@ Inside the **Claude Code Organization Panel** there is a setting which allows us
 | `Read`      | Used to allow or deny Claude Code from reading a file.      |
 | `Write`     | Used to allow or deny Claude Code from writing to a file.   |
 
-All these options allows us to secure Claude Code from executing specific commands and from reading critical files which has API keys and much more information. Here is an example configuration for Claude Code:
+All these options allow us to secure Claude Code from executing specific commands and from reading critical files that contain API keys and much more information. Here is an example configuration for Claude Code:
 
 ```json title="managed-settings.json"
 {
@@ -32,7 +32,7 @@ All these options allows us to secure Claude Code from executing specific comman
             "Read(**/.env)",
             "Read(**/local-settings.json)",
             "Write(**/etc/passwd)",
-            "Bash(sudo *)"
+            "Bash(sudo *)",
             "Bash(su *)",
             "Bash(curl *)",
             "Bash(git *)",
@@ -44,11 +44,11 @@ All these options allows us to secure Claude Code from executing specific comman
 }
 ```
 
-So basically the managed-settigns.json file basically secures Claude Code by preventing it from reading files which has API keys and blocking execution of specific commands. The disableBypassPermissionsMode disallows the users from bypassing the security configuration set in managed-settings.json.
+Basically, the `managed-settings.json` file secures Claude Code by preventing it from reading files that contain API keys and by blocking the execution of specific commands. The `disableBypassPermissionsMode` option prevents users from bypassing the security configuration set in `managed-settings.json`.
 
 ## Securing through Server-Side
 
-Claude allows us to secure Claude Code from server-side through the managed-settings.json which is accessible with the following steps.
+Claude allows us to secure Claude Code from the server-side through `managed-settings.json`, which is accessible via the following steps.
 
 1. Click on **Organizational Settings**
     ![[0044 Securing Claude Code via Client Side & Server Side 01.png]]
@@ -59,7 +59,7 @@ Claude allows us to secure Claude Code from server-side through the managed-sett
 3. Click on **Manage** on **Manage Settings**
     ![[0044 Securing Claude Code via Client Side & Server Side 03.png]]
 
-I would recommend to implement a strict access control for Claude Code as it comes with capabilities to read, write, and execute things on our end-users systems. Here is a starter tempalte that I would highly start recommending using.
+I would recommend implementing strict access control for Claude Code, as it comes with the capability to read, write, and execute things on our end-users' systems. Here is a starter template that I would highly recommend using.
 
 ```json title="managed-settings.json"
 {
@@ -73,8 +73,8 @@ I would recommend to implement a strict access control for Claude Code as it com
             "Read(**/id_ecdsa.pub)",
             "Read(**/id_rsa.pub)",
             "Write(**/etc/passwd)",
-            "Write(C:\Windows\System32\config\sam)",
-            "Write(C:\Windows\System32\config\security)",
+            "Write(C:\\Windows\\System32\\config\\sam)",
+            "Write(C:\\Windows\\System32\\config\\security)",
             "Bash(sudo *)",
             "Bash(su *)",
             "Bash(curl *)",
@@ -83,19 +83,19 @@ I would recommend to implement a strict access control for Claude Code as it com
             "Bash(chmod *)",
             "Bash(chown *)",
             "Bash(nmap *)",
-            "Bash(ssh * )",
+            "Bash(ssh *)",
             "Bash(nc *)",
-            "Bash(ncat *)",
+            "Bash(ncat *)"
         ]
     }
 }
 ```
 
-The server-side version of managed-setting.json will block the requests whenever the user tries to read, write, and execute things mentioned in the managed-settings.json file. I'll now go through implementing these restriction on the client-side since it can help us with enforcing these configurations.
+The server-side version of `managed-settings.json` will block requests whenever the user tries to read, write, or execute things mentioned in the `managed-settings.json` file. I'll now go through implementing these restrictions on the client-side, since it can help us enforce these configurations.
 
 ## Securing through Client-Side (Windows)
 
-Claude also allows us to secure Claude Code from client-side by adding the managed-settings.json file inside of a registry key.
+Claude also allows us to secure Claude Code from the client-side by adding the `managed-settings.json` file inside a registry key.
 
 1. Go to **[Microsoft Intune](http://intune.microsoft.com)**
 
@@ -152,10 +152,9 @@ Claude also allows us to secure Claude Code from client-side by adding the manag
 8. Review the configuration and create the **Script & Remediation**.
     ![[0044 Securing Claude Code via Client Side & Server Side 10.png]]
 
+## Securing through Client-Side (macOS)
 
-## Securing through Client-Side (MacOS)
-
-Claude also allows us to secure Claude Code from client-side on MacOS devices by adding the managed-settings.json fiel inside of a mobileconfig file which will be added into the MacOS MDM enforcement directory.
+Claude also allows us to secure Claude Code from the client-side on macOS devices by adding the `managed-settings.json` file inside a `.mobileconfig` file, which will be added into the macOS MDM enforcement directory.
 
 1. Go to **Microsoft Intune**
 
@@ -263,6 +262,6 @@ Claude also allows us to secure Claude Code from client-side on MacOS devices by
 
 ## Conclusion
 
-Antrophics the founders of Claude built a great tool which increases engineers productivity. However, as Security Engineers it's crucial for us to implement least privileges on these CLI tools as these comes with the capabilities to read, write, and execute on end-users systems to minimize the attack surface.
+Anthropic, the company behind Claude, built a great tool that increases engineers' productivity. However, as Security Engineers, it's crucial for us to implement least privilege on these CLI tools, as they come with the capability to read, write, and execute on end-users' systems, in order to minimize the attack surface.
 
-Fortunately for us Antrophics allows us to force security settings through both client-side and server-side which allows us to ensure that the attack surface is reduced. I would highly recommend to setup managed-settings.json for Claude Code to reduce the attack surface.
+Fortunately for us, Anthropic allows us to enforce security settings through both the client-side and the server-side, which helps ensure that the attack surface is reduced. I would highly recommend setting up `managed-settings.json` for Claude Code to reduce the attack surface.
