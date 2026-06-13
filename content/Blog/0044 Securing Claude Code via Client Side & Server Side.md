@@ -8,9 +8,9 @@ draft: false
 
 ## Introduction
 
-Claude comes with Claude Code, a product that allows developers to analyze and build applications through the terminal. It's also used by developers to automate repetitive tasks, which lets them focus on more important things such as optimization and architecture.
+Claude comes with Claude Code, a product that allows developers to analyze and build applications through the terminal. It's also used by developers to automate repetitive tasks, which lets them focus on more important things such as optimization and architecture. 
 
-Claude Code can also read, write, and execute commands on the system, therefore it's important to secure Claude Code from reading, writing, and executing specific things.
+Claude Code can also perform operations such as read, write, and execute commands on the system, therefore it's important to secure Claude Code from reading, writing, and executing specific things on the system. In this article I'll go through securing Claude Code through server-side and client-side using MDM.
 
 ## Claude Code Security
 
