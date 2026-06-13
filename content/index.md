@@ -11,7 +11,7 @@ I'm an Information Security Engineer who's primarily focused on cybersecurity.
 
 On a day-to-day basis I work across tools like Microsoft Defender XDR, Cortex XDR, SentinelOne, Proofpoint, and the Microsoft 365 Admin Suite. On the programming side, I'm comfortable in C++, Rust, and Python, and I spend a lot of my time digging into Windows Internals to better understand how the operating system actually works.
 
-I built this blog in 2023 to share projects, troubleshooting notes, and tutorials for anyone running into the same issues I have. Sharing what we learn just makes solving problems faster for everyone. 
+I built this blog in 2023 to share projects, troubleshooting notes, and tutorials for anyone running into the same issues. I believe sharing knowledge is extremely important as it will allow us to solve problems quicker so we can spend it on more important tasks.
 
 Cybersecurity is a field that moves fast, so continuous learning is a big part of the job. That is why I'm working on getting the certifications below.
 
@@ -24,12 +24,12 @@ Cybersecurity is a field that moves fast, so continuous learning is a big part o
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/63db89b5064d17ff" target="_blank" rel="noopener">AZ-500</a>
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/ae5226222b6183c4" target="_blank" rel="noopener">AZ-305</a>
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/f5d62077c174a42f" target="_blank" rel="noopener">AZ-104</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/686e367eb51f9614" target="_blank" rel="noopener">AZ-900</a>
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814" target="_blank" rel="noopener">SC-200</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/191a48d26936b5f4" target="_blank" rel="noopener">SC-900</a>
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814" target="_blank" rel="noopener">MD-102</a>
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/f6b075b311d35955" target="_blank" rel="noopener">MS-102</a>
         <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/aab886951d2cec68" target="_blank" rel="noopener">MS-900</a>
+        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/191a48d26936b5f4" target="_blank" rel="noopener">SC-900</a>
+        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/686e367eb51f9614" target="_blank" rel="noopener">AZ-900</a>
       </div>
     </td>
   </tr>
