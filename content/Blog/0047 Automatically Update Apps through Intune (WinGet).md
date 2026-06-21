@@ -42,4 +42,28 @@ We can execute these commands on the users devices using Remedication Scripts in
 > [!IMPORTANT]- Legacy Applications
 > It's important to note that WinGet will update the application automatically in the background therefore it's crucial that you understand your environment since in some situations users in the organization might be using older version of the application since a specific feature is necessary for them to perform their work.
 
-## Microsoft Intune
+## Microsoft Intune Rollout
+
+This section of the article goes through updating all applications using WinGet with Remediation Script.
+
+1. Go to Microsoft Intune.
+2. Click on **Endpoints -> Windows -> Remediation Script**.
+3. Click on **"Create"**.
+4. Enter Name and Description.
+5. Here is the **Detection and Script** to use.
+    ```powershell title="Detection Script"
+        $Output = winget.exe upgrade
+
+        if ($Output -like "*upgrades available*") {
+            Exit 1
+        } else {
+            Exit 0
+        }
+    ```
+    ```powershell title="Automatic Update"
+        $arguments = @("upgrade", "--all", "--silent", "--accept-source-agreements", "--accept-package-agreements")
+        Start-Process -FilePath "winget.exe" -ArgumentList $arguments -Wait -NoNewWindow
+    ```
+6. Create the Remediation Script.
+
+## Conclusion
