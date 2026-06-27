@@ -47,7 +47,7 @@ Cybersecurity is a field that moves fast, so continuous learning is a big part o
   </tr>
 </table>
 
-These certifications have given me a broad knowledge about penetration testing, cloud security, and AI security — enough to design, implement, and harden systems with more confidence. It has also allowed me to network and build relationships with people in different fields.
+These certifications have given me a broad knowledge about penetration testing, cloud security, and AI security — enough to design, implement, and harden systems with confidence. It has also allowed me to network and build relationships with people in different fields.
 
 Kind regards,
 <p id="signature">Husenjan</p>

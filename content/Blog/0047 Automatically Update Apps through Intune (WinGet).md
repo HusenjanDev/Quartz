@@ -2,7 +2,7 @@
 title: "Automatically Update Apps through Intune (WinGet)"
 created: 2026-06-26
 modified: 2026-06-26
-tags: ["Windows", "Intune", "WinGet"]
+tags: ["Intune", "Windows", "WinGet"]
 draft: false
 ---
 
