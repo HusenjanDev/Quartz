@@ -35,6 +35,10 @@
     grid-template-columns: 1.5fr 4.25fr 1.5fr repeat(2, 0);
 }
 
+code {
+  font-size: 0.8em;
+}
+
 @media (max-width: 780px) {
     .section-ul .section-li .section {
         display: grid;
