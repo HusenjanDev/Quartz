@@ -17,68 +17,64 @@ Additionally, disabling JavaScript and Flash engine will gain us extra 0.66% sec
 So basically I built a PowerShell script which disables JavaScript and Flash engine by creating or updating the registry values inside of the Adobe Acrobat Reader registry directory. I also built a function which deletes the registry values incase it distrupts the business *(Honestly who uses JavaScript and Flash Engine on Adobe in 2026)*...
 
 ```powershell title="DisableJavaScriptAndFlashEngine.ps1"
+#
+# Security Recommendation:  Disable JavaScript on Adobe Reader DC
+# Configuration ID:         SCID-76
+# 
 function DisableJavaScript() {
-    $adobe_reader_feature_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+    $adobe_featurelockdown_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
 
-    Write-Host "[#] Running the ApplyDisableJavaScript function."
-    if (-not (Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue)) {
-        # Create bDisableJavaScript with number 1
-        New-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript" -Value 1 | Out-Null
-        Write-Host "[#] Created Registry: " $adobe_reader_reg_path "bDisableJavaScript" 
+    Write-Host "[#] Running DisableJavaScript() function."
+    if (-not (Get-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue)) {
+        # We're creating a DWORD regitry to disables JavaScript.
+        New-ItemProperty -Path $adobe_reaadobe_featurelockdown_reg_pathder_feature_reg_path -Name "bDisableJavaScript" -Value 1 | Out-Null
+        Write-Host "`t[#] Registry DWORD created (bDisableJavaScript = 1)" 
     }
-    elseif ((Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue)) {
-        # Updates bDisableJavaScript value to 1
-        Set-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript" -Value 1 | Out-Null
-        Write-Host "[#] Changed registry for bDisableJavaScript to 1."
+    elseif ((Get-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue)) {
+        # We're updating the DWORD regitry to disables JavaScript.
+        Set-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bDisableJavaScript" -Value 1 | Out-Null
+        Write-Host "`t[#] Registry DWORD changed (bDisableJavaScript = 1)"
     }
     else {
-        Write-Host "[!] Unknown the bDisableJavaScript couldn't be created or updated."
+        Write-Host "[!] Error with DisableJavaScript() function."
     }
+    Write-Host "[#] Exiting DisableJavaScript() function."
 }
 
+#
+# Security Recommendation:  Disable Flash on Adobe Reader DC
+# Configuration ID:         SCID-75
+#
 function DisableFlash() {
-    # Initialization Variables
-    $adobe_reader_feature_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+    $adobe_featurelockdown_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
 
-    Write-Host "[#] Running the ApplyDisableFlash function."
-
-    # Is bEnableFlash created already? 
-    if (-not (Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue)) {
-        # Creates the registry value and disables Flash.
-        New-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash" -Value 0 | Out-Null
-        Write-Host "[#] Created registry for bFlash with value 0."
+    Write-Host "[#] Running DisableFlash() function."
+    if (-not (Get-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue)) {
+        # We're creating a DWORD regitry to disables Flash Engine.
+        New-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bEnableFlash" -Value 0 | Out-Null
+        Write-Host "`t[#] Registry DWORD created (bEnableFlash = 1) "
     }
-    elseif ((Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue)) { 
-        # Updates the registry value and disables Flash.
-        Set-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash" -Value 0 | Out-Null
-        Write-Host "[#] Changed registry for bFlash to 0."
+    elseif ((Get-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue)) { 
+        # We're updating the DWORD registry to disable Flash Engine.
+        Set-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bEnableFlash" -Value 0 | Out-Null
+        Write-Host "`t[#] Registry DWORD changed (bEnableFlash = 1) "
     }
     else {
-        Write-Host "[!] Unknown reason the bFlashEnable couldn't be created or updated."
+        Write-Host "[!] Error with DisableFlash() function."
     }
+    Write-Host "[#] Exiting DisableFlash() function."
 }
 
-function RevertChanges() {
-    # Adobe registry feature path
-    $adobe_reader_feature_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
-
-    # Deleting bEnableFlash on Adobe Acrobat Reader
-    if ((Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue)) {
-        Remove-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash"
-    }
-
-    # Deleting bDisableJavaScript on Adobe Acrobat Reader
-    if ((Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue)) {
-        Remove-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript"
-    }
-}
-
-
+#
+# Main Function -
+# Primarily used for detecting registry paths and appliying changes. 
+#
 function main() {
-    $adobe_reader_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader"
-    if ((Test-Path -Path $adobe_reader_path) -eq $true) {
-        DisableFlash
+    $adobe_featurelockdown_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+
+    if ((Test-Path -Path $adobe_featurelockdown_reg_path) -eq $true) {
         DisableJavaScript
+        DisableFlash
     }
 }
 
@@ -86,28 +82,33 @@ main
 ```
 
 ```powershell title="DetectionScript.ps1"
-function DetectionFunc() {
-    # Adobe registry feature path
-    $adobe_reader_feature_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
+#
+# Detection -
+# Primarily used for detecting if the change applied successfullly.
+#
+function Detection() {
+    $adobe_featurelockdown_reg_path = "HKLM:\Software\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown"
 
-    if ((Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue).bDisableJavaScript -eq 1) {
-        Write-Host "[#] JavaScript is disabled."
-        if ((Get-ItemProperty -Path $adobe_reader_feature_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue).bEnableFlash -eq 0) {
-            Write-Host "[#] Flash engine is disabled."
+    Write-Host "[#] Running DetectionFunc() function."
+    if ((Get-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bDisableJavaScript" -ErrorAction SilentlyContinue).bDisableJavaScript -eq 1) {
+        Write-Host "`t[#] JavaScript is DISABLED on Adobe Acrobat Reader."
+        if ((Get-ItemProperty -Path $adobe_featurelockdown_reg_path -Name "bEnableFlash" -ErrorAction SilentlyContinue).bEnableFlash -eq 0) {
+            Write-Host "`t[#] Flash Engine is DISABLED on Adobe Acrobat Reader."
             Exit 0
         }
         else {
-            Write-Host "[#] Flash engine is not disabled"
+        Write-Host "`t[#] Flash Engine is ENABLED on Adobe Acrobat Reader."
             Exit 1
         }
     }
     else {
-        Write-Host "[#] JavaScript is not disabled."
+        Write-Host "`t[#] JavaScript is ENABLED on Adobe Acrobat Reader."
         Exit 1
     }
+    Write-Host "[#] Exiting DetectionFunc() function."
 }
 
-DetectionFunc
+Detection
 ```
 
 The `DisableJavaScript` function is responsible for disabling JavaScript while the `DisabelFlash` is responsible for disabling Flash Engine. While the `RevertChanges` function is responsible for undoing the restriction applied by these two functions. The `DetectionScript.ps1` is mainly used for detecting if the changes applied successfully.
