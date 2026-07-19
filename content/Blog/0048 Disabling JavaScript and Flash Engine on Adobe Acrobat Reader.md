@@ -142,3 +142,9 @@ Well congratulations! Once the PowerShell script is ran on the different devices
 ## Conclusion
 
 Adobe Acrobat is a great product for reading PDF documents but majority of the vulnerabilities that are found in the product is related to JavaScript and Flash Engine. This is why Microsoft recommends us to disable JavaScript and Flash Engine to gain 0.66% higher secure score. Hopefully, this article has assisted you with securing your environment.
+
+## See also
+
+- [[0047 Automatically Update Apps through Intune (WinGet).md|Automatically Update APps through Intune (WinGet)]]
+- [[0049 Using Device Control to Block USB Devices in MDE.md|Using Device Control to Block USB Devices in MDE]]
+- [[0050 Disabling Autorun and Autoplay for Windows Devices.md|Disable Autorun and Autoplay for Windows Devices]]

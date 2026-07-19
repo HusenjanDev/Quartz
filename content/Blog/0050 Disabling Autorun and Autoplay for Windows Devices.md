@@ -171,3 +171,9 @@ You should now be able to harden the Windows devices by running the PowerShell s
 ## Conclusion
 
 I would highly recommend implementing these changes since it prevents an employee and user from accidentally running a malicious file which is ran through autorun and autoplay features. Disabling Autorun and Autoplay features for Windows devices should also gain your organization 0.5 to 1% higher secure score which are good for compliance reasons. Hopefully, this article has helped you with increasing your organization's security posture.
+
+## See also
+
+- [[0047 Automatically Update Apps through Intune (WinGet).md|Automatically Update APps through Intune (WinGet)]]
+- [[0048 Disabling JavaScript and Flash Engine on Adobe Acrobat Reader.md| Disabling JavaScript and Flash Engine on Adobe Acrobat Reader]]
+- [[0049 Using Device Control to Block USB Devices in MDE.md|Using Device Control to Block USB Devices in MDE]]

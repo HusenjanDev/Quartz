@@ -91,3 +91,9 @@ I would recommend starting off the Device Control Policy with some test users in
 ## Conclusion
 
 Device Control Policy in Microsoft Defender for Ednpoint (MDE) allows us to manage USB devices, CD drives, and SD cards by ensuring that users can only perform specific actions. It allows us to build anywhere from simple configuration to block execute permission to a complex configuration which only allows specific USB brands. If you're using MDE, I would highly recommend spending some time setting up your Device Control Policy.
+
+## See also
+
+- [[0047 Automatically Update Apps through Intune (WinGet).md|Automatically Update APps through Intune (WinGet)]]
+- [[0048 Disabling JavaScript and Flash Engine on Adobe Acrobat Reader.md| Disabling JavaScript and Flash Engine on Adobe Acrobat Reader]]
+- [[0050 Disabling Autorun and Autoplay for Windows Devices.md|Disable Autorun and Autoplay for Windows Devices]]
