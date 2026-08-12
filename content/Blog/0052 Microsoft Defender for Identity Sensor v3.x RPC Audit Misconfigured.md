@@ -1,0 +1,42 @@
+---
+title: "Troubleshooting Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured"
+created: 2026-08-14
+modified: 2026-08-14
+tags: ["MDE", "Identity"]
+draft: true
+---
+
+## Introduction
+
+Currently, I'm working on onboarding the Microsoft Defender for Identity sensors to the domain controllers in my organization. While onboarding them to identity sensor, Microsoft sent an alert where it said the *"Identity Sensor v3.x PRC Audit Misconfigured"*. In this article I'll go through resolving the alert and also provide information about RPC which might help you with understanding the purpose of collecitng RPC telemetry data. 
+
+## What is RPC?
+
+Remote Procedure Call (RPC) is a communication protocl which uses TCP or UDP to communicate with an program running in a different system. RPC uses the client-server model where the client communicates with the server for the services. As an example the client invokes a function and the server executes the function and returns the data to the client.
+
+Microsoft uses RPC protocol for many of its components such as AD Replication, Print Spooler, Account and Policy Lookup and so forth. This is why threat actors are interested in targeting the RPC protocol.
+
+## Solution
+
+This section of the document goes through resolving the alert.
+
+1. Go to [Microsoft Security](https://security.microsoft.com/machines)
+    ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 01.png]]
+
+2. Click on **Assets -> Devices**.
+    ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 02.png]]
+
+3. Find your domain controller.
+    ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 03.png]]
+
+4. Click on **"..." -> Manage Tags**
+    ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 04.png]]
+
+5. Add **"Unified Sensor RPC Audit"**
+    ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 05.png]]
+
+The tag synchronization should take around 15 minutes and from there on you can close the alert from Microsoft. If an new alert is generated make sure that there are no whitepsaces on right or left side of the tag.
+
+## Conclusion
+
+Microsoft recommends us to add the **"Unified Sensor RPC Audit"** tag since that will allow the identity sensor to monitor RPC traffics. It's crucial for us to monitor the RPC traffic happening in our Active Directory environemnt since many of the Windows components uses it. Additionally, in the future identity sensor will start monitoring the RPC traffic by default where tags doesn't need to be added to the domain controllers. Hopefully this article was useful for you in some way!
