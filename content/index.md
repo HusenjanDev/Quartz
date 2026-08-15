@@ -15,35 +15,59 @@ I built this blog in 2023 to share projects, troubleshooting notes, and tutorial
 
 Cybersecurity is a field that moves fast, so continuous learning is a big part of the job. That is why I'm working on getting the certifications below.
 
-<table class="certs-table">
+<style>
+.certs-table-quartz {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+  font-family: var(--bodyFont);
+  color: var(--darkgray);
+}
+.certs-table-quartz th,
+.certs-table-quartz td {
+  padding: 4px 10px;
+  border: 1px solid var(--lightgray);
+  text-align: left;
+  vertical-align: top;
+}
+.certs-table-quartz th {
+  white-space: nowrap;
+  color: var(--dark);
+  background-color: var(--light);
+}
+.certs-table-quartz a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+.certs-table-quartz a:hover {
+  color: var(--tertiary);
+  text-decoration: underline;
+}
+</style>
+
+<table class="certs-table-quartz">
   <tr>
-    <th data-status="done">Obtained</th>
+    <th>Obtained</th>
     <td>
-      <div class="certs-cell">
-        <a class="certs-chip" href="https://www.credential.net/b96accfa-fc61-44bd-b439-ce05d2c3a7b9" target="_blank" rel="noopener">OSCP</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/63db89b5064d17ff" target="_blank" rel="noopener">AZ-500</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/ae5226222b6183c4" target="_blank" rel="noopener">AZ-305</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/f5d62077c174a42f" target="_blank" rel="noopener">AZ-104</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814" target="_blank" rel="noopener">SC-200</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814" target="_blank" rel="noopener">MD-102</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/f6b075b311d35955" target="_blank" rel="noopener">MS-102</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/aab886951d2cec68" target="_blank" rel="noopener">MS-900</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/191a48d26936b5f4" target="_blank" rel="noopener">SC-900</a>
-        <a class="certs-chip" href="https://learn.microsoft.com/en-us/users/husenjan/credentials/686e367eb51f9614" target="_blank" rel="noopener">AZ-900</a>
-      </div>
+      <a href="https://www.credential.net/b96accfa-fc61-44bd-b439-ce05d2c3a7b9" target="_blank" rel="noopener">OSCP</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/63db89b5064d17ff" target="_blank" rel="noopener">AZ-500</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/ae5226222b6183c4" target="_blank" rel="noopener">AZ-305</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/f5d62077c174a42f" target="_blank" rel="noopener">AZ-104</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814" target="_blank" rel="noopener">SC-200</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/1ddb60c27ac1f814" target="_blank" rel="noopener">MD-102</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/f6b075b311d35955" target="_blank" rel="noopener">MS-102</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/aab886951d2cec68" target="_blank" rel="noopener">MS-900</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/191a48d26936b5f4" target="_blank" rel="noopener">SC-900</a> ·
+      <a href="https://learn.microsoft.com/en-us/users/husenjan/credentials/686e367eb51f9614" target="_blank" rel="noopener">AZ-900</a>
     </td>
   </tr>
   <tr>
-    <th data-status="pending">In Progress</th>
+    <th>In Progress</th>
+    <td>CAISP</td>
   </tr>
   <tr>
-    <th data-status="todo">Todo</th>
-    <td>
-      <div class="certs-cell">
-        <span class="certs-chip">SC-300</span>
-        <span class="certs-chip">CCNA</span>
-      </div>
-    </td>
+    <th>Todo</th>
+    <td>-</td>
   </tr>
 </table>
 
