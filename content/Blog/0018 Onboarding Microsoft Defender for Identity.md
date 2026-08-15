@@ -2,7 +2,7 @@
 title: "Onboarding Microsoft Defender for Identity"
 created: 2025-10-22
 modified: 2025-10-22
-tags: ["MDE"]
+tags: ["MDE", "IDENTITY"]
 draft: false
 ---
 
