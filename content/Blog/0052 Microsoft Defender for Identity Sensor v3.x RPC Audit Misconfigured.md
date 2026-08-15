@@ -20,7 +20,7 @@ Microsoft uses RPC protocol for many of its components such as AD Replication, P
 
 This section of the document goes through resolving the alert.
 
-1. Go to [Microsoft Security](https://security.microsoft.com/machines)
+1. Go to [Microsoft Security](https://security.microsoft.com/machines).
     ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 01.png]]
 
 2. Click on **Assets -> Devices**.
@@ -29,10 +29,10 @@ This section of the document goes through resolving the alert.
 3. Find your domain controller.
     ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 03.png]]
 
-4. Click on **"..." -> Manage Tags**
+4. Click on **"..." -> Manage Tags**.
     ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 04.png]]
 
-5. Add **"Unified Sensor RPC Audit"**
+5. Add **"Unified Sensor RPC Audit"** tag.
     ![[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured 05.png]]
 
 The tag synchronization should take around 15 minutes and from there on you can close the alert from Microsoft. If an new alert is generated make sure that there are no whitepsaces on right or left side of the tag.
