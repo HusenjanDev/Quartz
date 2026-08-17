@@ -40,3 +40,7 @@ The tag synchronization should take around 15 minutes and from there on you can 
 ## Conclusion
 
 Microsoft recommends us to add the **Unified Sensor RPC Audit** tag since that will allow the identity sensor to monitor RPC traffics. It's crucial for us to monitor the RPC traffics happening in our environment since many of the Windows and Active Directory components uses it. Additionally, the upcomming newer identity sensor will start monitoring RPC traffics by default without the tag. Hopefully this article was useful for you in some way!
+
+## See also
+
+- [[0018 Onboarding Microsoft Defender for Identity v2.x Sensor.md|Onboarding Microsoft Defender for Identity v2.x Sensor]]

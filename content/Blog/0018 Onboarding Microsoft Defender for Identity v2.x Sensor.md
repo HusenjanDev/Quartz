@@ -1,5 +1,5 @@
 ---
-title: "Onboarding Microsoft Defender for Identity"
+title: "Onboarding Microsoft Defender for Identity v2.x Sensor"
 created: 2025-10-22
 modified: 2025-10-22
 tags: ["MDE", "IDENTITY"]
@@ -60,3 +60,7 @@ It will help with detecting, investigating, and responding to attacks such as re
 ## Conclusion
 
 Once all these actions are completed the domain controllers are onboarded to Microsoft Defender for Identity. If your organization is using Microsoft Defender XDR and Microsoft highly recommends setting up Microsoft Defender for Identity as it will help with collecting signals to detect, investigate, and respond to complex cyberthreats.
+
+## See also
+
+- [[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured.md|Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured]]
