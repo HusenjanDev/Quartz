@@ -3,7 +3,7 @@ title: "Block MSHTA.EXE Outbound Connections"
 created: 2026-08-28
 modified: 2026-08-28
 tags: ["MDE", "HARDENING"]
-draft: true
+draft: false
 ---
 
 ## Information
