@@ -40,33 +40,33 @@ These two queries helped me with understanding my own environment sicne I found 
 
 1. Go to [**Microsoft Intune**](https://intune.microsoft.com/).
 2. Click on **Endpoint Security -> Firewalls**.
-    ![[Block MSHTA.EXE Outbound Connections 01.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 01.png]]
 3. Click on **Create Policy**.
-    ![[Block MSHTA.EXE Outbound Connections 02.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 02.png]]
 4. Select Platform as **Windows** and Profile as **Windows Firewall Rules**.
-    ![[Block MSHTA.EXE Outbound Connections 03.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 03.png]]
 5. Enter **Name** and **Description**.
-    ![[Block MSHTA.EXE Outbound Connections 04.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 04.png]]
 6. Create two firewall rules with the following naming conversions.
-    ![[Block MSHTA.EXE Outbound Connections 05.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 05.png]]
 7. Use the following configurations on the different settings.
     
     **Block mshta.exe on 32-bit**
     - Enabled: Enabled
     - Interface Types: All
     - File Path: `%SystemRoot%\System32\mshta.exe`
-    ![[Block MSHTA.EXE Outbound Connections 06.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 06.png]]
 
     **Block mshta.exe on 64-bit**
     - Enabled: Enabled
     - Interface Types: All
     - File Path: `%systemroot%\syswow64\mshta.exe`
-    ![[Block MSHTA.EXE Outbound Connections 07.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 07.png]]
 8. On the Assignment section use **All Users**.
-    ![[Block MSHTA.EXE Outbound Connections 08.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 08.png]]
 
 9. Review the **Windows Firewall Configuration** and **Create It**.
-    ![[Block MSHTA.EXE Outbound Connections 09.png]]
+    ![[0054 Block MSHTA.EXE Outbound Connections 09.png]]
 
 ## Conclusion
 
