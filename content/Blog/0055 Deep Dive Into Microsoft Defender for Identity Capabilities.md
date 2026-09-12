@@ -63,3 +63,7 @@ Microsoft Defender for Identity is an excellent tool for organizations to protec
 - [Why Microsoft Defender for Identity](https://www.quorumcyber.com/insights/why-microsoft-defender-for-identity/)
 - [Microsoft Defender for Identity Overview](https://learn.microsoft.com/en-us/defender-for-identity/what-is)
 
+## See also
+
+- [[0018 Onboarding Microsoft Defender for Identity v2.x Sensor.md|Onboarding Microsoft Defender for Identity v2.x Sensor]]
+- [[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured.md|Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured]]

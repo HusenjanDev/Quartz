@@ -64,3 +64,4 @@ Once all these actions are completed the domain controllers are onboarded to Mic
 ## See also
 
 - [[0052 Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured.md|Microsoft Defender for Identity Sensor v3.x RPC Audit Misconfigured]]
+- [[0055 Deep Dive Into Microsoft Defender for Identity Capabilities.md|Deep Dive Into Microsoft Defender for Identity Capabilities]]

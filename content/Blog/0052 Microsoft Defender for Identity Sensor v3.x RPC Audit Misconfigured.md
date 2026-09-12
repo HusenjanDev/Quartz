@@ -44,3 +44,4 @@ Microsoft recommends us to add the **Unified Sensor RPC Audit** tag since that w
 ## See also
 
 - [[0018 Onboarding Microsoft Defender for Identity v2.x Sensor.md|Onboarding Microsoft Defender for Identity v2.x Sensor]]
+- [[0055 Deep Dive Into Microsoft Defender for Identity Capabilities.md|Deep Dive Into Microsoft Defender for Identity Capabilities]]
