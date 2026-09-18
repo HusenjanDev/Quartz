@@ -52,4 +52,3 @@ Once the SentinelOne Data Connector is setup it should take anywhere from 5 to 1
 ## Conclusion
 
 The SentinelOne V2 Data Connector requires us to create a Service User with viewer only permissions and from there the SentinelOne V2 Data Connector can be setup using the **Management URL** and **API Key for Service User**. You can read more about SentinelOne V2 Data Connector through [GitHub](https://github.com/Azure/Azure-Sentinel/blob/master/Solutions/SentinelOne/Data%20Connectors/README.md).
-
